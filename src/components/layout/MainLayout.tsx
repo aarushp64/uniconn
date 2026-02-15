@@ -2,7 +2,7 @@ import React from 'react';
 import { Sidebar } from './Sidebar';
 import { Navbar } from './Navbar';
 import './Layout.css';
-import Profile from '../../pages/Profile';
+
 
 interface MainLayoutProps {
     children: React.ReactNode;
@@ -18,7 +18,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                     {children}
                 </div>
             </main>
-            <Profile />
+
         </div>
     );
 };

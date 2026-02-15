@@ -21,11 +21,11 @@ export const Navbar = () => {
 
                 <div className="flex items-center gap-3 pl-4 border-l border-white/10">
                     <div className="text-right hidden md:block">
-                        <p className="text-sm font-medium text-white">Alex Johnson</p>
-                        <p className="text-xs text-secondary">CSE • Year 2</p>
+                        <p className="text-sm font-medium text-white">Aarush Parate</p>
+                        <p className="text-xs text-secondary">AI Systems Engineer</p>
                     </div>
                     <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex-center text-white font-bold border-2 border-glass-border">
-                        AJ
+                        AP
                     </div>
                 </div>
             </div>

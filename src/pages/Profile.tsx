@@ -1,15 +1,15 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../components/common/Button';
 import { Card } from '../components/common/Card';
 import { Mail, MapPin, GraduationCap, Building2, Download, Share2, Settings } from 'lucide-react';
-import { Modal } from '../components/common/Modal';
-import { useUI } from '../context/UIContext';
+import { MainLayout } from '../components/layout/MainLayout';
 import { getTimelineEvents, requestVerification, type TimelineEvent } from '../mock/api';
 
 const STUDENT_ID = 'student-1';
 
+const loadEvents = async (studentId: string) => getTimelineEvents(studentId);
+
 const Profile = () => {
-    const { isProfileOpen, closeProfile } = useUI();
     const [events, setEvents] = useState<TimelineEvent[]>([]);
     const [loadingTimeline, setLoadingTimeline] = useState(false);
     const [requestingIds, setRequestingIds] = useState<Record<string, boolean>>({});
@@ -19,20 +19,14 @@ const Profile = () => {
         const load = async () => {
             setLoadingTimeline(true);
             try {
-                const data = await getTimelineEvents(STUDENT_ID);
-                if (isMounted) {
-                    setEvents(data);
-                }
+                const data = await loadEvents(STUDENT_ID);
+                if (isMounted) setEvents(data);
             } finally {
-                if (isMounted) {
-                    setLoadingTimeline(false);
-                }
+                if (isMounted) setLoadingTimeline(false);
             }
         };
         load();
-        return () => {
-            isMounted = false;
-        };
+        return () => { isMounted = false; };
     }, []);
 
     const handleRequestVerification = async (eventId: string) => {
@@ -46,30 +40,21 @@ const Profile = () => {
         }
     };
 
-    const verifiedSkills = useMemo(() => {
-        const counts: Record<string, number> = {};
-        events
-            .filter((event) => event.verificationStatus === 'VERIFIED')
-            .forEach((event) => {
-                event.tags.forEach((tag) => {
-                    counts[tag] = (counts[tag] || 0) + 1;
-                });
-            });
-
-        return Object.entries(counts).map(([name, count]) => {
-            let level = 'Intermediate';
-            if (count >= 3) level = 'Expert';
-            else if (count === 2) level = 'Advanced';
-
-            const val = Math.min(40 + count * 20, 96);
-
-            return {
-                name,
-                level,
-                val,
-            };
-        });
-    }, [events]);
+    const verifiedSkills = [
+        { name: 'Python', level: 'Expert', val: 90 },
+        { name: 'Machine Learning', level: 'Expert', val: 85 },
+        { name: 'TensorFlow', level: 'Advanced', val: 75 },
+        { name: 'PyTorch', level: 'Advanced', val: 75 },
+        { name: 'SQL', level: 'Expert', val: 88 },
+        { name: 'FastAPI', level: 'Advanced', val: 78 },
+        { name: 'Docker', level: 'Advanced', val: 70 },
+        { name: 'Git', level: 'Expert', val: 85 },
+        { name: 'REST APIs', level: 'Expert', val: 82 },
+        { name: 'Data Structures', level: 'Expert', val: 80 },
+        { name: 'Prompt Engineering', level: 'Expert', val: 85 },
+        { name: 'CI/CD', level: 'Intermediate', val: 45 },
+        { name: 'AWS (Basics)', level: 'Intermediate', val: 40 },
+    ];
 
     const statusLabel = (status: TimelineEvent['verificationStatus']) => {
         if (status === 'VERIFIED') return 'Verified';
@@ -79,13 +64,7 @@ const Profile = () => {
     };
 
     return (
-        <Modal
-            isOpen={isProfileOpen}
-            onClose={closeProfile}
-            size="full"
-            className="border-primary/20 bg-[#0f1115]"
-        >
-            {/* Modal is the container, no need for extra wrapper div with max-w */}
+        <MainLayout>
             <div className="pb-10 animate-fade-in text-left">
                 {/* Hero Section */}
                 <div className="relative bg-glass-panel rounded-3xl p-8 mb-8 overflow-hidden border border-white/10 shadow-2xl">
@@ -95,7 +74,7 @@ const Profile = () => {
                         {/* Avatar */}
                         <div className="relative">
                             <div className="w-40 h-40 rounded-3xl bg-gradient-to-br from-primary to-accent flex-center text-5xl font-bold text-white shadow-[0_0_50px_rgba(167,139,250,0.4)]">
-                                PR
+                                AP
                             </div>
                             <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-success rounded-full flex-center border-4 border-bg-card text-white shadow-lg">
                                 ✓
@@ -104,21 +83,21 @@ const Profile = () => {
 
                         {/* Info */}
                         <div className="pt-2">
-                            <h1 className="text-4xl font-extrabold text-white mb-2">Pranav Ranade</h1>
-                            <p className="text-xl text-secondary mb-6 font-medium">Full-Stack Developer | AI Enthusiast | Building Real-World Solutions</p>
+                            <h1 className="text-4xl font-extrabold text-white mb-2">Aarush Parate</h1>
+                            <p className="text-xl text-secondary mb-6 font-medium">AI Systems Engineer | Building Scalable Intelligence</p>
 
                             <div className="flex flex-wrap gap-6 mb-6 text-muted">
                                 <div className="flex-center gap-2">
-                                    <GraduationCap size={18} /> <span>Computer Science, 3rd Year</span>
+                                    <GraduationCap size={18} /> <span>AI & Data Science</span>
                                 </div>
                                 <div className="flex-center gap-2">
-                                    <Building2 size={18} /> <span>MIT College of Engineering</span>
+                                    <Building2 size={18} /> <span>Tech Institute of Advanced Studies</span>
                                 </div>
                                 <div className="flex-center gap-2">
-                                    <MapPin size={18} /> <span>Pune, India</span>
+                                    <MapPin size={18} /> <span>Bangalore, India</span>
                                 </div>
                                 <div className="flex-center gap-2">
-                                    <Mail size={18} /> <span>pranav.ranade@mitcoe.edu</span>
+                                    <Mail size={18} /> <span>aarush.parate.dev@gmail.com</span>
                                 </div>
                             </div>
 
@@ -158,19 +137,19 @@ const Profile = () => {
                         {/* Score Circle */}
                         <div className="relative w-48 h-48 rounded-full flex-center bg-bg-main shadow-[0_0_60px_rgba(45,212,191,0.2)] z-10 before:absolute before:inset-[-2px] before:rounded-full before:bg-gradient-to-r before:from-primary before:to-secondary before:-z-10">
                             <div className="flex flex-col items-center">
-                                <span className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-primary to-secondary">64</span>
-                                <span className="text-sm font-bold text-muted uppercase tracking-wider mt-2">Industry Ready</span>
+                                <span className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-primary to-secondary">72</span>
+                                <span className="text-sm font-bold text-muted uppercase tracking-wider mt-2">Emerging Pro</span>
                             </div>
                         </div>
 
                         {/* Breakdown */}
                         <div className="flex-1 w-full max-w-2xl bg-bg-main/50 p-6 rounded-2xl border border-white/5">
                             {[
-                                { label: 'Technical Skills', val: 78 },
-                                { label: 'Project Experience', val: 72 },
-                                { label: 'Collaboration', val: 65 },
-                                { label: 'Consistency', val: 58 },
-                                { label: 'Faculty Endorsements', val: 85 }
+                                { label: 'Technical Depth', val: 75 },
+                                { label: 'Project Maturity', val: 72 },
+                                { label: 'Deployment Score', val: 50 },
+                                { label: 'Certification Strength', val: 45 },
+                                { label: 'Specialization Clarity', val: 80 }
                             ].map(stat => (
                                 <div key={stat.label} className="flex items-center justify-between py-3 border-b border-white/5 last:border-0">
                                     <span className="font-medium text-white/90 min-w-[140px] text-left">{stat.label}</span>
@@ -348,7 +327,7 @@ const Profile = () => {
 
                 </div>
             </div>
-        </Modal>
+        </MainLayout>
     );
 };
 

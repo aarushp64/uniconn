@@ -53,6 +53,47 @@ const Explore = () => {
             type: 'Project',
             skills: ['C++', 'ROS', 'Embedded'],
             postedDaysAgo: 3
+        },
+        {
+            id: '6',
+            title: 'Blockchain Developer',
+            organization: 'Web3 Society',
+            type: 'Project',
+            skills: ['Solidity', 'Ethereum', 'Smart Contracts'],
+            postedDaysAgo: 1,
+            featured: true
+        },
+        {
+            id: '7',
+            title: 'Technical Content Writer',
+            organization: 'Campus Mag',
+            type: 'Club Role',
+            skills: ['Writing', 'Tech', 'Journalism'],
+            postedDaysAgo: 4
+        },
+        {
+            id: '8',
+            title: 'Cybersecurity Analyst',
+            organization: 'InfoSec Team',
+            type: 'Job',
+            skills: ['Network Security', 'Linux', 'Ethical Hacking'],
+            postedDaysAgo: 6
+        },
+        {
+            id: '9',
+            title: 'Game Designer',
+            organization: 'Indie Game Club',
+            type: 'Project',
+            skills: ['Unity', 'C#', 'Blender'],
+            postedDaysAgo: 2
+        },
+        {
+            id: '10',
+            title: 'Data Analyst Intern',
+            organization: 'FinTech Corp',
+            type: 'Job',
+            skills: ['SQL', 'Python', 'Tableau'],
+            postedDaysAgo: 5
         }
     ];
 

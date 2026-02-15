@@ -10,6 +10,7 @@ import Projects from './pages/Projects';
 import Clubs from './pages/Clubs';
 import OpportunityDetail from './pages/OpportunityDetail';
 import Applications from './pages/Applications';
+import AIInsights from './pages/AIInsights';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/opportunity/:id" element={<OpportunityDetail />} />
         <Route path="/applications" element={<Applications />} />
+        <Route path="/ai-insights" element={<AIInsights />} />
       </Routes>
     </div>
   );
