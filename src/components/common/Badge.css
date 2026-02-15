@@ -1,0 +1,63 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.625rem;
+    border-radius: 9999px;
+    /* Pill shape */
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+}
+
+.badge-primary {
+    background: rgba(79, 70, 229, 0.15);
+    /* Primary with opacity */
+    color: #818cf8;
+    /* Light indigo */
+    border: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.badge-secondary {
+    background: rgba(139, 92, 246, 0.15);
+    /* Violet with opacity */
+    color: #a78bfa;
+    /* Light violet */
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.badge-success {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.badge-warning {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.badge-danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.badge-neutral {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+}
+
+.badge-outline {
+    background: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-muted);
+}
+
+.badge-verify-icon {
+    margin-right: 0.125rem;
+}
