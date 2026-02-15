@@ -3,9 +3,17 @@ import { BookOpen, Calendar, Code2, Heart } from 'lucide-react';
 import { Input } from '../../common/Input';
 import { Badge } from '../../common/Badge';
 
+interface StudentFormData {
+    skills?: string[];
+    interests?: string[];
+    year?: string;
+    branch?: string;
+    [key: string]: unknown;
+}
+
 interface StudentDetailsFormProps {
-    data: any;
-    onChange: (data: any) => void;
+    data: StudentFormData;
+    onChange: (data: StudentFormData) => void;
 }
 
 export const StudentDetailsForm: React.FC<StudentDetailsFormProps> = ({ data, onChange }) => {
@@ -33,11 +41,11 @@ export const StudentDetailsForm: React.FC<StudentDetailsFormProps> = ({ data, on
     };
 
     const removeSkill = (skill: string) => {
-        onChange({ ...data, skills: data.skills.filter((s: string) => s !== skill) });
+        onChange({ ...data, skills: data.skills?.filter((s: string) => s !== skill) || [] });
     };
 
     const removeInterest = (interest: string) => {
-        onChange({ ...data, interests: data.interests.filter((i: string) => i !== interest) });
+        onChange({ ...data, interests: data.interests?.filter((i: string) => i !== interest) || [] });
     };
 
     return (

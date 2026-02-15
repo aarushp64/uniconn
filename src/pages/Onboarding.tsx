@@ -78,7 +78,7 @@ const Onboarding = () => {
 
         if (step === 1) {
             if (role === 'student') {
-                return <StudentDetailsForm data={details} onChange={setDetails} />;
+                return <StudentDetailsForm data={details} onChange={(data) => setDetails(data as typeof details)} />;
             }
             return (
                 <div className="text-center py-10 animate-fade-in">

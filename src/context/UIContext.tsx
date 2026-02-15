@@ -8,7 +8,7 @@ interface UIContextType {
 
 const UIContext = createContext<UIContextType | undefined>(undefined);
 
-export const UIProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export function UIProvider({ children }: { children: React.ReactNode }) {
     const [isProfileOpen, setProfileOpen] = useState(false);
 
     const openProfile = () => setProfileOpen(true);
@@ -19,12 +19,13 @@ export const UIProvider: React.FC<{ children: React.ReactNode }> = ({ children }
             {children}
         </UIContext.Provider>
     );
-};
+}
 
-export const useUI = () => {
+// eslint-disable-next-line react-refresh/only-export-components
+export function useUI() {
     const context = useContext(UIContext);
     if (context === undefined) {
         throw new Error('useUI must be used within a UIProvider');
     }
     return context;
-};
+}

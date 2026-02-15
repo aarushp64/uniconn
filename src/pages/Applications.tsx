@@ -100,7 +100,7 @@ const Applications = () => {
                                 </div>
 
                                 <div className="flex flex-col items-center md:items-end gap-1 min-w-[140px]">
-                                    <Badge variant={getStatusColor(app.status) as any} verified={app.status === 'Verified'}>
+                                    <Badge variant={getStatusColor(app.status) as 'primary' | 'success' | 'warning' | 'danger' | 'neutral'} verified={app.status === 'Verified'}>
                                         {app.status}
                                     </Badge>
                                     <span className="text-xs text-muted flex items-center gap-1">

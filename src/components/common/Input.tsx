@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useId } from 'react';
 import './Input.css';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -19,7 +19,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
     id,
     ...props
 }, ref) => {
-    const inputId = id || props.name || Math.random().toString(36).substring(7);
+    const generatedId = useId();
+    const inputId = id || props.name || generatedId;
 
     return (
         <div className={`input-wrapper ${fullWidth ? 'w-full' : ''} ${className}`}>
