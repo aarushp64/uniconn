@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { api } from '../utils/api';
 
 interface User {
     id: string;
@@ -13,39 +12,38 @@ interface User {
 interface AuthContextType {
     user: User | null;
     loading: boolean;
-    login: (token: string, userData: User) => void;
+    login: (userData: User) => void;
     logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+const STORAGE_KEY = 'uniconn_user';
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const loadUser = async () => {
-            const token = localStorage.getItem('token');
-            if (token) {
-                try {
-                    const userData = await api.get('/users/me');
-                    setUser(userData);
-                } catch (err) {
-                    localStorage.removeItem('token');
-                    setUser(null);
-                }
+        // Restore user from localStorage (no backend needed)
+        try {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+                setUser(JSON.parse(stored));
             }
-            setLoading(false);
-        };
-        loadUser();
+        } catch {
+            localStorage.removeItem(STORAGE_KEY);
+        }
+        setLoading(false);
     }, []);
 
-    const login = (token: string, userData: User) => {
-        localStorage.setItem('token', token);
+    const login = (userData: User) => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(userData));
         setUser(userData);
     };
 
     const logout = () => {
+        localStorage.removeItem(STORAGE_KEY);
         localStorage.removeItem('token');
         setUser(null);
     };

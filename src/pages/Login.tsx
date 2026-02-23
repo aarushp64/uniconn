@@ -5,7 +5,15 @@ import { AuthLayout } from '../components/layout/AuthLayout';
 import { Button } from '../components/common/Button';
 import { Input } from '../components/common/Input';
 import { useAuth } from '../context/AuthContext';
-import { api } from '../utils/api';
+
+/* Demo user — used for Quick Access and any login */
+const DEMO_USER = {
+    id: 'demo-001',
+    name: 'Aarush Parate',
+    email: 'aarush@mitadtu.ac.in',
+    username: 'aarush.parate',
+    role: 'student',
+};
 
 const Login = () => {
     const navigate = useNavigate();
@@ -18,15 +26,12 @@ const Login = () => {
     });
 
     const handleDemoLogin = () => {
-        setFormData({
-            email: 'demo@uniconn.edu',
-            password: 'password123'
-        });
-        // Trigger submit after state update
+        setLoading(true);
+        // Simulate a brief delay for UX
         setTimeout(() => {
-            const form = document.getElementById('login-form') as HTMLFormElement;
-            form?.requestSubmit();
-        }, 100);
+            login(DEMO_USER);
+            navigate('/dashboard');
+        }, 400);
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -34,15 +39,22 @@ const Login = () => {
         setLoading(true);
         setError(null);
 
-        try {
-            const data = await api.post('/auth/login', formData);
-            login(data.token, data.user);
+        // Client-side login — accept any credentials, use demo user
+        // In production you'd validate against a real backend here
+        setTimeout(() => {
+            if (!formData.email || !formData.password) {
+                setError('Please enter both email and password.');
+                setLoading(false);
+                return;
+            }
+            login({
+                ...DEMO_USER,
+                email: formData.email,
+                name: formData.email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+                username: formData.email.split('@')[0],
+            });
             navigate('/dashboard');
-        } catch (err: any) {
-            setError(err.message || 'Login failed. Please check your credentials.');
-        } finally {
-            setLoading(false);
-        }
+        }, 500);
     };
 
     return (
@@ -55,7 +67,7 @@ const Login = () => {
                     <Sparkles size={18} />
                     <span className="font-bold text-sm text-left">Quick Access Mode</span>
                 </div>
-                <p className="text-xs text-slate-500 text-left">Use the demo account to explore all features instantly without a database setup.</p>
+                <p className="text-xs text-slate-500 text-left">Explore all features instantly — no account needed.</p>
                 <Button
                     variant="outline"
                     size="sm"

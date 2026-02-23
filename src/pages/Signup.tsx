@@ -5,7 +5,6 @@ import { AuthLayout } from '../components/layout/AuthLayout';
 import { Button } from '../components/common/Button';
 import { Input } from '../components/common/Input';
 import { useAuth } from '../context/AuthContext';
-import { api } from '../utils/api';
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -29,20 +28,17 @@ const Signup = () => {
         setLoading(true);
         setError(null);
 
-        try {
-            const data = await api.post('/auth/register', {
+        // Client-side signup — creates user locally
+        setTimeout(() => {
+            login({
+                id: `user-${Date.now()}`,
                 name: formData.fullName,
                 username: formData.username,
                 email: formData.email,
-                password: formData.password
+                role: 'student',
             });
-            login(data.token, data.user);
             navigate('/onboarding');
-        } catch (err: any) {
-            setError(err.message || 'Signup failed. Please try again.');
-        } finally {
-            setLoading(false);
-        }
+        }, 500);
     };
 
     return (
