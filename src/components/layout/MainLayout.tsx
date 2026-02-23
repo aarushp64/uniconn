@@ -1,5 +1,4 @@
 import React from 'react';
-import { Sidebar } from './Sidebar';
 import { Navbar } from './Navbar';
 import './Layout.css';
 
@@ -11,14 +10,12 @@ interface MainLayoutProps {
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     return (
         <div className="app-layout">
-            <Sidebar />
             <main className="main-content">
                 <Navbar />
-                <div className="animate-fade-in">
+                <div className="animate-fade-in content-area">
                     {children}
                 </div>
             </main>
-
         </div>
     );
 };

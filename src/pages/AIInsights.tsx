@@ -1,211 +1,324 @@
+import { useState } from 'react';
 import { Card } from '../components/common/Card';
 import { MainLayout } from '../components/layout/MainLayout';
-import { Target, Zap, Server, Activity, TrendingUp, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { Star, TrendingUp, Zap, ChevronRight, Lightbulb, Rocket, Shield } from 'lucide-react';
+
+/* ─── Star Rating Helper ─── */
+const Stars = ({ rating, max = 5, size = 14 }: { rating: number; max?: number; size?: number }) => (
+    <div className="flex items-center gap-0.5">
+        {Array.from({ length: max }, (_, i) => {
+            const filled = i < Math.floor(rating);
+            const half = !filled && i < rating;
+            return (
+                <div key={i} className="relative">
+                    {/* Empty star */}
+                    <Star size={size} className="text-slate-200" />
+                    {/* Filled overlay */}
+                    {(filled || half) && (
+                        <div className="absolute inset-0 overflow-hidden" style={{ width: filled ? '100%' : '50%' }}>
+                            <Star size={size} className="text-amber-400 fill-amber-400" />
+                        </div>
+                    )}
+                </div>
+            );
+        })}
+    </div>
+);
+
+/* ─── Data ─── */
+const skills = [
+    { name: 'Python', stars: 4.5, icon: '🐍' },
+    { name: 'ML / AI', stars: 4, icon: '🧠' },
+    { name: 'Databases', stars: 4.5, icon: '🗄️' },
+    { name: 'APIs & Backend', stars: 4, icon: '⚡' },
+    { name: 'System Design', stars: 3.5, icon: '🏗️' },
+    { name: 'Frontend', stars: 3, icon: '🎨' },
+    { name: 'Docker / Cloud', stars: 2.5, icon: '☁️' },
+    { name: 'DevOps / CI-CD', stars: 2, icon: '🔧' },
+];
+
+const growthData = [
+    { month: 'Sep', val: 2 },
+    { month: 'Oct', val: 2.5 },
+    { month: 'Nov', val: 3 },
+    { month: 'Dec', val: 3 },
+    { month: 'Jan', val: 3.5 },
+    { month: 'Feb', val: 4 },
+    { month: 'Mar', val: 4.3 },
+    { month: 'Apr', val: 4.5 },
+];
+
+const actionPlan = [
+    { step: 1, title: 'Production-Harden ML API', desc: 'Add auth, logging, versioning to your FastAPI project', color: 'border-sky-500', iconBg: 'bg-sky-50', iconColor: 'text-sky-600', icon: Shield, tags: ['Auth', 'Logging', 'Versioning'] },
+    { step: 2, title: 'Build CI/CD Pipeline', desc: 'Automate testing & deployment with GitHub Actions + Docker', color: 'border-violet-500', iconBg: 'bg-violet-50', iconColor: 'text-violet-600', icon: Rocket, tags: ['GitHub Actions', 'Docker', 'Tests'] },
+    { step: 3, title: 'Add Observability', desc: 'Implement monitoring, error tracking, and performance alerts', color: 'border-emerald-500', iconBg: 'bg-emerald-50', iconColor: 'text-emerald-600', icon: Lightbulb, tags: ['Monitoring', 'Alerts', 'Perf'] },
+];
 
 const AIInsights = () => {
+    const [expandedStep, setExpandedStep] = useState<number | null>(null);
+
+    // SVG line chart calculations
+    const chartW = 600;
+    const chartH = 160;
+    const padX = 40;
+    const padY = 20;
+    const maxVal = 5;
+    const points = growthData.map((d, i) => ({
+        x: padX + (i / (growthData.length - 1)) * (chartW - padX * 2),
+        y: padY + (1 - d.val / maxVal) * (chartH - padY * 2),
+        ...d,
+    }));
+    const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
+    const areaPath = `${linePath} L ${points[points.length - 1].x} ${chartH - padY} L ${points[0].x} ${chartH - padY} Z`;
+
+    // Overall rating
+    const avgRating = skills.reduce((a, s) => a + s.stars, 0) / skills.length;
+
     return (
         <MainLayout>
             <div className="container mx-auto pb-12 animate-fade-in">
                 {/* Header */}
-                <div className="mb-8">
-                    <h1 className="text-3xl font-bold text-white mb-2">UNICONN Monthly Growth Insight</h1>
-                    <p className="text-secondary">AI-driven analysis of your professional trajectory.</p>
+                <div className="mb-6">
+                    <h1 className="text-xl font-bold text-slate-900 mb-1">Growth Intelligence</h1>
+                    <p className="text-xs text-slate-500">AI-powered analysis • Updated Feb 2026</p>
                 </div>
 
-                {/* Top Summary Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                    <Card className="p-6 border-l-4 border-primary bg-primary/5">
-                        <div className="mb-2 text-secondary text-sm font-medium">Student</div>
-                        <h3 className="text-xl font-bold text-white">Aarush Parate</h3>
-                    </Card>
-                    <Card className="p-6 border-l-4 border-accent bg-accent/5">
-                        <div className="mb-2 text-secondary text-sm font-medium">Target Role</div>
-                        <h3 className="text-xl font-bold text-white">AI Systems Engineer</h3>
-                    </Card>
-                    <Card className="p-6 border-l-4 border-yellow-500 bg-yellow-500/5">
-                        <div className="mb-2 text-secondary text-sm font-medium">Current Stage</div>
-                        <h3 className="text-xl font-bold text-white">Emerging → Competitive</h3>
-                    </Card>
-                    <Card className="p-6 border-l-4 border-success bg-success/5">
-                        <div className="mb-2 text-secondary text-sm font-medium">Differentiation</div>
-                        <h3 className="text-xl font-bold text-white">Top 15% (Building)</h3>
-                    </Card>
-                </div>
+                {/* Overall Rating Hero */}
+                <Card className="p-5 mb-6 border-slate-100 bg-gradient-to-r from-amber-50/50 to-transparent">
+                    <div className="flex flex-col md:flex-row items-center gap-6">
+                        <div className="text-center md:text-left">
+                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Overall Rating</p>
+                            <div className="flex items-center gap-3">
+                                <span className="text-4xl font-black text-slate-900">{avgRating.toFixed(1)}</span>
+                                <Stars rating={avgRating} size={22} />
+                            </div>
+                            <p className="text-[10px] text-slate-400 mt-1">Based on {skills.length} skill areas</p>
+                        </div>
+                        <div className="flex-1 w-full md:w-auto">
+                            <div className="grid grid-cols-3 gap-3">
+                                {[
+                                    { label: 'Peer Rank', value: 'Top 15%', emoji: '🏅' },
+                                    { label: 'Stage', value: 'Emerging', emoji: '🚀' },
+                                    { label: 'Next Level', value: 'Competitive', emoji: '🎯' },
+                                ].map(stat => (
+                                    <div key={stat.label} className="text-center p-3 bg-white rounded-xl border border-slate-100">
+                                        <span className="text-lg">{stat.emoji}</span>
+                                        <p className="text-xs font-bold text-slate-800 mt-1">{stat.value}</p>
+                                        <p className="text-[8px] font-bold text-slate-400 uppercase">{stat.label}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </Card>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
-                    {/* Left Column: Deep Analysis */}
-                    <div className="flex flex-col gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6">
+                    {/* Left Column */}
+                    <div className="flex flex-col gap-6">
 
-                        {/* Where You Stand */}
-                        <Card className="p-8">
-                            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                                <Activity className="text-primary" /> 📍 Where You Stand Right Now
+                        {/* Skill Ratings - Stars */}
+                        <Card className="p-5 border-slate-100">
+                            <h2 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <Star size={16} className="text-amber-500 fill-amber-500" /> Skill Ratings
                             </h2>
-                            <div className="space-y-6">
-                                <p className="text-secondary leading-relaxed">
-                                    You are in the <strong className="text-white">Emerging → Competitive</strong> transition stage.
-                                    You are stronger than the average AI student because:
-                                </p>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-3">
+                                {skills.map(skill => (
+                                    <div key={skill.name} className="flex items-center gap-3 group">
+                                        <span className="text-lg w-7 text-center">{skill.icon}</span>
+                                        <div className="flex-1 min-w-0">
+                                            <div className="flex items-center justify-between mb-0.5">
+                                                <span className="text-xs font-semibold text-slate-700">{skill.name}</span>
+                                                <span className="text-[10px] font-bold text-amber-600">{skill.stars}/5</span>
+                                            </div>
+                                            <Stars rating={skill.stars} size={13} />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </Card>
+
+                        {/* Growth Trajectory - SVG Line Graph */}
+                        <Card className="p-5 border-slate-100">
+                            <h2 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <TrendingUp size={16} className="text-emerald-600" /> Growth Trajectory
+                            </h2>
+                            <div className="w-full overflow-hidden">
+                                <svg viewBox={`0 0 ${chartW} ${chartH}`} className="w-full h-40">
+                                    <defs>
+                                        <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                                            <stop offset="0%" stopColor="#38bdf8" />
+                                            <stop offset="100%" stopColor="#34d399" />
+                                        </linearGradient>
+                                        <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.15" />
+                                            <stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
+                                        </linearGradient>
+                                    </defs>
+
+                                    {/* Grid lines */}
+                                    {[1, 2, 3, 4, 5].map(v => {
+                                        const y = padY + (1 - v / maxVal) * (chartH - padY * 2);
+                                        return (
+                                            <g key={v}>
+                                                <line x1={padX} y1={y} x2={chartW - padX} y2={y} stroke="#f1f5f9" strokeWidth="1" />
+                                                <text x={padX - 8} y={y + 3} textAnchor="end" className="text-[10px] fill-slate-300 font-medium">{v}★</text>
+                                            </g>
+                                        );
+                                    })}
+
+                                    {/* Area fill */}
+                                    <path d={areaPath} fill="url(#areaGrad)" />
+
+                                    {/* Line */}
+                                    <path d={linePath} fill="none" stroke="url(#lineGrad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+
+                                    {/* Data points + labels */}
+                                    {points.map((p, i) => (
+                                        <g key={i}>
+                                            <circle cx={p.x} cy={p.y} r={i === points.length - 1 ? 5 : 3} fill={i === points.length - 1 ? '#34d399' : '#38bdf8'} stroke="white" strokeWidth="2" />
+                                            {i >= points.length - 3 && (
+                                                <text x={p.x} y={p.y - 10} textAnchor="middle" className="text-[9px] fill-emerald-600 font-bold">{p.val}★</text>
+                                            )}
+                                            <text x={p.x} y={chartH - 4} textAnchor="middle" className="text-[9px] fill-slate-400 font-medium">{p.month}</text>
+                                        </g>
+                                    ))}
+
+                                    {/* Projected dashed */}
+                                    {points.length >= 2 && (
+                                        <line
+                                            x1={points[points.length - 1].x} y1={points[points.length - 1].y}
+                                            x2={chartW - padX + 10} y2={padY + (1 - 4.8 / maxVal) * (chartH - padY * 2)}
+                                            stroke="#34d399" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.5"
+                                        />
+                                    )}
+                                </svg>
+                            </div>
+                            <div className="flex items-center justify-between mt-2 pt-2 border-t border-slate-50">
+                                <span className="text-[10px] text-slate-400">8-month trajectory</span>
+                                <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">↑ 2 stars growth</span>
+                            </div>
+                        </Card>
+
+                        {/* Focus Areas */}
+                        <div className="grid grid-cols-2 gap-4">
+                            <Card className="p-4 border-rose-100 bg-rose-50/30">
+                                <h3 className="text-xs font-bold text-rose-700 mb-3">🚧 Needs Work</h3>
+                                <div className="space-y-2">
                                     {[
-                                        "You think in systems, not just models",
-                                        "You build APIs around ML",
-                                        "You understand deployment basics",
-                                        "You care about architecture"
-                                    ].map((item, i) => (
-                                        <div key={i} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
-                                            <CheckCircle2 size={18} className="text-success shrink-0" />
-                                            <span className="text-sm font-medium text-white">{item}</span>
+                                        { name: 'DevOps / CI-CD', stars: 2 },
+                                        { name: 'Docker / Cloud', stars: 2.5 },
+                                    ].map(s => (
+                                        <div key={s.name}>
+                                            <p className="text-[10px] font-semibold text-slate-700 mb-0.5">{s.name}</p>
+                                            <Stars rating={s.stars} size={11} />
                                         </div>
                                     ))}
                                 </div>
-                                <div className="p-4 rounded-xl bg-orange-500/10 border border-orange-500/20">
-                                    <p className="text-orange-200 text-sm italic">
-                                        "However, you are not yet clearly differentiated from the large AI student cluster.
-                                        You are capable, but not yet distinct."
-                                    </p>
-                                </div>
-                            </div>
-                        </Card>
-
-                        {/* Bottleneck & Focus */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <Card className="p-8 border border-red-500/30 bg-gradient-to-br from-red-500/5 to-transparent">
-                                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                                    <AlertTriangle className="text-red-500" /> 🚧 Biggest Bottleneck
-                                </h3>
-                                <p className="text-2xl font-black text-white mb-4">Engineering Maturity Depth</p>
-                                <p className="text-secondary text-sm mb-4">
-                                    Right now your profile signals "Strong AI builder", but not yet "Reliable AI Systems Engineer".
-                                </p>
-                                <ul className="space-y-2 text-sm text-muted">
-                                    <li className="flex gap-2">❌ Missing CI/CD pipelines</li>
-                                    <li className="flex gap-2">❌ Basic Monitoring</li>
-                                    <li className="flex gap-2">❌ Clean Production Arch</li>
-                                </ul>
                             </Card>
-
-                            <Card className="p-8 border border-emerald-500/30 bg-gradient-to-br from-emerald-500/5 to-transparent">
-                                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                                    <Target className="text-emerald-500" /> 🎯 One High-Leverage Focus
-                                </h3>
-                                <div className="space-y-4">
-                                    <div className="text-center p-3 bg-white/5 rounded-lg">
-                                        <div className="text-xs text-muted uppercase font-bold mb-1">Shift From</div>
-                                        <div className="text-white font-medium">"Building smart AI projects"</div>
-                                    </div>
-                                    <div className="flex justify-center text-emerald-500">↓</div>
-                                    <div className="text-center p-3 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
-                                        <div className="text-xs text-emerald-300 uppercase font-bold mb-1">Shift To</div>
-                                        <div className="text-white font-bold">"Engineering production-grade AI systems"</div>
-                                    </div>
+                            <Card className="p-4 border-emerald-100 bg-emerald-50/30">
+                                <h3 className="text-xs font-bold text-emerald-700 mb-3">💪 Strengths</h3>
+                                <div className="space-y-2">
+                                    {[
+                                        { name: 'Python', stars: 4.5 },
+                                        { name: 'Databases', stars: 4.5 },
+                                    ].map(s => (
+                                        <div key={s.name}>
+                                            <p className="text-[10px] font-semibold text-slate-700 mb-0.5">{s.name}</p>
+                                            <Stars rating={s.stars} size={11} />
+                                        </div>
+                                    ))}
                                 </div>
                             </Card>
                         </div>
-
-                        {/* Action Plan */}
-                        <Card className="p-8">
-                            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                                <Zap className="text-yellow-400" /> 🛠️ WHAT To Do (Next 30 Days)
-                            </h2>
-                            <div className="space-y-8">
-                                <div className="relative pl-8 border-l-2 border-white/10 space-y-8">
-                                    {/* Step 1 */}
-                                    <div className="relative">
-                                        <div className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-bg-card border-4 border-primary flex-center text-xs font-bold text-primary">1</div>
-                                        <h4 className="text-lg font-bold text-white mb-2">Production-Harden One Project</h4>
-                                        <p className="text-sm text-secondary mb-3">Take your ML Deployment API and add:</p>
-                                        <div className="flex flex-wrap gap-2">
-                                            {['Authentication', 'Structured Logging', 'Health Check Endpoint', 'Versioning', 'Error Handling'].map(tag => (
-                                                <span key={tag} className="px-3 py-1 bg-white/5 rounded text-xs text-white border border-white/10">{tag}</span>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    {/* Step 2 */}
-                                    <div className="relative">
-                                        <div className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-bg-card border-4 border-accent flex-center text-xs font-bold text-accent">2</div>
-                                        <h4 className="text-lg font-bold text-white mb-2">Implement Real CI/CD</h4>
-                                        <div className="bg-black/30 rounded-lg p-4 font-mono text-sm text-accent/80">
-                                            .github/workflows/deploy.yml<br />
-                                            ├── Install dependencies<br />
-                                            ├── Run tests<br />
-                                            ├── Build Docker Image<br />
-                                            └── Deploy automatically
-                                        </div>
-                                    </div>
-
-                                    {/* Step 3 */}
-                                    <div className="relative">
-                                        <div className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-bg-card border-4 border-success flex-center text-xs font-bold text-success">3</div>
-                                        <h4 className="text-lg font-bold text-white mb-2">Add Observability</h4>
-                                        <p className="text-sm text-secondary">Basic logging dashboard, error tracking, and performance timing logs. This is where you differentiate.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Card>
                     </div>
 
-                    {/* Right Column: Strategy & Identity */}
+                    {/* Right Column */}
                     <div className="flex flex-col gap-6">
 
-                        {/* HOW to Execute */}
-                        <Card className="p-6">
-                            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                                <Server size={20} className="text-purple-400" /> 🔎 Execution Guide
-                            </h3>
-                            <div className="space-y-6">
-                                <div>
-                                    <h4 className="text-sm font-bold text-white mb-2">Technicals</h4>
-                                    <p className="text-xs text-secondary leading-relaxed mb-2">
-                                        Use <strong>GitHub Actions</strong> for the pipeline. Write a technical breakdown: "How I Designed a Production-Ready AI System", explaining your architecture choices.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h4 className="text-sm font-bold text-white mb-2">Refactoring</h4>
-                                    <div className="bg-white/5 rounded p-3">
-                                        <code className="text-xs text-accent block">
-                                            /services<br />
-                                            /models<br />
-                                            /routers<br />
-                                            /config
-                                        </code>
-                                    </div>
-                                    <p className="text-xs text-secondary mt-2">Make it look like enterprise production code.</p>
-                                </div>
+                        {/* 30-Day Action Plan */}
+                        <Card className="p-5 border-slate-100">
+                            <h2 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <Zap size={16} className="text-amber-500" /> 30-Day Action Plan
+                            </h2>
+                            <div className="space-y-2">
+                                {actionPlan.map(item => {
+                                    const Icon = item.icon;
+                                    return (
+                                        <button
+                                            key={item.step}
+                                            onClick={() => setExpandedStep(expandedStep === item.step ? null : item.step)}
+                                            className={`w-full text-left p-3 rounded-xl border-l-4 ${item.color} transition-all ${expandedStep === item.step ? `${item.iconBg} shadow-sm` : 'bg-white hover:bg-slate-50'
+                                                }`}
+                                        >
+                                            <div className="flex items-start gap-2.5">
+                                                <div className={`w-7 h-7 rounded-lg ${item.iconBg} flex items-center justify-center shrink-0 mt-0.5`}>
+                                                    <Icon size={14} className={item.iconColor} />
+                                                </div>
+                                                <div className="flex-1 min-w-0">
+                                                    <div className="flex items-center gap-1.5 mb-0.5">
+                                                        <span className="text-[8px] font-black text-slate-400">STEP {item.step}</span>
+                                                        <ChevronRight size={10} className={`text-slate-300 transition-transform ${expandedStep === item.step ? 'rotate-90' : ''}`} />
+                                                    </div>
+                                                    <h4 className="text-xs font-bold text-slate-800">{item.title}</h4>
+                                                    {expandedStep === item.step && (
+                                                        <div className="animate-fade-in mt-2">
+                                                            <p className="text-[10px] text-slate-500 mb-2">{item.desc}</p>
+                                                            <div className="flex flex-wrap gap-1">
+                                                                {item.tags.map(tag => (
+                                                                    <span key={tag} className="px-2 py-0.5 bg-white rounded text-[9px] font-bold text-slate-500 border border-slate-100">{tag}</span>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </button>
+                                    );
+                                })}
                             </div>
                         </Card>
 
-                        {/* Projection */}
-                        <Card className="p-6 bg-gradient-to-b from-primary/10 to-transparent border-primary/20">
-                            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                                <TrendingUp size={20} className="text-primary" /> 📈 Projection
+                        {/* Projected Ratings */}
+                        <Card className="p-5 bg-gradient-to-br from-sky-50/50 to-transparent border-sky-100">
+                            <h3 className="text-xs font-bold text-slate-700 mb-4 flex items-center gap-2">
+                                🔮 Projected Ratings
                             </h3>
                             <div className="space-y-4">
-                                <div>
-                                    <div className="text-xs text-primary font-bold uppercase mb-1">Within 3 Months</div>
-                                    <p className="text-sm text-white">You move into the <strong>Competitive Tier</strong>.</p>
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sm">📅</div>
+                                    <div className="flex-1">
+                                        <p className="text-xs font-bold text-slate-800">In 3 Months</p>
+                                        <Stars rating={4.2} size={12} />
+                                    </div>
+                                    <span className="text-[10px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded border border-sky-100">Competitive</span>
                                 </div>
-                                <div>
-                                    <div className="text-xs text-primary font-bold uppercase mb-1">Within 6 Months</div>
-                                    <p className="text-sm text-white">Strong candidate for <strong>MLOps Associate</strong> or <strong>Backend AI Engineer</strong>.</p>
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-sm">🎯</div>
+                                    <div className="flex-1">
+                                        <p className="text-xs font-bold text-slate-800">In 6 Months</p>
+                                        <Stars rating={4.7} size={12} />
+                                    </div>
+                                    <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">Industry Ready</span>
                                 </div>
                             </div>
                         </Card>
 
                         {/* Identity Shift */}
-                        <Card className="p-6 border-t-4 border-t-white/20">
-                            <h3 className="text-lg font-bold text-white mb-2">🧠 Identity Shift</h3>
-                            <div className="flex items-center gap-3 text-sm mb-4">
-                                <span className="text-muted line-through">AI Builder</span>
-                                <span className="text-white">→</span>
-                                <span className="text-success font-bold">AI Infra Engineer</span>
+                        <Card className="p-4 border-slate-100">
+                            <h3 className="text-xs font-bold text-slate-700 mb-3">🧬 Identity Evolution</h3>
+                            <div className="flex items-center gap-3 text-xs">
+                                <div className="text-center p-2 bg-slate-50 rounded-lg flex-1">
+                                    <p className="text-slate-400 line-through text-[10px]">AI Builder</p>
+                                    <Stars rating={3} size={10} />
+                                </div>
+                                <span className="text-slate-300 font-bold">→</span>
+                                <div className="text-center p-2 bg-emerald-50 rounded-lg flex-1 border border-emerald-100">
+                                    <p className="text-emerald-700 font-bold text-[10px]">AI Infra Engineer</p>
+                                    <Stars rating={4.5} size={10} />
+                                </div>
                             </div>
-                            <p className="text-xs text-secondary leading-relaxed">
-                                A smaller, stronger competitive space. Less crowded. More respected. Higher leverage.
-                            </p>
+                            <p className="text-[9px] text-slate-400 mt-2 text-center">Higher leverage. More impact.</p>
                         </Card>
-
                     </div>
                 </div>
             </div>

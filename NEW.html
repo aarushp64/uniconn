@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Clubs - CampusConnect</title>
+    <title>Campus Clubs - UniConn</title>
     <style>
         * {
             margin: 0;
@@ -48,7 +49,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         .logo {
@@ -94,7 +95,7 @@
             right: -20%;
             width: 600px;
             height: 600px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             filter: blur(100px);
         }
@@ -110,7 +111,7 @@
             font-weight: 900;
             margin-bottom: 1rem;
             line-height: 1.1;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .hero p {
@@ -126,11 +127,11 @@
         }
 
         .hero-stat {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(20px);
             padding: 2rem;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             text-align: center;
         }
 
@@ -165,7 +166,7 @@
             background: var(--card);
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         .section-title {
@@ -209,7 +210,7 @@
             background: var(--card);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 3px solid transparent;
             display: grid;
@@ -219,7 +220,7 @@
 
         .club-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
             border-color: var(--primary);
         }
 
@@ -253,7 +254,7 @@
             justify-content: center;
             font-size: 5rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
             position: relative;
             z-index: 1;
         }
@@ -416,7 +417,7 @@
             background: var(--card);
             border-radius: 24px;
             padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         .sidebar-title {
@@ -440,7 +441,7 @@
 
         .event-item:hover {
             background: white;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             transform: translateX(4px);
         }
 
@@ -551,7 +552,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
             padding: 2rem;
             overflow-y: auto;
@@ -572,12 +573,17 @@
             max-height: 90vh;
             overflow-y: auto;
             animation: slideUp 0.4s;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideUp {
@@ -585,6 +591,7 @@
                 opacity: 0;
                 transform: translateY(60px) scale(0.95);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -606,7 +613,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             border: none;
             color: white;
@@ -616,7 +623,7 @@
         }
 
         .close-btn:hover {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             transform: rotate(90deg);
         }
 
@@ -681,7 +688,7 @@
         .member-card:hover {
             background: white;
             transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
 
         .member-avatar {
@@ -733,7 +740,7 @@
 
         .modal-event-card:hover {
             background: white;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
 
         .openings-grid {
@@ -764,7 +771,7 @@
             .main-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .club-card {
                 grid-template-columns: 1fr;
             }
@@ -774,26 +781,27 @@
             body {
                 padding: 1rem;
             }
-            
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero-stats {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .modal-body {
                 padding: 2rem 1.5rem;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- Top Navigation -->
         <nav class="top-nav">
-            <div class="logo">CampusConnect</div>
+            <div class="logo">UniConn</div>
             <div class="nav-links">
                 <a href="#" class="nav-link">Dashboard</a>
                 <a href="#" class="nav-link">Profile</a>
@@ -807,7 +815,7 @@
             <div class="hero-content">
                 <h1>🏛️ Campus Clubs</h1>
                 <p>Discover your passion, build your network, create lasting impact</p>
-                
+
                 <div class="hero-stats">
                     <div class="hero-stat">
                         <div class="hero-stat-value">25+</div>
@@ -1236,8 +1244,8 @@
 
         function renderUpcomingEvents() {
             const container = document.getElementById('upcomingEvents');
-            const allEvents = clubsData.flatMap(club => 
-                club.upcomingEvents.map(event => ({...event, clubName: club.name, clubLogo: club.logo, clubId: club.id}))
+            const allEvents = clubsData.flatMap(club =>
+                club.upcomingEvents.map(event => ({ ...event, clubName: club.name, clubLogo: club.logo, clubId: club.id }))
             ).sort((a, b) => new Date(a.date) - new Date(b.date)).slice(0, 5);
 
             container.innerHTML = allEvents.map(event => `
@@ -1256,8 +1264,8 @@
 
         function renderOpenPositions() {
             const container = document.getElementById('openPositions');
-            const allPositions = clubsData.flatMap(club => 
-                club.openings.map(opening => ({...opening, clubName: club.name, clubLogo: club.logo, clubId: club.id}))
+            const allPositions = clubsData.flatMap(club =>
+                club.openings.map(opening => ({ ...opening, clubName: club.name, clubLogo: club.logo, clubId: club.id }))
             );
 
             container.innerHTML = allPositions.map(position => `
@@ -1279,7 +1287,7 @@
             const club = clubsData.find(c => c.id === clubId);
             const modal = document.getElementById('clubModal');
             const modalContent = document.getElementById('modalContent');
-            
+
             modalContent.innerHTML = `
                 <div class="modal-header" style="background: ${club.gradient}">
                     <button class="close-btn" onclick="closeModal()">✕</button>
@@ -1370,7 +1378,7 @@
                     </div>
                 </div>
             `;
-            
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -1386,18 +1394,19 @@
         renderOpenPositions();
 
         // Close modal on outside click
-        document.getElementById('clubModal').addEventListener('click', function(e) {
+        document.getElementById('clubModal').addEventListener('click', function (e) {
             if (e.target === this) {
                 closeModal();
             }
         });
 
         // ESC key to close
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeModal();
             }
         });
     </script>
 </body>
+
 </html>

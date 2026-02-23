@@ -27,9 +27,8 @@
     font-size: 0.95rem;
     font-family: inherit;
     color: var(--text-primary);
-    background: rgba(15, 23, 42, 0.6);
-    /* Darker background */
-    border: 1px solid var(--glass-border);
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
     border-radius: var(--radius-md);
     outline: none;
     transition: all 0.2s ease;
@@ -37,9 +36,9 @@
 
 /* Glass effect focus */
 .input-field:focus {
-    background: rgba(30, 41, 59, 0.8);
+    background: var(--bg-elevated);
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    box-shadow: 0 0 0 3px var(--primary-glow);
 }
 
 .input-field::placeholder {
@@ -52,7 +51,7 @@
 
 .input-error:focus {
     border-color: var(--accent-danger);
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
 }
 
 .input-error-msg {

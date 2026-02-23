@@ -76,7 +76,7 @@ const VerifyQueue = () => {
                 <p className="text-muted text-sm leading-relaxed">{item.description}</p>
 
                 <div className="flex flex-wrap gap-2 items-center">
-                  {item.tags.map((tag) => (
+                  {item.tags?.map((tag) => (
                     <span
                       key={tag}
                       className="px-3 py-1 rounded-lg bg-primary/10 text-primary text-xs font-bold border border-primary/20"

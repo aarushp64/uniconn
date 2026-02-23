@@ -5,46 +5,60 @@
 @tailwind utilities;
 
 :root {
-  /* Cosmic Base */
-  --bg-main: #020617;
-  /* Space Black */
-  --bg-elevated: #0B1020;
-  /* Raised Surfaces */
-  --bg-card: rgba(15, 23, 42, 0.85);
-  --bg-card-hover: #111C33;
-  /* Hover elevation */
+  /* ===== MODERN CLEAN BLUE PALETTE ===== */
+  /* Backgrounds */
+  --bg-main: #F8FAFC;
+  /* Slate 50 - main background */
+  --bg-darker: #F1F5F9;
+  /* Slate 100 */
+  --bg-dark: #F1F5F9;
+  --bg-elevated: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F0F9FF;
+  /* Sky 50 tint */
 
-  /* Aurora Spectrum */
-  --primary: #4F46E5;
-  /* Indigo */
-  --primary-dark: #312E81;
-  /* Midnight Indigo */
-  --secondary: #2DD4BF;
-  /* Aurora Teal */
-  --accent: #A78BFA;
-  /* Violet Glow */
+  /* Text Hierarchy */
+  --text-primary: #0F172A;
+  /* Slate 900 */
+  --text-secondary: #334155;
+  /* Slate 700 */
+  --text-muted: #64748B;
+  /* Slate 500 */
+  --text-meta: #94A3B8;
+  /* Slate 400 */
 
-  /* Achievement Spark */
-  --gold: #FBBF24;
+  /* Accent Colors */
+  --primary: #0284C7;
+  /* Sky 600 */
+  --primary-dark: #0369A1;
+  /* Sky 700 */
+  --primary-glow: rgba(2, 132, 199, 0.2);
+  --secondary: #0D9488;
+  /* Teal 600 */
+  --accent: #7C3AED;
+  /* Violet 600 */
+  --gold: #F59E0B;
+  /* Amber 500 */
 
-  /* System */
-  --success: #22C55E;
+  /* System Colors */
+  --success: #10B981;
+  /* Emerald 500 */
   --warning: #F59E0B;
+  /* Amber 500 */
   --danger: #EF4444;
+  /* Red 500 */
+  --accent-danger: #EF4444;
 
-  /* Text (STRICT contrast control) */
-  --text-primary: #F8FAFC;
-  /* Main text */
-  --text-secondary: #CBD5E1;
-  /* Subtext */
-  --text-muted: #94A3B8;
-  /* Meta / timestamps */
+  /* Borders & Effects */
+  --border-soft: #E2E8F0;
+  /* Slate 200 */
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-surface: rgba(255, 255, 255, 0.7);
 
-  /* Borders / Effects */
-  --border-soft: rgba(148, 163, 184, 0.15);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-surface: rgba(255, 255, 255, 0.03);
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
+  /* Border Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -59,17 +73,17 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background:
-    radial-gradient(circle at 80% 10%, rgba(167, 139, 250, 0.15), transparent 40%),
-    radial-gradient(circle at 10% 90%, rgba(45, 212, 191, 0.15), transparent 40%),
+  background: radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.1), transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(20, 184, 166, 0.1), transparent 40%),
     var(--bg-main);
   background-attachment: fixed;
-  color: var(--text-primary);
-  line-height: 1.6;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 /* Animations */
-@keyframes fadeInUp {
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -81,38 +95,59 @@ body {
   }
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Score glow animation */
+@keyframes scoreGlow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+    transform: scale(1);
   }
 
-  to {
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.4), 0 0 80px rgba(194, 65, 12, 0.3);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes scoreLabelFade {
+
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+
+  50% {
     opacity: 1;
+  }
+}
+
+@keyframes bounce-subtle {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
-}
 
-@keyframes pulse-glow {
-  0% {
-    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
-  }
-
-  70% {
-    box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+  50% {
+    transform: translateY(-3px);
   }
 }
 
-.animate-fade-in {
-  animation: fadeInUp 0.6s ease-out;
+.animate-score-glow {
+  animation: scoreGlow 2.5s ease-in-out infinite;
 }
 
-.animate-fade-in-down {
-  animation: fadeInDown 0.6s ease-out;
+.animate-score-label {
+  animation: scoreLabelFade 2.5s ease-in-out infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s infinite ease-in-out;
 }
 
 /* Scrollbar */
@@ -126,7 +161,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-card-hover);
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
@@ -135,12 +170,6 @@ body {
 }
 
 /* Utilities */
-.text-gradient {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .flex-center {
   display: flex;
   align-items: center;
@@ -160,4 +189,11 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

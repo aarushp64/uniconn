@@ -25,18 +25,18 @@ export const OpportunityCard: React.FC<OpportunityProps> = ({
 }) => {
     return (
         <Card
-            className={`flex flex-col h-full ${featured ? 'border-primary/50 bg-gradient-to-br from-glass-surface to-primary/5' : ''}`}
+            className={`flex flex-col h-full bg-white border-border-soft ${featured ? 'border-sky-300 ring-4 ring-sky-50' : ''}`}
             hover={true}
         >
             <div className="flex justify-between items-start mb-4">
-                <div className="p-2 bg-white/5 rounded-lg border border-white/10">
-                    <Building2 size={24} className="text-secondary" />
+                <div className="p-2 bg-sky-50 rounded-lg border border-sky-100">
+                    <Building2 size={24} className="text-sky-600" />
                 </div>
                 {featured && <Badge variant="primary" verified={true}>Featured</Badge>}
             </div>
 
             <div className="flex-1">
-                <h3 className="text-lg font-bold text-white mb-1 line-clamp-1">{title}</h3>
+                <h3 className="text-lg font-bold text-primary mb-1 line-clamp-1">{title}</h3>
                 <p className="text-sm text-secondary mb-4">{organization} • {type}</p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -47,7 +47,7 @@ export const OpportunityCard: React.FC<OpportunityProps> = ({
                 </div>
             </div>
 
-            <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
+            <div className="flex items-center justify-between pt-4 border-t border-border-soft mt-auto">
                 <div className="flex items-center text-xs text-muted">
                     <Clock size={12} className="mr-1" />
                     {postedDaysAgo}d ago

@@ -1,6 +1,6 @@
-# 🎓 UniConn - Campus Collaboration Platform
+# 🎓 UniConn - Campus Collaboration
 
-**UniConn** is a modern campus collaboration platform that connects students, faculty, and clubs for authentic professional development and networking.
+UniConn is a modern campus collaboration platform designed to connect students, faculty, and clubs in a seamless, high-performance environment. Built as a Progressive Web App (PWA), UniConn offers a premium, mobile-first experience with a focus on professional readiness and verified contributions.
 
 ![React](https://img.shields.io/badge/React-19.2-61dafb?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript)
@@ -10,12 +10,14 @@
 ## ✨ Features
 
 ### 🎯 Core Features
-- **Interactive Dashboard** - Real-time campus activity feed with personalized insights
-- **Opportunity Marketplace** - Browse and apply for research projects, club positions, and student collaborations
-- **Verification System** - Faculty-verified project timeline and skill authentication
-- **Smart Matching** - AI-powered recommendations based on skills and interests
-- **Profile Building** - Create verifiable professional profiles with project portfolios
-- **Club Management** - Comprehensive tools for campus organizations
+- **Interactive Dashboard** — Real-time campus activity with Tech Pulse, Live Bulletin, and trending insights
+- **Social Feed** — LinkedIn-style post feed with 12+ filter tags, images, likes, comments, and reposts
+- **Opportunity Marketplace** — Browse & apply for research, club roles, projects, and jobs across MIT ADTU
+- **AI Growth Intelligence** — Star-based skill ratings, SVG growth trajectory graph, and 30-day action plans
+- **NEP 4-Year Roadmap** — Visual tree/branch layout showing semester milestones and progress
+- **16+ Campus Clubs** — Real MIT ADTU clubs (GDSC, IEEE, ACM, NSS, Robotics, E-Cell, etc.)
+- **Profile Building** — Verifiable professional profiles with project portfolios and skill tags
+- **Projects Tracker** — Manage and showcase academic and personal projects
 
 ### 🛠️ Technical Features
 - **React 19** with TypeScript for type-safe development
@@ -78,30 +80,30 @@ The backend will be running at `http://localhost:5000` (if started)
 
 ```
 uniconn/
-├── src/                  # Frontend source code
-│   ├── components/       # Reusable UI components
-│   │   ├── common/       # Basic components (Button, Card, Input, etc.)
-│   │   ├── features/     # Feature-specific components
-│   │   └── layout/       # Layout components (Navbar, Sidebar, etc.)
-│   ├── pages/            # Page components
-│   ├── context/          # React context providers
-│   ├── hooks/            # Custom React hooks
-│   ├── mock/             # Mock data and API
-│   ├── App.tsx           # Main app component with routing
-│   ├── main.tsx          # Application entry point
-│   └── index.css         # Global styles
-├── server/               # Backend API (Node.js + Express + MongoDB)
-│   ├── models/           # Database models
-│   ├── index.js          # Server entry point
-│   ├── package.json      # Backend dependencies
-│   └── .env.example      # Backend environment variables template
-├── public/               # Static assets
-├── legacy/               # Legacy HTML prototypes
-├── dist/                 # Production build output
-├── .env.example          # Frontend environment variables template
-├── LICENSE               # MIT License
-├── CONTRIBUTING.md       # Contributing guidelines
-└── index.html            # HTML entry point
+├── src/
+│   ├── components/
+│   │   ├── common/           # Button, Card, Input, Badge
+│   │   ├── features/
+│   │   │   ├── auth/         # StudentDetailsForm
+│   │   │   ├── dashboard/    # LiveActivity
+│   │   │   ├── feed/         # Social Feed with tags & images
+│   │   │   └── opportunities/# OpportunityCard
+│   │   └── layout/           # Navbar, MainLayout, AuthLayout
+│   ├── pages/                # Dashboard, Feed, Explore, Profile,
+│   │                         # AIInsights, Projects, Clubs, etc.
+│   ├── context/              # AuthContext, UIContext
+│   ├── mock/                 # Mock API helpers
+│   ├── utils/                # API utilities
+│   ├── App.tsx               # Routing
+│   ├── main.tsx              # Entry point
+│   └── index.css             # Global styles & animations
+├── server/                   # Express + MongoDB backend
+│   ├── models/               # User, Post, etc.
+│   └── index.js              # Server entry
+├── public/                   # Static assets
+├── LICENSE
+├── CONTRIBUTING.md
+└── index.html
 ```
 
 ## 🎨 Tech Stack
@@ -147,14 +149,14 @@ This project uses ESLint with TypeScript support and React-specific rules:
 
 | Page | Route | Description |
 |------|-------|-------------|
-| Home | `/` | Landing page with call-to-action |
-| Login | `/login` | User authentication |
-| Signup | `/signup` | New user registration |
-| Dashboard | `/dashboard` | Main activity feed and insights |
-| Profile | `/profile` | User profile and timeline |
-| Explore | `/explore` | Browse opportunities |
-| Projects | `/projects` | Project listings |
-| Clubs | `/clubs` | Campus clubs directory |
+| Login | `/login` | Authentication with dummy bypass |
+| Dashboard | `/dashboard` | Activity feed, Tech Pulse, Live Bulletin |
+| Feed | `/feed` | Social posts with 12+ tags & images |
+| Explore | `/explore` | 15+ opportunity listings with filters |
+| AI Insights | `/ai-insights` | Star ratings, growth graph, action plan |
+| Profile | `/profile` | NEP roadmap tree, skills, timeline |
+| Projects | `/projects` | Personal project portfolio |
+| Clubs | `/clubs` | 16 real MIT ADTU clubs |
 | Applications | `/applications` | Track application status |
 
 ## 🔧 Configuration Files
@@ -206,7 +208,7 @@ This project is licensed under the MIT License.
 
 ## 👥 Authors
 
-CampusConnect Team
+UniConn Team
 
 ## 🙏 Acknowledgments
 

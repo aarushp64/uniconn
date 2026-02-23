@@ -91,7 +91,7 @@ const Onboarding = () => {
     return (
         <AuthLayout
             title={step === 0 ? "Choose your Role" : "Complete Profile"}
-            subtitle={step === 0 ? "How will you use CampusConnect?" : `Setting up as ${role}`}
+            subtitle={step === 0 ? "How will you use UniConn?" : `Setting up as ${role}`}
         >
             <div className="flex flex-col gap-6">
                 {renderStepContent()}

@@ -36,24 +36,24 @@ const OpportunityDetail = () => {
         <MainLayout>
             <div className="max-w-4xl mx-auto flex flex-col gap-6 pb-10 animate-fade-in">
 
-                <Link to="/explore" className="text-secondary hover:text-white flex items-center gap-2 mb-2 w-fit">
+                <Link to="/explore" className="text-slate-500 hover:text-sky-600 flex items-center gap-2 mb-2 w-fit">
                     <ArrowLeft size={18} /> Back to Explore
                 </Link>
 
                 {/* Header */}
-                <Card className="p-6 md:p-8">
+                <Card className="p-6 md:p-8 text-left">
                     <div className="flex flex-col md:flex-row justify-between gap-6">
                         <div className="flex gap-4">
-                            <div className="w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex-center text-secondary">
+                            <div className="w-16 h-16 rounded-xl bg-slate-50 border border-slate-100 flex-center text-slate-500">
                                 <Building2 size={32} />
                             </div>
                             <div>
-                                <h1 className="text-2xl font-bold text-white mb-1">{opportunity.title}</h1>
-                                <p className="text-lg text-secondary mb-3">{opportunity.organization} • <span className="text-primary">{opportunity.type}</span></p>
-                                <div className="flex flex-wrap gap-4 text-sm text-muted">
+                                <h1 className="text-2xl font-bold text-slate-900 mb-1">{opportunity.title}</h1>
+                                <p className="text-lg text-slate-600 mb-3">{opportunity.organization} • <span className="text-sky-600">{opportunity.type}</span></p>
+                                <div className="flex flex-wrap gap-4 text-sm text-slate-500">
                                     <span className="flex items-center gap-1"><Calendar size={14} /> Posted {opportunity.posted}</span>
                                     <span className="flex items-center gap-1"><MapPin size={14} /> {opportunity.location}</span>
-                                    <span className="flex items-center gap-1 text-yellow-500"><Calendar size={14} /> Deadline: {opportunity.deadline}</span>
+                                    <span className="flex items-center gap-1 text-amber-600"><Calendar size={14} /> Deadline: {opportunity.deadline}</span>
                                 </div>
                             </div>
                         </div>
@@ -79,15 +79,15 @@ const OpportunityDetail = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                     {/* Main Info */}
-                    <div className="md:col-span-2 flex flex-col gap-6">
+                    <div className="md:col-span-2 flex flex-col gap-6 text-left">
                         <Card className="p-6">
-                            <h2 className="text-xl font-bold text-white mb-4">About the Role</h2>
-                            <p className="text-secondary leading-relaxed mb-6">
+                            <h2 className="text-xl font-bold text-slate-900 mb-4">About the Role</h2>
+                            <p className="text-slate-600 leading-relaxed mb-6">
                                 {opportunity.description}
                             </p>
 
-                            <h3 className="text-lg font-semibold text-white mb-3">Key Deliverables</h3>
-                            <ul className="list-disc list-inside text-secondary space-y-2 mb-6 ml-2">
+                            <h3 className="text-lg font-semibold text-slate-900 mb-3">Key Deliverables</h3>
+                            <ul className="list-disc list-inside text-slate-600 space-y-2 mb-6 ml-2">
                                 {opportunity.deliverables.map((item, idx) => (
                                     <li key={idx}>{item}</li>
                                 ))}
@@ -96,9 +96,9 @@ const OpportunityDetail = () => {
                     </div>
 
                     {/* Sidebar Info */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-6 text-left">
                         <Card className="p-6">
-                            <h3 className="text-lg font-semibold text-white mb-4">Required Skills</h3>
+                            <h3 className="text-lg font-semibold text-slate-900 mb-4">Required Skills</h3>
                             <div className="flex flex-wrap gap-2">
                                 {opportunity.skills.map(skill => (
                                     <Badge key={skill} variant="neutral">{skill}</Badge>
@@ -106,12 +106,12 @@ const OpportunityDetail = () => {
                             </div>
                         </Card>
 
-                        <Card className="p-6 bg-gradient-to-br from-primary/10 to-transparent border-primary/20">
-                            <h3 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">Verification</h3>
-                            <p className="text-sm text-secondary">
-                                This role will be verified by <span className="text-white font-medium">{opportunity.organization}</span> upon completion of deliverables.
+                        <Card className="p-6 bg-gradient-to-br from-sky-50 to-transparent border-sky-100">
+                            <h3 className="text-sm font-semibold text-sky-700 mb-2 uppercase tracking-wider">Verification</h3>
+                            <p className="text-sm text-slate-600">
+                                This role will be verified by <span className="text-slate-900 font-medium">{opportunity.organization}</span> upon completion of deliverables.
                                 <br /><br />
-                                <span className="text-xs text-muted">Method: {opportunity.verificationMethod}</span>
+                                <span className="text-xs text-slate-400">Method: {opportunity.verificationMethod}</span>
                             </p>
                         </Card>
                     </div>

@@ -1,16 +1,49 @@
-import { Bell, Search } from 'lucide-react';
+import { Bell, Search, LayoutDashboard, User, Brain, Briefcase, Rocket, Landmark } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 import { Input } from '../common/Input';
 import { Button } from '../common/Button';
+import { useAuth } from '../../context/AuthContext';
 
 export const Navbar = () => {
+    const { user } = useAuth();
+
     return (
         <header className="top-navbar animate-fade-in-down">
-            <div className="w-96">
-                <Input
-                    placeholder="Search opportunities, clubs..."
-                    leftIcon={<Search size={18} />}
-                    className="mb-0"
-                />
+            <div className="flex items-center gap-8 flex-1">
+                <h1 className="text-xl font-bold text-gradient shrink-0">UniConn</h1>
+
+                <div className="w-64">
+                    <Input
+                        placeholder="Search..."
+                        leftIcon={<Search size={16} />}
+                        className="mb-0"
+                    />
+                </div>
+
+                <nav className="flex items-center gap-1">
+                    {[
+                        { icon: <LayoutDashboard size={18} />, label: 'Home', path: '/dashboard' },
+                        { icon: <Brain size={18} />, label: 'Insights', path: '/ai-insights' },
+                        { icon: <Briefcase size={18} />, label: 'Explore', path: '/explore' },
+                        { icon: <Rocket size={18} />, label: 'Projects', path: '/projects' },
+                        { icon: <Landmark size={18} />, label: 'Clubs', path: '/clubs' },
+                        { icon: <User size={18} />, label: 'Profile', path: '/profile' },
+                    ].map((item) => (
+                        <NavLink
+                            key={item.path}
+                            to={item.path}
+                            className={({ isActive }) => `
+                                flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all
+                                ${isActive
+                                    ? 'bg-sky-50 text-sky-600 shadow-sm border border-sky-100'
+                                    : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'}
+                            `}
+                        >
+                            {item.icon}
+                            <span>{item.label}</span>
+                        </NavLink>
+                    ))}
+                </nav>
             </div>
 
             <div className="flex items-center gap-4">
@@ -19,13 +52,13 @@ export const Navbar = () => {
                     <span className="absolute top-2 right-3 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
                 </Button>
 
-                <div className="flex items-center gap-3 pl-4 border-l border-white/10">
+                <div className="flex items-center gap-3 pl-4 border-l border-border-soft">
                     <div className="text-right hidden md:block">
-                        <p className="text-sm font-medium text-white">Aarush Parate</p>
-                        <p className="text-xs text-secondary">AI Systems Engineer</p>
+                        <p className="text-sm font-medium text-slate-900">{user?.name || 'Explorer'}</p>
+                        <p className="text-xs text-secondary">@{user?.username || 'user'}</p>
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex-center text-white font-bold border-2 border-glass-border">
-                        AP
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold border-2 border-border-soft">
+                        {user?.name ? user.name.substring(0, 2).toUpperCase() : '??'}
                     </div>
                 </div>
             </div>
