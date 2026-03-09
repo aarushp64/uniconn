@@ -39,17 +39,8 @@ const Dashboard = () => {
         return items;
     };
 
-    return (
-        <MainLayout>
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 pb-10">
-
-                {/* Main Feed Column */}
-                <div>
-                    <Feed />
-                </div>
-
-                {/* Right Sidebar */}
-                <div className="hidden lg:flex flex-col gap-4 sticky top-24 h-fit">
+    const rightPanel = (
+        <div className="flex flex-col gap-4">
 
                     {/* Live Bulletin */}
                     <LiveActivity />
@@ -158,9 +149,12 @@ const Dashboard = () => {
                         </div>
                     </Card>
 
-                </div>
+        </div>
+    );
 
-            </div>
+    return (
+        <MainLayout rightPanel={rightPanel}>
+            <Feed />
         </MainLayout>
     );
 };

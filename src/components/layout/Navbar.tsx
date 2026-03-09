@@ -1,5 +1,4 @@
-import { Bell, Search, LayoutDashboard, User, Brain, Briefcase, Rocket, Landmark } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { Bell, Search } from 'lucide-react';
 import { Input } from '../common/Input';
 import { Button } from '../common/Button';
 import { useAuth } from '../../context/AuthContext';
@@ -19,31 +18,6 @@ export const Navbar = () => {
                         className="mb-0"
                     />
                 </div>
-
-                <nav className="flex items-center gap-1">
-                    {[
-                        { icon: <LayoutDashboard size={18} />, label: 'Home', path: '/dashboard' },
-                        { icon: <Brain size={18} />, label: 'Insights', path: '/ai-insights' },
-                        { icon: <Briefcase size={18} />, label: 'Explore', path: '/explore' },
-                        { icon: <Rocket size={18} />, label: 'Projects', path: '/projects' },
-                        { icon: <Landmark size={18} />, label: 'Clubs', path: '/clubs' },
-                        { icon: <User size={18} />, label: 'Profile', path: '/profile' },
-                    ].map((item) => (
-                        <NavLink
-                            key={item.path}
-                            to={item.path}
-                            className={({ isActive }) => `
-                                flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all
-                                ${isActive
-                                    ? 'bg-sky-50 text-sky-600 shadow-sm border border-sky-100'
-                                    : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'}
-                            `}
-                        >
-                            {item.icon}
-                            <span>{item.label}</span>
-                        </NavLink>
-                    ))}
-                </nav>
             </div>
 
             <div className="flex items-center gap-4">
