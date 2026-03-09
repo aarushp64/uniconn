@@ -2,7 +2,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Onboarding from './pages/Onboarding';
-import Dashboard from './pages/Dashboard';
+import StudentHome from './pages/StudentHome';
 import Explore from './pages/Explore';
 import Profile from './pages/Profile';
 import VerifyQueue from './pages/VerifyQueue';
@@ -11,6 +11,12 @@ import Clubs from './pages/Clubs';
 import OpportunityDetail from './pages/OpportunityDetail';
 import Applications from './pages/Applications';
 import AIInsights from './pages/AIInsights';
+import FacultyDashboard from './pages/faculty/FacultyDashboard';
+import FacultyHome from './pages/faculty/FacultyHome';
+import FacultyVerifications from './pages/faculty/FacultyVerifications';
+import FacultyStudents from './pages/faculty/FacultyStudents';
+import FacultyOpportunities from './pages/faculty/FacultyOpportunities';
+import FacultyProfile from './pages/faculty/FacultyProfile';
 
 function App() {
   return (
@@ -32,7 +38,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/onboarding" element={<Onboarding />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/home" element={<StudentHome />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/verify" element={<VerifyQueue />} />
         <Route path="/projects" element={<Projects />} />
@@ -41,6 +47,12 @@ function App() {
         <Route path="/opportunity/:id" element={<OpportunityDetail />} />
         <Route path="/applications" element={<Applications />} />
         <Route path="/ai-insights" element={<AIInsights />} />
+        <Route path="/faculty/home" element={<FacultyHome />} />
+        <Route path="/faculty/dashboard" element={<FacultyDashboard />} />
+        <Route path="/faculty/verifications" element={<FacultyVerifications />} />
+        <Route path="/faculty/students" element={<FacultyStudents />} />
+        <Route path="/faculty/opportunities" element={<FacultyOpportunities />} />
+        <Route path="/faculty/profile" element={<FacultyProfile />} />
       </Routes>
     </div>
   );

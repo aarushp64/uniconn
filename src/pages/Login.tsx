@@ -1,18 +1,26 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Mail, Lock, ArrowRight, AlertCircle, Sparkles } from 'lucide-react';
+import { Mail, Lock, ArrowRight, AlertCircle, Sparkles, GraduationCap } from 'lucide-react';
 import { AuthLayout } from '../components/layout/AuthLayout';
 import { Button } from '../components/common/Button';
 import { Input } from '../components/common/Input';
 import { useAuth } from '../context/AuthContext';
 
-/* Demo user — used for Quick Access and any login */
-const DEMO_USER = {
+/* Demo users — used for Quick Access */
+const DEMO_STUDENT = {
     id: 'demo-001',
     name: 'Aarush Parate',
     email: 'aarush@mitadtu.ac.in',
     username: 'aarush.parate',
     role: 'student',
+};
+
+const DEMO_FACULTY = {
+    id: 'faculty-001',
+    name: 'Dr. Meera Joshi',
+    email: 'meera.joshi@mitadtu.ac.in',
+    username: 'meera.joshi',
+    role: 'faculty',
 };
 
 const Login = () => {
@@ -25,12 +33,16 @@ const Login = () => {
         password: ''
     });
 
-    const handleDemoLogin = () => {
+    const handleDemoLogin = (type: 'student' | 'faculty') => {
         setLoading(true);
-        // Simulate a brief delay for UX
         setTimeout(() => {
-            login(DEMO_USER);
-            navigate('/dashboard');
+            if (type === 'faculty') {
+                login(DEMO_FACULTY);
+                navigate('/faculty/home');
+            } else {
+                login(DEMO_STUDENT);
+                navigate('/home');
+            }
         }, 400);
     };
 
@@ -48,12 +60,12 @@ const Login = () => {
                 return;
             }
             login({
-                ...DEMO_USER,
+                ...DEMO_STUDENT,
                 email: formData.email,
                 name: formData.email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
                 username: formData.email.split('@')[0],
             });
-            navigate('/dashboard');
+            navigate('/home');
         }, 500);
     };
 
@@ -68,15 +80,27 @@ const Login = () => {
                     <span className="font-bold text-sm text-left">Quick Access Mode</span>
                 </div>
                 <p className="text-xs text-slate-500 text-left">Explore all features instantly — no account needed.</p>
-                <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full bg-white border-sky-200 text-sky-600 hover:bg-sky-50"
-                    onClick={handleDemoLogin}
-                    disabled={loading}
-                >
-                    🚀 Log in as Demo Explorer
-                </Button>
+                <div className="flex gap-2">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 bg-white border-sky-200 text-sky-600 hover:bg-sky-50"
+                        onClick={() => handleDemoLogin('student')}
+                        disabled={loading}
+                    >
+                        🚀 Student Demo
+                    </Button>
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 bg-white border-amber-200 text-amber-600 hover:bg-amber-50"
+                        onClick={() => handleDemoLogin('faculty')}
+                        disabled={loading}
+                    >
+                        <GraduationCap size={14} className="mr-1" />
+                        Faculty Demo
+                    </Button>
+                </div>
             </div>
 
             <form id="login-form" onSubmit={handleSubmit} className="flex flex-col gap-6">

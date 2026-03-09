@@ -2,9 +2,13 @@ import { Bell, Search } from 'lucide-react';
 import { Input } from '../common/Input';
 import { Button } from '../common/Button';
 import { useAuth } from '../../context/AuthContext';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
     const { user } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const isFaculty = location.pathname.startsWith('/faculty');
 
     return (
         <header className="top-navbar animate-fade-in-down">
@@ -26,7 +30,10 @@ export const Navbar = () => {
                     <span className="absolute top-2 right-3 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
                 </Button>
 
-                <div className="flex items-center gap-3 pl-4 border-l border-border-soft">
+                <div
+                    className="flex items-center gap-3 pl-4 border-l border-border-soft cursor-pointer hover:opacity-80 transition-opacity"
+                    onClick={() => navigate(isFaculty ? '/faculty/profile' : '/profile')}
+                >
                     <div className="text-right hidden md:block">
                         <p className="text-sm font-medium text-slate-900">{user?.name || 'Explorer'}</p>
                         <p className="text-xs text-secondary">@{user?.username || 'user'}</p>

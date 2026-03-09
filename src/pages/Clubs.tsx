@@ -18,7 +18,7 @@ interface Club {
 }
 
 const ALL_CLUBS: Club[] = [
-    { name: 'Team Speedtail Racing', subtitle: 'SAE India • Formula Bharat', desc: 'Official racing team. Designing, building, and racing formula-style cars at national levels. Winners at Formula Bharat 2026.', emoji: '🏎️', gradient: 'from-red-600 to-orange-600', members: '120+', badge: 'Active', badgeVariant: 'success', cta: 'Apply for Aero Team' },
+    { name: 'MIT Debate Society', subtitle: 'MUN & Parliamentary Debate', desc: 'Inter-college MUN conferences, parliamentary debates, and public speaking workshops. National finalists at IIMUN 2025.', emoji: '🏛️', gradient: 'from-indigo-600 to-blue-600', members: '95+', badge: 'Active', badgeVariant: 'success', cta: 'Join Next MUN' },
     { name: 'GDSC MIT ADTU', subtitle: 'Google Developer Student Clubs', desc: 'Community focused on Google Technologies. Flutter, Cloud, ML workshops every month. Open to all branches.', emoji: '🚀', gradient: 'from-blue-500 via-red-500 to-green-500', members: '300+', badge: 'Member', badgeVariant: 'secondary' },
     { name: 'MIT CBC', subtitle: 'Cybersecurity & Blockchain Club', desc: 'Deep diving into network security, cryptography, and decentralized apps. CTF winners 2025.', emoji: '🛡️', gradient: 'from-slate-800 to-indigo-900', members: '85+', badge: 'Lead', badgeVariant: 'primary' },
     { name: 'IEEE MIT ADTU', subtitle: 'IEEE Student Branch', desc: "One of India's most active IEEE branches. TechX Hackathon, research paper publications, and global networking.", emoji: '⚡', gradient: 'from-blue-700 to-blue-500', members: '200+', badge: 'Active', badgeVariant: 'success' },

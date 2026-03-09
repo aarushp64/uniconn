@@ -42,8 +42,8 @@ const POSTS: Post[] = [
     {
         id: '1', timeAgo: '2h', likes: 342, comments: 28, reposts: 15, tag: 'Achievement',
         name: 'MIT ADTU Official', headline: 'Official Campus Page', initials: 'MI', gradient: 'from-sky-600 to-sky-500',
-        content: 'Victory at Formula Bharat 2026! 🏆 Team Speedtail Racing from MIT ADTU clinches top honors in Pune. Proud moment for the entire campus!',
-        img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&h=400&fit=crop',
+        content: 'Congratulations to our students! 🎓 MIT ADTU achieves 94% placement rate for the 2026 batch with the highest package at ₹52 LPA (Google). Average CTC up 22% from last year. Hard work pays off!',
+        img: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=400&fit=crop',
     },
     {
         id: '2', timeAgo: '3h', likes: 156, comments: 12, reposts: 8, tag: 'Workshop',
@@ -122,6 +122,72 @@ const POSTS: Post[] = [
         name: 'MIT Sports Committee', headline: 'Inter-University Sports', initials: 'SC', gradient: 'from-green-500 to-emerald-600',
         content: "MIT ADTU Basketball team qualifies for Pune University finals! 🏀 Semi-final win against COEP. Let's go Titans!",
         img: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&h=400&fit=crop',
+    },
+    {
+        id: '15', timeAgo: '3d', likes: 256, comments: 18, reposts: 14, tag: 'Club Role',
+        name: 'E-Cell MIT ADTU', headline: 'Entrepreneurship Cell', initials: 'EC', gradient: 'from-orange-500 to-red-500',
+        content: 'E-Cell Pitch Day is here! 💡 12 student startups pitching to real investors this Saturday. Winner gets ₹2L seed funding + incubation at MIT TBI. Open for audience — learn how to pitch!',
+        img: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=400&fit=crop',
+    },
+    {
+        id: '16', timeAgo: '3d', likes: 189, comments: 22, reposts: 10, tag: 'Research',
+        name: 'Priya Kulkarni', headline: 'M.Tech Data Science • MIT ADTU', initials: 'PK', gradient: 'from-emerald-600 to-teal-600',
+        content: 'Published my first research paper! 📝 "Federated Learning for Healthcare Data Privacy" accepted at ICML 2026. Grateful to my guide Dr. Anil Sharma for constant support throughout this journey.',
+        img: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=400&fit=crop',
+    },
+    {
+        id: '17', timeAgo: '4d', likes: 145, comments: 11, reposts: 8, tag: 'Workshop',
+        name: 'Photography Club', headline: 'MIT ADTU Lens Society', initials: 'LS', gradient: 'from-pink-500 to-rose-500',
+        content: 'Photography Masterclass this weekend! 📸 Pro photographer Amit Mehra covering composition, lighting, and post-processing. Bring your DSLRs and phones. Open to all years.',
+        img: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&h=400&fit=crop',
+    },
+    {
+        id: '18', timeAgo: '4d', likes: 312, comments: 27, reposts: 16, tag: 'Tech',
+        name: 'Coding Club MIT ADTU', headline: 'Competitive Programming Society', initials: 'CP', gradient: 'from-cyan-600 to-blue-600',
+        content: 'Weekly CP contest results are out! 🏆 Top 3: Vikram (2100 rating), Sneha (1950), Aarush (1890). Next contest: LeetCode Biweekly #142 — study group at Library Hall B, Thursday 7 PM.',
+        img: 'https://images.unsplash.com/photo-1515879218367-8466d910auj7?w=800&h=400&fit=crop',
+    },
+    {
+        id: '19', timeAgo: '4d', likes: 423, comments: 35, reposts: 22, tag: 'Event',
+        name: 'NSS MIT ADTU', headline: 'National Service Scheme Unit', initials: 'NS', gradient: 'from-green-600 to-emerald-500',
+        content: 'Blood Donation Drive was a huge success! 🩸 187 units collected at MIT campus today. Thank you to every donor and volunteer. Next camp: Tree Plantation at Loni Kalbhor village this Sunday.',
+        img: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=400&fit=crop',
+    },
+    {
+        id: '20', timeAgo: '5d', likes: 167, comments: 13, reposts: 9, tag: 'Project',
+        name: 'Vikram Desai', headline: 'B.Tech Electronics • MIT ADTU', initials: 'VD', gradient: 'from-amber-600 to-yellow-500',
+        content: 'EV Battery Thermal Management System prototype complete! ⚡ Reduced overheating by 35% using AI-driven cooling. Dr. Patil verified it as publication-worthy. Working on IEEE paper now.',
+        img: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&h=400&fit=crop',
+    },
+    {
+        id: '21', timeAgo: '5d', likes: 210, comments: 16, reposts: 11, tag: 'Club Role',
+        name: 'Debate Society', headline: 'MIT ADTU MUN & Debate Club', initials: 'DS', gradient: 'from-violet-600 to-purple-600',
+        content: 'MIT ADTU MUN 2026 registrations open! 🏛️ 6 committees, 200+ delegates, guest secretary from UN Youth India. Early bird discount ends Feb 25. Prep sessions every Wednesday at Seminar Hall.',
+        img: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=400&fit=crop',
+    },
+    {
+        id: '22', timeAgo: '5d', likes: 378, comments: 29, reposts: 20, tag: 'Achievement',
+        name: 'MIT ADTU Official', headline: 'Official Campus Page', initials: 'MI', gradient: 'from-sky-600 to-sky-500',
+        content: '🎯 MIT ADTU ranks #3 among Pune private universities in NIRF 2026! Up 7 positions from last year. Research output grew 40%, placement rate hit 94%. Proud moment for the entire MIT family!',
+        img: 'https://images.unsplash.com/photo-1523050854058-8df90110c476?w=800&h=400&fit=crop',
+    },
+    {
+        id: '23', timeAgo: '6d', likes: 134, comments: 10, reposts: 6, tag: 'Workshop',
+        name: 'Music Club', headline: 'Rhythm & Blues • MIT ADTU', initials: 'MC', gradient: 'from-rose-500 to-pink-600',
+        content: 'Open Mic Night this Friday! 🎵 Sign up at the Student Activity Center. Acoustic sets, beatboxing, and spoken word all welcome. Last month we had 25 performers — lets beat that record!',
+        img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&h=400&fit=crop',
+    },
+    {
+        id: '24', timeAgo: '6d', likes: 198, comments: 15, reposts: 9, tag: 'Research',
+        name: 'Dr. Meera Joshi Lab', headline: 'NLP Research Group • MIT ADTU', initials: 'NR', gradient: 'from-indigo-600 to-violet-600',
+        content: 'Looking for 3 undergrad research interns! 🔬 Working on Transformer-based Code Summarization for Indian Languages. Prereqs: Python, basic NLP, curiosity. Stipend provided. DM or visit CS-304.',
+        img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop',
+    },
+    {
+        id: '25', timeAgo: '1w', likes: 245, comments: 20, reposts: 13, tag: 'Tech',
+        name: 'ACM MIT ADTU', headline: 'ACM Student Chapter', initials: 'AC', gradient: 'from-blue-700 to-indigo-700',
+        content: 'ACM Tech Talk: "Building Scalable Systems at Netflix" by MIT ADTU alumnus Rohan Mehta (SDE-3, Netflix). 📺 This Saturday, 3 PM, Auditorium B. Free for ACM members, ₹50 for others.',
+        img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=400&fit=crop',
     },
 ];
 
