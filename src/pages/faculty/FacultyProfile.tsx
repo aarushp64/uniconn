@@ -3,7 +3,7 @@ import { MainLayout } from '../../components/layout/MainLayout';
 import { Card } from '../../components/common/Card';
 import { Button } from '../../components/common/Button';
 import { Badge } from '../../components/common/Badge';
-import { Mail, MapPin, GraduationCap, Share2, Settings, ExternalLink, BookOpen, Award, Users, FlaskConical, FileText, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, GraduationCap, Share2, Settings, ExternalLink, BookOpen, Award, Users, FlaskConical, FileText, ArrowRight, DoorOpen } from 'lucide-react';
 import { getSupervisedStudents, getVerificationRequests, getResearchOpportunities, type SupervisedStudent } from '../../mock/facultyApi';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,6 +29,7 @@ const FacultyProfile = () => {
         department: 'Dept. of Computer Science & Engineering',
         university: 'MIT ADT University',
         location: 'Pune, Maharashtra',
+        cabin: 'S-305, IT Building',
         specialization: 'Natural Language Processing, AI/ML, Deep Learning',
         experience: '12 Years',
         hIndex: 18,
@@ -97,6 +98,7 @@ const FacultyProfile = () => {
                                     <span className="flex items-center gap-1"><GraduationCap size={11} /> {faculty.university}</span>
                                     <span className="flex items-center gap-1"><MapPin size={11} /> {faculty.location}</span>
                                     <span className="flex items-center gap-1"><Mail size={11} /> {faculty.email}</span>
+                                    <span className="flex items-center gap-1"><DoorOpen size={11} /> {faculty.cabin}</span>
                                 </div>
                                 <div className="flex gap-1.5 sm:gap-2 mt-3 flex-wrap">
                                     <span className="text-[8px] sm:text-[9px] font-bold px-2 py-1 rounded-md bg-violet-50 text-violet-600 border border-violet-100">🎓 Ph.D. Computer Science</span>
