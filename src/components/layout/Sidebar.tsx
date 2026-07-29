@@ -1,4 +1,4 @@
-import { LayoutDashboard, Brain, Briefcase, Rocket, Landmark, User, ShieldCheck, ClipboardCheck, Users, FlaskConical, Home } from 'lucide-react';
+import { LayoutDashboard, Brain, Briefcase, Rocket, Landmark, User, ShieldCheck, ClipboardCheck, Users, FlaskConical, Home, CalendarDays } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { UpcomingEvents } from '../features/calendar/UpcomingEvents';
 
@@ -16,6 +16,7 @@ const facultyNav = [
     { icon: <ClipboardCheck size={18} />, label: 'Verifications', path: '/faculty/verifications' },
     { icon: <Users size={18} />, label: 'Students', path: '/faculty/students' },
     { icon: <FlaskConical size={18} />, label: 'Opportunities', path: '/faculty/opportunities' },
+    { icon: <CalendarDays size={18} />, label: 'Calendar', path: '/faculty/calendar' },
     { icon: <User size={18} />, label: 'Profile', path: '/faculty/profile' },
 ];
 
@@ -61,11 +62,9 @@ export const Sidebar = () => {
                             }
                         </div>
                         
-                        {!isFacultySection && (
-                            <div className="pt-4 border-t border-slate-100 hidden md:flex flex-col flex-1 overflow-hidden min-h-0">
-                                <UpcomingEvents />
-                            </div>
-                        )}
+                        <div className="pt-4 border-t border-slate-100 hidden md:flex flex-col flex-1 overflow-hidden min-h-0">
+                            <UpcomingEvents />
+                        </div>
                     </div>
                     
                     <div className="pt-3 border-t border-slate-100 mt-2 shrink-0">

@@ -45,7 +45,7 @@ export const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-4">
-                <Button variant="ghost" size="sm" className="text-slate-500 hover:text-sky-600" onClick={() => navigate('/calendar')}>
+                <Button variant="ghost" size="sm" className="text-slate-500 hover:text-sky-600" onClick={() => navigate(isFaculty ? '/faculty/calendar' : '/calendar')}>
                     <CalendarDays size={20} />
                 </Button>
 

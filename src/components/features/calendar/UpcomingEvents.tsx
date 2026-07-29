@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { CalendarDays, ChevronRight, Clock, MapPin, Star } from 'lucide-react';
 import type { CalendarEvent } from '../../../mock/calendarEvents';
 import {
@@ -23,6 +23,9 @@ function isWithinDays(eventDate: string, fromDate: Date, days: number): boolean 
 
 export const UpcomingEvents: React.FC = () => {
   const [events, setEvents] = useState<CalendarEvent[]>([]);
+  const location = useLocation();
+  const isFaculty = location.pathname.startsWith('/faculty');
+  const targetCalendarPath = isFaculty ? '/faculty/calendar' : '/calendar';
 
   useEffect(() => {
     getCalendarEvents().then(setEvents);
@@ -63,7 +66,7 @@ export const UpcomingEvents: React.FC = () => {
               </span>
               <div className="mt-1.5 space-y-1.5">
                 {todayEvents.slice(0, 2).map((event) => (
-                  <EventMiniCard key={event.id} event={event} />
+                  <EventMiniCard key={event.id} event={event} targetCalendarPath={targetCalendarPath} />
                 ))}
               </div>
             </div>
@@ -77,7 +80,7 @@ export const UpcomingEvents: React.FC = () => {
               </span>
               <div className="mt-1.5 space-y-1.5">
                 {weekEvents.slice(0, 3).map((event) => (
-                  <EventMiniCard key={event.id} event={event} showDate />
+                  <EventMiniCard key={event.id} event={event} showDate targetCalendarPath={targetCalendarPath} />
                 ))}
               </div>
             </div>
@@ -97,7 +100,7 @@ export const UpcomingEvents: React.FC = () => {
 
       {/* View Full Calendar */}
       <Link
-        to="/calendar"
+        to={targetCalendarPath}
         className="
           flex items-center justify-center gap-1.5
           w-full mt-3 py-2 bg-sky-500 hover:bg-sky-600
@@ -117,18 +120,19 @@ export const UpcomingEvents: React.FC = () => {
 interface EventMiniCardProps {
   event: CalendarEvent;
   showDate?: boolean;
+  targetCalendarPath?: string;
 }
 
 const WEEKDAY_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const EventMiniCard: React.FC<EventMiniCardProps> = ({ event, showDate = false }) => {
+const EventMiniCard: React.FC<EventMiniCardProps> = ({ event, showDate = false, targetCalendarPath = '/calendar' }) => {
   const config = CATEGORY_CONFIG[event.category] || CATEGORY_CONFIG.academic;
   const navigate = useNavigate();
 
   return (
     <div 
       className="p-2.5 bg-white hover:bg-slate-50/50 rounded-lg border border-slate-100 hover:border-sky-100 transition-all cursor-pointer group/evt"
-      onClick={() => navigate(`/calendar?date=${event.date}`)}
+      onClick={() => navigate(`${targetCalendarPath}?date=${event.date}`)}
     >
       <div className="flex justify-between items-start mb-1">
         <span

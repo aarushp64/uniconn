@@ -54,6 +54,7 @@ function App() {
         <Route path="/faculty/verifications" element={<FacultyVerifications />} />
         <Route path="/faculty/students" element={<FacultyStudents />} />
         <Route path="/faculty/opportunities" element={<FacultyOpportunities />} />
+        <Route path="/faculty/calendar" element={<Calendar />} />
         <Route path="/faculty/profile" element={<FacultyProfile />} />
       </Routes>
     </div>
