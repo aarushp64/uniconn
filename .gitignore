@@ -53,6 +53,9 @@ coverage
 .eslintcache
 .stylelintcache
 
+# Local uploaded assets
+MIT ADTU Annual Calendar 2026-27.xlsx
+
 # Temporary files
 *.tmp
 *.temp
