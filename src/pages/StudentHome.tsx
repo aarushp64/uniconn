@@ -4,6 +4,7 @@ import Feed from '../components/features/feed/Feed';
 import { TrendingUp, Target, Briefcase } from 'lucide-react';
 import { Card } from '../components/common/Card';
 import { LiveActivity } from '../components/features/dashboard/LiveActivity';
+import { UpcomingEvents } from '../components/features/calendar/UpcomingEvents';
 
 const TECH_ITEMS = [
     { cat: 'AI & ML', catColor: 'text-sky-600 bg-sky-50', time: '10m ago', text: 'OpenAI launches Sora: text-to-video era begins with high fidelity.' },
@@ -41,6 +42,9 @@ const StudentHome = () => {
 
     const rightPanel = (
         <div className="flex flex-col gap-4">
+
+            {/* Upcoming Events */}
+            <UpcomingEvents />
 
             {/* Live Bulletin */}
             <LiveActivity />

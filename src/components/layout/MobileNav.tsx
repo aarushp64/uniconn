@@ -1,4 +1,4 @@
-import { LayoutDashboard, Brain, Briefcase, Rocket, Landmark, User } from 'lucide-react';
+import { LayoutDashboard, Brain, Briefcase, Rocket, Landmark, User, CalendarDays } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const navItems = [
@@ -6,6 +6,7 @@ const navItems = [
     { icon: <Brain size={20} />, label: 'Insights', path: '/ai-insights' },
     { icon: <Briefcase size={20} />, label: 'Explore', path: '/explore' },
     { icon: <Rocket size={20} />, label: 'Projects', path: '/projects' },
+    { icon: <CalendarDays size={20} />, label: 'Calendar', path: '/calendar' },
     { icon: <Landmark size={20} />, label: 'Clubs', path: '/clubs' },
     { icon: <User size={20} />, label: 'Profile', path: '/profile' },
 ];

@@ -1,0 +1,345 @@
+﻿
+====================================================================================================
+SHEET: "July  26" | Range: A1:G980 | Rows: 980, Cols: 7
+
+Merged cells (12):
+  E33:G33  rows 32-32 cols 4-6  => "1st Year Orientation(Bioengineering)"
+  A34:B34  rows 33-33 cols 0-1  => "PG Workshop on Infrastructure Modelling(SOES-CE)"
+  B35:F35  rows 34-34 cols 1-5  => "VAC Activity (SOES-MECH)"
+  B36:F36  rows 35-35 cols 1-5  => "VAC on GIS and Remote Sensing(SOES-CE)"
+  E38:F38  rows 37-37 cols 4-5  => "MIT IMPACT Student Council -Personal Interview Rounds"
+  A1:G1  rows 0-0 cols 0-6  => "       Activity Calendar"
+  A2:G2  rows 1-1 cols 0-6  => "JULY 2026"
+  B13:F13  rows 12-12 cols 1-5  => "MicroStation Training Program(SOES-CE)"
+  F16:G16  rows 15-15 cols 5-6  => "Trek N Trail - Karoli Valley Trek"
+  B19:C19  rows 18-18 cols 1-2  => "Career CATALYST Workshop"
+  D28:E28  rows 27-27 cols 3-4  => "Workshop: 3D Printing (IIC)"
+  C30:F30  rows 29-29 cols 2-5  => "MIT IMPACT Student Council -First-Level Screening & Interviews"
+
+Full cell dump:
+  R0: A1[t=s]="       Activity Calendar"
+  R1: A2[t=s]="JULY 2026"
+  R2: A3[t=s]="SUNDAY" | B3[t=s]="MONDAY" | C3[t=s]="TUESDAY" | D3[t=s]="WEDNESDAY" | E3[t=s]="THURSDAY" | F3[t=s]="FRIDAY" | G3[t=s]="SATURDAY"
+  R3: A4[t=n]="28" | B4[t=n]="29" | C4[t=n]="30" | D4[t=n]="1" | E4[t=n]="2" | F4[t=n]="3" | G4[t=n]="4"
+  R4: D5[t=s]="Auditions - Spectra Play(Panchayati)" | G5[t=s]="Trek N Trail - Andharban Jungle Trek"
+  R5: D6[t=s]="Embassy Visits, New Delhi (OIA)(1 to 4)" | G6[t=s]="What Industry Expects from Fresh Graduates(SCIL)"
+  R10: A11[t=n]="5" | B11[t=n]="6" | C11[t=n]="7" | D11[t=n]="8" | E11[t=n]="9" | F11[t=n]="10" | G11[t=n]="11"
+  R11: A12[t=s]="Trek N Trail - Aadrai " | C12[t=s]="Workshop-Java Unlock (Java Brewers)" | D12[t=s]="Auditions - Purushopttam Karandak 2026 (Panchayati" | E12[t=s]="SHODH 2026(Astra Club)" | F12[t=s]="Handover Ceremony (Panchayati Drama Club)" | G12[t=s]="World Population Day"
+  R12: B13[t=s]="MicroStation Training Program(SOES-CE)" | G13[t=s]="Trek N Trail - Adrai Jungle"
+  R13: D14[t=s]="Nomination MIT IMPACT Student Council " | E14[t=s]="QNX Everywhere Awareness Session(SOES-ECE)" | F14[t=s]="Tree Plantation Drive (SVS)" | G14[t=s]="Alumini Webinar(MITCOM)"
+  R14: F15[t=s]="World Population Day Competition-MITCOM     
+"
+  R15: F16[t=s]="Trek N Trail - Karoli Valley Trek"
+  R17: A18[t=n]="12" | B18[t=n]="13" | C18[t=n]="14" | D18[t=n]="15" | E18[t=n]="16" | F18[t=n]="17" | G18[t=n]="18"
+  R18: A19[t=s]="Trek N Trail - Devkund Waterfall" | B19[t=s]="Career CATALYST Workshop" | D19[t=s]="UI/UX Design or Redesign challenge (ACM-W)" | E19[t=s]="Board of Sports Meeting" | F19[t=s]="SWAYAM NPTEL Workshop" | G19[t=s]="Alumni Webinar Series - Lecture 1(SVS)"
+  R19: B20[t=s]="Gender Sensitization for University Students (SVS)" | C20[t=s]="Introduction to AWS (AWS SBGL)" | D20[t=s]="Sarav Samarambh (Shivray Dhol Tasha Pathak)" | E20[t=s]="Handover ceremony (ACM-W) " | F20[t=s]="Workshop: Circuit Architecture & Foundations  (QQu" | G20[t=s]="Stories of Narrative Panels: Bhuleshwar(SAP-Herita"
+  R20: B21[t=s]="Extension activity (SAE Club)" | D21[t=s]="Incubation Cohort
+(AIC)" | E21[t=s]="Guest lecture ΓÇô Alumni(SOES-MECH)" | F21[t=s]="Research Workshop (Psychology Club)" | G21[t=s]="Trek N Trail - Andharban"
+  R21: B22[t=s]="Club Catalyst (LFAC Club)" | D22[t=s]="MIT IMPACT Student Council - Nomination Submission" | E22[t=s]="Flutter Forward (GDG) (9 to10)" | F22[t=s]="Robotex International Event (OIA) (17 to 18)" | G22[t=s]="Feel to Lead (SCIL)"
+  R22: F23[t=s]="Workshop: Drone Technology(SOES-AERO)" | G23[t=s]="Tree Plantation Drive at Anandvan (NSS)"
+  R23: F24[t=s]="Expert Session on Placement Activities(SOES-ECE)"
+  R24: A25[t=n]="19" | B25[t=n]="20" | C25[t=n]="21" | D25[t=n]="22" | E25[t=n]="23" | F25[t=n]="24" | G25[t=n]="25"
+  R25: A26[t=s]="Trek N Trail - Andharban" | B26[t=s]="Seminar on Recent Trend in Food(Infusion Club)" | C26[t=s]="Guest Lecture: Recent Developments in Treatment Te" | E26[t=s]="MIT IMPACT Student Council Clubs Meeting" | F26[t=s]="Blood Donation Drive on Kargil Vijay Diwas" | G26[t=s]="Trek N Trail - Devkund waterfall"
+  R26: E27[t=s]="Twisted Debate (Psychology Club)" | F27[t=s]="Student Training Program on Multisim(SOES-ECE)" | G27[t=s]="PG Workshop on Infrastructure Modelling(SOES-CE)"
+  R27: D28[t=s]="Workshop: 3D Printing (IIC)" | F28[t=s]="Alumni Meet - Delhi Chapter" | G28[t=s]="Ashadi Ekadashi Celebration(MITCOM)"
+  R28: F29[t=s]="Kargil Vijay Diwas (India) :Competition(MITCOM)   "
+  R29: C30[t=s]="MIT IMPACT Student Council -First-Level Screening "
+  R31: A32[t=n]="26" | B32[t=n]="27" | C32[t=n]="28" | D32[t=n]="29" | E32[t=n]="30" | F32[t=n]="31" | G32[t=n]="1"
+  R32: A33[t=s]="Kargil Vijay Diwas" | C33[t=s]="Spectra 16.O (Shivray Dhol Tasha Pathak)" | D33[t=s]="Guru Pournima" | E33[t=s]="1st Year Orientation(Bioengineering)"
+  R33: A34[t=s]="PG Workshop on Infrastructure Modelling(SOES-CE)" | C34[t=s]="Guest lecture ΓÇô Alumni(SOES-MECH)" | D34[t=s]="Mumbai Field Visit (Techno Smart)" | E34[t=s]="Hack-ADT 1 (ACES)" | F34[t=s]="Industrial Visit(SOES-CE)" | G34[t=s]="Trek N Trail - Kalu waterfall"
+  R34: B35[t=s]="VAC Activity (SOES-MECH)"
+  R35: B36[t=s]="VAC on GIS and Remote Sensing(SOES-CE)"
+  R36: C37[t=s]="Practical Hands on session Agentec AI voice suit (" | E37[t=s]="Session: Innovation/Prototype Validation & ΓÇ£Value " | F37[t=s]="Idea Power Hour(CRIEYA)"
+  R37: E38[t=s]="MIT IMPACT Student Council -Personal Interview Rou"
+  R42: A43[t=s]="Holiday" | B43[t=s]="MIT ADT Holiday"
+  R43: A44[t=s]="University Flagship Events" | B44[t=s]="Flagship Events"
+  R44: A45[t=s]="Days" | B45[t=s]="  Days of Significance"
+  R45: A46[t=s]="Socio-economical" | B46[t=s]="Socio-economical"
+  R46: A47[t=s]="Outreach" | B47[t=s]="Trek N Trail"
+  R47: A48[t=s]="Alumni Meet" | B48[t=s]="  Alumni & Convocation"
+  R48: A49[t=s]="Cultural" | B49[t=s]="Cultural & Performing Arts"
+  R49: A50[t=s]="  Workshops, Conferences & Sessions" | B50[t=s]="Workshop"
+  R50: A51[t=s]="Festival" | B51[t=s]="Festivals"
+  R51: A52[t=s]="Sports" | B52[t=s]="Sports"
+  R52: A53[t=s]="Technical/Innovation/Hackethon/Other" | B53[t=s]="  General / Academic"
+
+JSON form (header: 1):
+  [0]: ["       Activity Calendar","","","","","",""]
+  [1]: ["JULY 2026","","","","","",""]
+  [2]: ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"]
+  [3]: ["28","29","30","1","2","3","4"]
+  [4]: ["","","","Auditions - Spectra Play(Panchayati)","","","Trek N Trail - Andharban Jungle Trek"]
+  [5]: ["","","","Embassy Visits, New Delhi (OIA)(1 to 4)","","","What Industry Expects from Fresh Graduates(SCIL)"]
+  [10]: ["5","6","7","8","9","10","11"]
+  [11]: ["Trek N Trail - Aadrai ","","Workshop-Java Unlock (Java Brewers)","Auditions - Purushopttam Karandak 2026 (Panchayati)","SHODH 2026(Astra Club)","Handover Ceremony (Panchayati Drama Club)","World Population Day"]
+  [12]: ["","MicroStation Training Program(SOES-CE)","","","","","Trek N Trail - Adrai Jungle"]
+  [13]: ["","","","Nomination MIT IMPACT Student Council ","QNX Everywhere Awareness Session(SOES-ECE)","Tree Plantation Drive (SVS)","Alumini Webinar(MITCOM)"]
+  [14]: ["","","","","","World Population Day Competition-MITCOM     \n",""]
+  [15]: ["","","","","","Trek N Trail - Karoli Valley Trek",""]
+  [17]: ["12","13","14","15","16","17","18"]
+  [18]: ["Trek N Trail - Devkund Waterfall","Career CATALYST Workshop","","UI/UX Design or Redesign challenge (ACM-W)","Board of Sports Meeting","SWAYAM NPTEL Workshop","Alumni Webinar Series - Lecture 1(SVS)"]
+  [19]: ["","Gender Sensitization for University Students (SVS)","Introduction to AWS (AWS SBGL)","Sarav Samarambh (Shivray Dhol Tasha Pathak)","Handover ceremony (ACM-W) ","Workshop: Circuit Architecture & Foundations  (QQuEST)","Stories of Narrative Panels: Bhuleshwar(SAP-Heritage Yatra)"]
+  [20]: ["","Extension activity (SAE Club)","","Incubation Cohort\n(AIC)","Guest lecture ΓÇô Alumni(SOES-MECH)","Research Workshop (Psychology Club)","Trek N Trail - Andharban"]
+  [21]: ["","Club Catalyst (LFAC Club)","","MIT IMPACT Student Council - Nomination Submission Deadline","Flutter Forward (GDG) (9 to10)","Robotex International Event (OIA) (17 to 18)","Feel to Lead (SCIL)"]
+  [22]: ["","","","","","Workshop: Drone Technology(SOES-AERO)","Tree Plantation Drive at Anandvan (NSS)"]
+  [23]: ["","","","","","Expert Session on Placement Activities(SOES-ECE)",""]
+  [24]: ["19","20","21","22","23","24","25"]
+  [25]: ["Trek N Trail - Andharban","Seminar on Recent Trend in Food(Infusion Club)","Guest Lecture: Recent Developments in Treatment Technologies (SOES-CE)","","MIT IMPACT Student Council Clubs Meeting","Blood Donation Drive on Kargil Vijay Diwas","Trek N Trail - Devkund waterfall"]
+  [26]: ["","","","","Twisted Debate (Psychology Club)","Student Training Program on Multisim(SOES-ECE)","PG Workshop on Infrastructure Modelling(SOES-CE)"]
+  [27]: ["","","","Workshop: 3D Printing (IIC)","","Alumni Meet - Delhi Chapter","Ashadi Ekadashi Celebration(MITCOM)"]
+  [28]: ["","","","","","Kargil Vijay Diwas (India) :Competition(MITCOM)      \n",""]
+  [29]: ["","","MIT IMPACT Student Council -First-Level Screening & Interviews","","","",""]
+  [31]: ["26","27","28","29","30","31","1"]
+  [32]: ["Kargil Vijay Diwas","","Spectra 16.O (Shivray Dhol Tasha Pathak)","Guru Pournima","1st Year Orientation(Bioengineering)","",""]
+  [33]: ["PG Workshop on Infrastructure Modelling(SOES-CE)","","Guest lecture ΓÇô Alumni(SOES-MECH)","Mumbai Field Visit (Techno Smart)","Hack-ADT 1 (ACES)","Industrial Visit(SOES-CE)","Trek N Trail - Kalu waterfall"]
+  [34]: ["","VAC Activity (SOES-MECH)","","","","",""]
+  [35]: ["","VAC on GIS and Remote Sensing(SOES-CE)","","","","",""]
+  [36]: ["","","Practical Hands on session Agentec AI voice suit (Laveric Club)","","Session: Innovation/Prototype Validation & ΓÇ£Value Proposition Fit & Business fitΓÇ¥/Idea Validation & Problem Identification(IIC-AIC)","Idea Power Hour(CRIEYA)",""]
+  [37]: ["","","","","MIT IMPACT Student Council -Personal Interview Rounds","",""]
+  [42]: ["Holiday","MIT ADT Holiday","","","","",""]
+  [43]: ["University Flagship Events","Flagship Events","","","","",""]
+  [44]: ["Days","  Days of Significance","","","","",""]
+  [45]: ["Socio-economical","Socio-economical","","","","",""]
+  [46]: ["Outreach","Trek N Trail","","","","",""]
+  [47]: ["Alumni Meet","  Alumni & Convocation","","","","",""]
+  [48]: ["Cultural","Cultural & Performing Arts","","","","",""]
+  [49]: ["  Workshops, Conferences & Sessions","Workshop","","","","",""]
+  [50]: ["Festival","Festivals","","","","",""]
+  [51]: ["Sports","Sports","","","","",""]
+  [52]: ["Technical/Innovation/Hackethon/Other","  General / Academic","","","","",""]
+
+====================================================================================================
+SHEET: "October 26" | Range: A1:G976 | Rows: 976, Cols: 7
+
+Merged cells (15):
+  B17:F17  rows 16-16 cols 1-5  => "VAC on Water Network Modelling OpenFlows WaterGEMS / HAMMER(SOES-CE)"
+  E19:F19  rows 18-18 cols 4-5  => "MIT ADT Dandiya Night"
+  B22:E22  rows 21-21 cols 1-4  => "VAC (EV Domain)(SOES-MECH) & VAC on Machine & Deep Learning (SOES-ECE)"
+  D24:E24  rows 23-23 cols 3-4  => "Front2Back (Synapse AI)"
+  B33:C33  rows 32-32 cols 1-2  => "Annual Inter Collegiate ΓÇô Kho-Kho "
+  E33:F33  rows 32-32 cols 4-5  => "Halloween Fest (SOH)"
+  E35:F35  rows 34-34 cols 4-5  => "Workshop :Automotive domain(SAE Club)"
+  E37:F37  rows 36-36 cols 4-5  => "Workshop:PCB Design and Fabrication (SOES-ECE)"
+  A1:G1  rows 0-0 cols 0-6  => "Activity Calendar"
+  A2:G2  rows 1-1 cols 0-6  => "OCTOBER 2026"
+  F5:G5  rows 4-4 cols 5-6  => "Trek N Trail - Vasota Fort"
+  B12:C12  rows 11-11 cols 1-2  => "Annual Inter Collegiate ΓÇô Volleyball "
+  D12:F12  rows 11-11 cols 3-5  => "Annual Inter Collegiate ΓÇô Football"
+  D13:G13  rows 12-12 cols 3-6  => "ELTAI- 26 International Conference (SHD)"
+  C14:D14  rows 13-13 cols 2-3  => "Workshop: Red vs Blue(CBC)"
+
+Full cell dump:
+  R0: A1[t=s]="Activity Calendar"
+  R1: A2[t=s]="OCTOBER 2026"
+  R2: A3[t=s]="SUNDAY" | B3[t=s]="MONDAY" | C3[t=s]="TUESDAY" | D3[t=s]="WEDNESDAY" | E3[t=s]="THURSDAY" | F3[t=s]="FRIDAY" | G3[t=s]="SATURDAY"
+  R3: A4[t=n]="27" | B4[t=n]="28" | C4[t=n]="29" | D4[t=n]="30" | E4[t=n]="1" | F4[t=n]="2" | G4[t=n]="3"
+  R4: E5[t=s]="Trek N Trail - Kedarnath (1 to 9)" | F5[t=s]="Trek N Trail - Vasota Fort"
+  R5: E6[t=s]="IIC 9.0 -Orientation Programme for IIC Faculty Cou" | F6[t=s]="Tree Plantation Drive (Shivray Dhol Tasha Pathak)" | G6[t=s]="Cleanliness Drive (Panchayati)"
+  R6: E7[t=s]="Session:Research and Startup Innovation (MITCOM)  " | F7[t=s]="Gandhi Jayanti (Holiday)" | G7[t=s]="Guest Lecture on Prompt Engineering(SOES-ECE)"
+  R7: F8[t=s]="Seminars(TFC)"
+  R8: F9[t=s]="Lal Bahadur Shastri Jayanti"
+  R9: F10[t=s]="Gandhi Jayanti ΓÇô Essay Competition (SICS)"
+  R10: A11[t=n]="4" | B11[t=n]="5" | C11[t=n]="6" | D11[t=n]="7" | E11[t=n]="8" | F11[t=n]="9" | G11[t=n]="10"
+  R11: B12[t=s]="Annual Inter Collegiate ΓÇô Volleyball " | D12[t=s]="Annual Inter Collegiate ΓÇô Football" | G12[t=s]="Trek N Trail - Raireshwar"
+  R12: B13[t=s]="Tree Plantation Drive & NGO Visit (ACM_W)" | C13[t=s]="State-level One Act Play Competition (Panchayati) " | D13[t=s]="ELTAI- 26 International Conference (SHD)"
+  R13: B14[t=s]="Open MIC (MUSE)" | C14[t=s]="Workshop: Red vs Blue(CBC)" | E14[t=s]="Startupology (Yuvarth)" | F14[t=s]="Garba Workshop (LOG)" | G14[t=s]="Triathlon-Adventure Club"
+  R14: B15[t=s]="Workshop:Music(SOD)" | C15[t=s]="IEEE Day Celebration (IEEE SB)" | D15[t=s]="Indian Air Force Day Celebration" | E15[t=s]="New Voter Registration Drive (NSS)" | F15[t=s]="Panel Discussion on Mental Health (Psychology -SVS" | G15[t=s]="Mental Health Awareness (Samarpan-SOER)"
+  R15: B16[t=s]="World Architecture Day Celebration (SAP)" | C16[t=s]="Boot camp on Problem Solving/Ideation(IIC)(6 TO 9)" | D16[t=s]="Awarness for SDG (Techno Smart)" | E16[t=s]="Verse Elevate day(Code Verse)(8 to 9)" | F16[t=s]="Session:World Mental Health Day -Emotional Intelli" | G16[t=s]="Webinars (TFC) 
+AI as Your Co-worker (SCIL)"
+  R16: B17[t=s]="VAC on Water Network Modelling OpenFlows WaterGEMS" | G17[t=s]="World Mental Health Day Rally (Psychology -SVS)"
+  R17: A18[t=n]="11" | B18[t=n]="12" | C18[t=n]="13" | D18[t=n]="14" | E18[t=n]="15" | F18[t=n]="16" | G18[t=n]="17"
+  R18: A19[t=s]="(Ghatsthapana)Navaratri" | B19[t=s]="Garba Competition (SHD)" | C19[t=s]="Garba Competition, Diya and Rangoli Competition (S" | D19[t=s]="Annual Inter Collegiate ΓÇô Cricket " | E19[t=s]="MIT ADT Dandiya Night" | G19[t=s]="Trek N Trail - Kalsubai"
+  R19: A20[t=s]="International Day of the girl Child (SHD)" | B20[t=s]="CTF (Internship-Linked) (LAVERIC)" | C20[t=s]="Taal sangram B(Shivray Dhol Tasha Pathak)" | D20[t=s]="Dr.APJ Abdul Kalam Birth. Anniversary " | E20[t=s]="Navratri Play (Panchayati)" | F20[t=s]="Annual Inter Collegiate ΓÇô Cricket "
+  R20: B21[t=s]="Workshop:Research(Infusion Club)" | C21[t=s]="State level Folk-Dance  competition ΓÇÿNandi(Kalakri" | D21[t=s]="Deepotsav 2026 (SHD)" | E21[t=s]="Bharat Ratna Dr. A P J Abdul Kalam Jayanti" | F21[t=s]="Dussehra Celebration(Bioengineering) & An online q"
+  R21: B22[t=s]="VAC (EV Domain)(SOES-MECH) & VAC on Machine & Deep" | F22[t=s]="World Food Day:AFBM Competition(MITCOM) 
+WFD Celeb"
+  R22: B23[t=s]="Navratri Celebration (SOFT)" | C23[t=s]="Foundational knowledge on IP, technology transfer," | D23[t=s]="Workshop:Transforming Ideas into Assets: IPR and T" | E23[t=s]="SHODH 2.0 (ASTRA)(15 TO 17)" | F23[t=s]="Technology Transfer and Commercialization: Strateg"
+  R23: B24[t=s]="MIT-ADT AI Symposium 2026 (SOC)" | D24[t=s]="Front2Back (Synapse AI)" | F24[t=s]="Road Safety Awareness Rally(SOES-CE)"
+  R24: A25[t=n]="18" | B25[t=n]="19" | C25[t=n]="20" | D25[t=n]="21" | E25[t=n]="22" | F25[t=n]="23" | G25[t=n]="24"
+  R25: B26[t=s]="Khandenavami Poojan" | C26[t=s]="Dussehra (Holiday)" | D26[t=s]="Workshop:Human Values(SOH)" | E26[t=s]="Alumni Dialogues (SOH)" | F26[t=s]="MIT ADT ki Pathshala (Kalakriti)" | G26[t=s]="Alumni Webinar Series - Lecture 4 (SVS)"
+  R26: B27[t=s]="Shakti (ACES & IGNITE))" | D27[t=s]="TECHSANGAM (IEEE Std. Chapter)" | E27[t=s]="Extension activity (EV Club)" | F27[t=s]="Awarness Campaign activity at Darekarwadi (ELC)" | G27[t=s]="Guest lecture - Alumni Activity(SOES-MECH)"
+  R27: B28[t=s]="Workshop:Thang-Ta(SOD)" | D28[t=s]="Astro Snap Competition (LFAC Club)" | G28[t=s]="Webinar on Ethics in Technical Writing(SOES-ECE)
+T"
+  R28: B29[t=s]="Workshop: Multiplayer (ARCADE)" | D29[t=s]="Fintech Hackathon (MACC Club)" | G29[t=s]="Trek N Trail - Rajgad"
+  R29: B30[t=s]="Project Expo (SAP)" | D30[t=s]="International Conference Day(SOFT)" | G30[t=s]="Cleanliness Drive (Adventure Club)"
+  R30: G31[t=s]="Alumini Webinar(MITCOM)"
+  R31: A32[t=n]="25" | B32[t=n]="26" | C32[t=n]="27" | D32[t=n]="28" | E32[t=n]="29" | F32[t=n]="30" | G32[t=n]="31"
+  R32: B33[t=s]="Annual Inter Collegiate ΓÇô Kho-Kho " | D33[t=s]="Annual Inter Collegiate ΓÇô Triathlon " | E33[t=s]="Halloween Fest (SOH)" | G33[t=s]="Rashtriya Ekta Diwas (SHD) & Poster Competition (S"
+  R33: C34[t=s]="Git&Github Guide Program (IEEE SB)" | D34[t=s]="Panchayati - Play" | E34[t=s]="Annual Inter Collegiate ΓÇô Yoga" | F34[t=s]="CSR Activity ΓÇô River Cleaning Activity(MITCOM)    " | G34[t=s]="Cultural Evening ( ASTECH)"
+  R34: C35[t=s]="Alumni Interaction (SOES-AERO)" | D35[t=s]="Workshop: AI / Deign Thinking (IIC)" | E35[t=s]="Workshop :Automotive domain(SAE Club)" | G35[t=s]="Sardar Vallabhbhai Patel Jayanti"
+  R35: E36[t=s]="Alumni Interaction (SOES-AERO)" | F36[t=s]="Diwali Treats for Old Age Home/Special Schools (Ev" | G36[t=s]="Trek N Trail - Ratangad"
+  R36: E37[t=s]="Workshop:PCB Design and Fabrication (SOES-ECE)"
+  R41: A42[t=s]="Holiday" | B42[t=s]="MIT ADT Holiday"
+  R42: A43[t=s]="University Flagship Events" | B43[t=s]="Flagship Events"
+  R43: A44[t=s]="Days" | B44[t=s]="  Days of Significance"
+  R44: A45[t=s]="Socio-economical" | B45[t=s]="Socio-economical"
+  R45: A46[t=s]="Outreach" | B46[t=s]="Trek N Trail"
+  R46: A47[t=s]="Alumni Meet" | B47[t=s]="  Alumni & Convocation"
+  R47: A48[t=s]="Cultural" | B48[t=s]="Cultural & Performing Arts"
+  R48: A49[t=s]="  Workshops, Conferences & Sessions" | B49[t=s]="Workshop"
+  R49: A50[t=s]="Festival" | B50[t=s]="Festivals"
+  R50: A51[t=s]="Sports" | B51[t=s]="Sports"
+  R51: A52[t=s]="Technical/Innovation/Hackethon/Other" | B52[t=s]="  General / Academic"
+
+JSON form (header: 1):
+  [0]: ["Activity Calendar","","","","","",""]
+  [1]: ["OCTOBER 2026","","","","","",""]
+  [2]: ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"]
+  [3]: ["27","28","29","30","1","2","3"]
+  [4]: ["","","","","Trek N Trail - Kedarnath (1 to 9)","Trek N Trail - Vasota Fort",""]
+  [5]: ["","","","","IIC 9.0 -Orientation Programme for IIC Faculty Council (IIC)","Tree Plantation Drive (Shivray Dhol Tasha Pathak)","Cleanliness Drive (Panchayati)"]
+  [6]: ["","","","","Session:Research and Startup Innovation (MITCOM)    ","Gandhi Jayanti (Holiday)","Guest Lecture on Prompt Engineering(SOES-ECE)"]
+  [7]: ["","","","","","Seminars(TFC)",""]
+  [8]: ["","","","","","Lal Bahadur Shastri Jayanti",""]
+  [9]: ["","","","","","Gandhi Jayanti ΓÇô Essay Competition (SICS)",""]
+  [10]: ["4","5","6","7","8","9","10"]
+  [11]: ["","Annual Inter Collegiate ΓÇô Volleyball ","","Annual Inter Collegiate ΓÇô Football","","","Trek N Trail - Raireshwar"]
+  [12]: ["","Tree Plantation Drive & NGO Visit (ACM_W)","State-level One Act Play Competition (Panchayati) ","ELTAI- 26 International Conference (SHD)","","",""]
+  [13]: ["","Open MIC (MUSE)","Workshop: Red vs Blue(CBC)","","Startupology (Yuvarth)","Garba Workshop (LOG)","Triathlon-Adventure Club"]
+  [14]: ["","Workshop:Music(SOD)","IEEE Day Celebration (IEEE SB)","Indian Air Force Day Celebration","New Voter Registration Drive (NSS)","Panel Discussion on Mental Health (Psychology -SVS)","Mental Health Awareness (Samarpan-SOER)"]
+  [15]: ["","World Architecture Day Celebration (SAP)","Boot camp on Problem Solving/Ideation(IIC)(6 TO 9)","Awarness for SDG (Techno Smart)","Verse Elevate day(Code Verse)(8 to 9)","Session:World Mental Health Day -Emotional Intelligence(HR Club-MITCOM)        ","Webinars (TFC) \nAI as Your Co-worker (SCIL)"]
+  [16]: ["","VAC on Water Network Modelling OpenFlows WaterGEMS / HAMMER(SOES-CE)","","","","","World Mental Health Day Rally (Psychology -SVS)"]
+  [17]: ["11","12","13","14","15","16","17"]
+  [18]: ["(Ghatsthapana)Navaratri","Garba Competition (SHD)","Garba Competition, Diya and Rangoli Competition (SHD)","Annual Inter Collegiate ΓÇô Cricket ","MIT ADT Dandiya Night","","Trek N Trail - Kalsubai"]
+  [19]: ["International Day of the girl Child (SHD)","CTF (Internship-Linked) (LAVERIC)","Taal sangram B(Shivray Dhol Tasha Pathak)","Dr.APJ Abdul Kalam Birth. Anniversary ","Navratri Play (Panchayati)","Annual Inter Collegiate ΓÇô Cricket ",""]
+  [20]: ["","Workshop:Research(Infusion Club)","State level Folk-Dance  competition ΓÇÿNandi(Kalakriti)       ","Deepotsav 2026 (SHD)","Bharat Ratna Dr. A P J Abdul Kalam Jayanti","Dussehra Celebration(Bioengineering) & An online quiz (Heritage Yatra)",""]
+  [21]: ["","VAC (EV Domain)(SOES-MECH) & VAC on Machine & Deep Learning (SOES-ECE)","","","","World Food Day:AFBM Competition(MITCOM) \nWFD Celebration (SOFT)  \nKnow Japan (Japan Day)(OIA)    ",""]
+  [22]: ["","Navratri Celebration (SOFT)","Foundational knowledge on IP, technology transfer, and innovation(IPR&TTO)","Workshop:Transforming Ideas into Assets: IPR and Technology Transfer(IPR&TTO)","SHODH 2.0 (ASTRA)(15 TO 17)","Technology Transfer and Commercialization: Strategic Leadership Dialogue with STEM & Foundational knowledge on IP, technology transfer, and innovation\n(IPR&TTO)",""]
+  [23]: ["","MIT-ADT AI Symposium 2026 (SOC)","","Front2Back (Synapse AI)","","Road Safety Awareness Rally(SOES-CE)",""]
+  [24]: ["18","19","20","21","22","23","24"]
+  [25]: ["","Khandenavami Poojan","Dussehra (Holiday)","Workshop:Human Values(SOH)","Alumni Dialogues (SOH)","MIT ADT ki Pathshala (Kalakriti)","Alumni Webinar Series - Lecture 4 (SVS)"]
+  [26]: ["","Shakti (ACES & IGNITE))","","TECHSANGAM (IEEE Std. Chapter)","Extension activity (EV Club)","Awarness Campaign activity at Darekarwadi (ELC)","Guest lecture - Alumni Activity(SOES-MECH)"]
+  [27]: ["","Workshop:Thang-Ta(SOD)","","Astro Snap Competition (LFAC Club)","","","Webinar on Ethics in Technical Writing(SOES-ECE)\nThink Before You Conclude (SCIL)"]
+  [28]: ["","Workshop: Multiplayer (ARCADE)","","Fintech Hackathon (MACC Club)","","","Trek N Trail - Rajgad"]
+  [29]: ["","Project Expo (SAP)","","International Conference Day(SOFT)","","","Cleanliness Drive (Adventure Club)"]
+  [30]: ["","","","","","","Alumini Webinar(MITCOM)"]
+  [31]: ["25","26","27","28","29","30","31"]
+  [32]: ["","Annual Inter Collegiate ΓÇô Kho-Kho ","","Annual Inter Collegiate ΓÇô Triathlon ","Halloween Fest (SOH)","","Rashtriya Ekta Diwas (SHD) & Poster Competition (SICS)"]
+  [33]: ["","","Git&Github Guide Program (IEEE SB)","Panchayati - Play","Annual Inter Collegiate ΓÇô Yoga","CSR Activity ΓÇô River Cleaning Activity(MITCOM)     ","Cultural Evening ( ASTECH)"]
+  [34]: ["","","Alumni Interaction (SOES-AERO)","Workshop: AI / Deign Thinking (IIC)","Workshop :Automotive domain(SAE Club)","","Sardar Vallabhbhai Patel Jayanti"]
+  [35]: ["","","","","Alumni Interaction (SOES-AERO)","Diwali Treats for Old Age Home/Special Schools (Ev, MESA Club&CESA)","Trek N Trail - Ratangad"]
+  [36]: ["","","","","Workshop:PCB Design and Fabrication (SOES-ECE)","",""]
+  [41]: ["Holiday","MIT ADT Holiday","","","","",""]
+  [42]: ["University Flagship Events","Flagship Events","","","","",""]
+  [43]: ["Days","  Days of Significance","","","","",""]
+  [44]: ["Socio-economical","Socio-economical","","","","",""]
+  [45]: ["Outreach","Trek N Trail","","","","",""]
+  [46]: ["Alumni Meet","  Alumni & Convocation","","","","",""]
+  [47]: ["Cultural","Cultural & Performing Arts","","","","",""]
+  [48]: ["  Workshops, Conferences & Sessions","Workshop","","","","",""]
+  [49]: ["Festival","Festivals","","","","",""]
+  [50]: ["Sports","Sports","","","","",""]
+  [51]: ["Technical/Innovation/Hackethon/Other","  General / Academic","","","","",""]
+
+====================================================================================================
+SHEET: "January 27" | Range: A1:J984 | Rows: 984, Cols: 10
+
+Merged cells (19):
+  A1:G1  rows 0-0 cols 0-6  => " Activity Calendar"
+  A2:G2  rows 1-1 cols 0-6  => "JANUARY 2027"
+  D14:F14  rows 13-13 cols 3-5  => "Workshop on Internationalization of Higher Education (OIA)"
+  C19:G19  rows 18-18 cols 2-6  => "Cricket - VSM'27"
+  D24:E24  rows 23-23 cols 3-4  => "Level Design Masterclass (ARCADE) (12,13,14 Jan)"
+  A26:B26  rows 25-25 cols 0-1  => "Cricket - VSM'27"
+  F26:G26  rows 25-25 cols 5-6  => "Vishwanath Sports Meet 2027"
+  C40:C45  rows 39-44 cols 2-2  => ""
+  D40:D45  rows 39-44 cols 3-3  => ""
+  E40:E45  rows 39-44 cols 4-4  => ""
+  F40:F45  rows 39-44 cols 5-5  => ""
+  B28:C28  rows 27-27 cols 1-2  => "Cloud Hackathon (AWS SBGL)"
+  C29:G29  rows 28-28 cols 2-6  => "Formaula Bharat competation (Speedtail Racing & SAE Club) "
+  B30:F30  rows 29-29 cols 1-5  => "VAC on Digital IC Design using Verilog HDL RTL Design and FPGA Implementation us"
+  B31:C31  rows 30-30 cols 1-2  => "Startup Fest (Laveric Club)"
+  A33:D33  rows 32-32 cols 0-3  => "Vishwanath Sports Meet 2027"
+  A40:A45  rows 39-44 cols 0-0  => ""
+  B40:B45  rows 39-44 cols 1-1  => ""
+  G40:G45  rows 39-44 cols 6-6  => ""
+
+Full cell dump:
+  R0: A1[t=s]=" Activity Calendar"
+  R1: A2[t=s]="JANUARY 2027"
+  R2: A3[t=s]="SUNDAY" | B3[t=s]="MONDAY" | C3[t=s]="TUESDAY" | D3[t=s]="WEDNESDAY" | E3[t=s]="THURSDAY" | F3[t=s]="FRIDAY" | G3[t=s]="SATURDAY"
+  R3: A4[t=n]="27" | B4[t=n]="28" | C4[t=n]="29" | D4[t=n]="30" | E4[t=n]="31" | F4[t=n]="1" | G4[t=n]="2"
+  R4: F5[t=s]="New Year (Holiday)"
+  R7: J8[t=s]=" "
+  R10: A11[t=n]="3" | B11[t=n]="4" | C11[t=n]="5" | D11[t=n]="6" | E11[t=n]="7" | F11[t=n]="8" | G11[t=n]="9"
+  R11: A12[t=s]="Savitribai Phule Jayanti" | B12[t=s]="Special Camp (NSS)" | C12[t=s]="Startup ADT (IEEE SB)" | D12[t=s]="IOT Workshop (IGNITE)" | F12[t=s]="Cinememoir (Psychology -SVS)" | G12[t=s]="Trek N Trail - Vasota"
+  R12: C13[t=s]="SAKSHAM Scholarship Interview (SOES-ASH)" | F13[t=s]="Guest Lecture by Theatre Practitioner(SOD)"
+  R13: D14[t=s]="Workshop on Internationalization of Higher Educati"
+  R17: A18[t=n]="10" | B18[t=n]="11" | C18[t=n]="12" | D18[t=n]="13" | E18[t=n]="14" | F18[t=n]="15" | G18[t=n]="16"
+  R18: B19[t=s]="VAC on Openpipes for Waterflow 11 to 15 (SOES-CE)" | C19[t=s]="Cricket - VSM'27"
+  R19: C20[t=s]="Yuva Din & Jija Mata Jayanti(Shivray Dhol Tasha Pa" | D20[t=s]="Buildathon/hackathon (Code Verse)" | E20[t=s]="Club Activity (Cloud Computing)" | F20[t=s]="MIT ADT ki Pathshala (Kalakriti)" | G20[t=s]="Fort Conservation & Trekking(Shivray Dhol Tasha Pa"
+  R20: C21[t=s]="Youth day Celebration with NGO (Samarpan-SOER)" | D21[t=s]="Lohari Event(Adventure Club)" | E21[t=s]="Sakal Karandak Ekankika Showcase (Panchayati) " | F21[t=s]="IKS Hackathon (SVS)" | G21[t=s]="Guest lecture-Thermal domain (ASHRAE Club )"
+  R21: C22[t=s]="National Youth Day Celebration (SOH) & (NSS)" | D22[t=s]="Avinya 2.0 - Startup Week (IIC) (12 to 16)" | E22[t=s]="Guest lecture-EV domain (EV Club)" | F22[t=s]="HP Mini Marathon 2026 (SHD)" | G22[t=s]="Alumni Talk (SOES-ECE)"
+  R22: C23[t=s]="DSA BOOTCAMP 5.0 (Codechef)" | E23[t=s]="αñ«αñ░αñ╛αñáαÑÇ αñ¡αñ╛αñ╖αñ╛ αñ╕αñéαñ╡αñ░αÑìαñºαñ¿ αñ¬αñéαñºαñ░αñ╡αñíαñ╛(SOER)(14 to 28)" | F23[t=s]="Traffic Awareness Drive(SOES-CE) & Awarness Campai" | G23[t=s]="Alumini Webinar(MITCOM)"
+  R23: C24[t=s]="Swami Vivekananda Jayanti" | D24[t=s]="Level Design Masterclass (ARCADE) (12,13,14 Jan)" | F24[t=s]="Poster Making Competition on the Thoughts of Swami"
+  R24: A25[t=n]="17" | B25[t=n]="18" | C25[t=n]="19" | D25[t=n]="20" | E25[t=n]="21" | F25[t=n]="22" | G25[t=n]="23"
+  R25: A26[t=s]="Cricket - VSM'27" | C26[t=s]="How to use Linkedin as an Entrepreneur (TFC)" | D26[t=s]="TEDxMITADT 2027" | E26[t=s]="Intern Insight(Alpha Cell)" | F26[t=s]="Vishwanath Sports Meet 2027"
+  R26: B27[t=s]="AI Art War (ACM-W)" | C27[t=s]="BOOTCAMP(Swift Coding)" | D27[t=s]="UI&UX Designing on Figma (IEEE SB)" | E27[t=s]="ACES Community Day (ACD 3.0) (ACES)" | F27[t=s]="Expert Talk: on Gender Sensitization and Equality(" | G27[t=s]="PIFF (SOH)(22 & 23)"
+  R27: B28[t=s]="Cloud Hackathon (AWS SBGL)" | D28[t=s]="Outreach, Extension & Social Impact Activities(SOF" | E28[t=s]="Maharashtra Government- One Act Play Competition (" | F28[t=s]="Guest Lecture on Career Opportunities(SOES-CE)" | G28[t=s]="Netaji Subhas Chandra Bose Jayanti (Parakram Diwas"
+  R28: C29[t=s]="Formaula Bharat competation (Speedtail Racing & SA"
+  R29: B30[t=s]="VAC on Digital IC Design using Verilog HDL RTL Des"
+  R30: B31[t=s]="Startup Fest (Laveric Club)" | F31[t=s]="Trek N Trail - Kedarkantha &  Kuari Pass"
+  R31: A32[t=n]="24" | B32[t=n]="25" | C32[t=n]="26" | D32[t=n]="27" | E32[t=n]="28" | F32[t=n]="29" | G32[t=n]="30"
+  R32: A33[t=s]="Vishwanath Sports Meet 2027" | E33[t=s]="Panchayati - Play" | F33[t=s]="Spelling Bee (SHD)" | G33[t=s]="Alumni Webinar Series - Lecture 7 
+ (SVS)"
+  R33: A34[t=s]="Formaula Bharat competation(Speedtail Racing & SAE" | B34[t=s]="Constitutional Roots of Ancient India: A Knowledge" | C34[t=s]="78th Republic Day Celebrations" | D34[t=s]="Donation Drive (Adventure Club)" | F34[t=s]="Group Discussion / Guest Lecture on any Technical " | G34[t=s]="National MartyrsΓÇÖ Day-Martyrs of India Exhibition "
+  R34: B35[t=s]="Cleanliness Drive (SVS)" | C35[t=s]="Nukkad Natak & Cleanliness Drive (Panchayati) "
+  R35: B36[t=s]="National VotersΓÇÖ Day Celebration (SICS)" | C36[t=s]="Donation Drive (ASTECH)"
+  R36: C37[t=s]="Republic Day Celebrations (Groovance)"
+  R38: A39[t=n]="31" | B39[t=n]="1" | C39[t=n]="2" | D39[t=n]="3" | E39[t=n]="4" | F39[t=n]="5" | G39[t=n]="6"
+  R49: A50[t=s]="Holiday" | B50[t=s]="MIT ADT Holiday"
+  R50: A51[t=s]="University Flagship Events" | B51[t=s]="Flagship Events"
+  R51: A52[t=s]="Days" | B52[t=s]="  Days of Significance"
+  R52: A53[t=s]="Socio-economical" | B53[t=s]="Socio-economical"
+  R53: A54[t=s]="Outreach" | B54[t=s]="Trek N Trail"
+  R54: A55[t=s]="Alumni Meet" | B55[t=s]="  Alumni & Convocation"
+  R55: A56[t=s]="Cultural" | B56[t=s]="Cultural & Performing Arts"
+  R56: A57[t=s]="  Workshops, Conferences & Sessions" | B57[t=s]="Workshop"
+  R57: A58[t=s]="Festival" | B58[t=s]="Festivals"
+  R58: A59[t=s]="Sports" | B59[t=s]="Sports"
+  R59: A60[t=s]="Technical/Innovation/Hackethon/Other" | B60[t=s]="  General / Academic"
+
+JSON form (header: 1):
+  [0]: [" Activity Calendar","","","","","","","","",""]
+  [1]: ["JANUARY 2027","","","","","","","","",""]
+  [2]: ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","","",""]
+  [3]: ["27","28","29","30","31","1","2","","",""]
+  [4]: ["","","","","","New Year (Holiday)","","","",""]
+  [7]: ["","","","","","","","",""," "]
+  [10]: ["3","4","5","6","7","8","9","","",""]
+  [11]: ["Savitribai Phule Jayanti","Special Camp (NSS)","Startup ADT (IEEE SB)","IOT Workshop (IGNITE)","","Cinememoir (Psychology -SVS)","Trek N Trail - Vasota","","",""]
+  [12]: ["","","SAKSHAM Scholarship Interview (SOES-ASH)","","","Guest Lecture by Theatre Practitioner(SOD)","","","",""]
+  [13]: ["","","","Workshop on Internationalization of Higher Education (OIA)","","","","","",""]
+  [17]: ["10","11","12","13","14","15","16","","",""]
+  [18]: ["","VAC on Openpipes for Waterflow 11 to 15 (SOES-CE)","Cricket - VSM'27","","","","","","",""]
+  [19]: ["","","Yuva Din & Jija Mata Jayanti(Shivray Dhol Tasha Pathak)","Buildathon/hackathon (Code Verse)","Club Activity (Cloud Computing)","MIT ADT ki Pathshala (Kalakriti)","Fort Conservation & Trekking(Shivray Dhol Tasha Pathak)","","",""]
+  [20]: ["","","Youth day Celebration with NGO (Samarpan-SOER)","Lohari Event(Adventure Club)","Sakal Karandak Ekankika Showcase (Panchayati) ","IKS Hackathon (SVS)","Guest lecture-Thermal domain (ASHRAE Club )","","",""]
+  [21]: ["","","National Youth Day Celebration (SOH) & (NSS)","Avinya 2.0 - Startup Week (IIC) (12 to 16)","Guest lecture-EV domain (EV Club)","HP Mini Marathon 2026 (SHD)","Alumni Talk (SOES-ECE)","","",""]
+  [22]: ["","","DSA BOOTCAMP 5.0 (Codechef)","","αñ«αñ░αñ╛αñáαÑÇ αñ¡αñ╛αñ╖αñ╛ αñ╕αñéαñ╡αñ░αÑìαñºαñ¿ αñ¬αñéαñºαñ░αñ╡αñíαñ╛(SOER)(14 to 28)","Traffic Awareness Drive(SOES-CE) & Awarness Campaign activity at Talegaon (ELC)","Alumini Webinar(MITCOM)","","",""]
+  [23]: ["","","Swami Vivekananda Jayanti","Level Design Masterclass (ARCADE) (12,13,14 Jan)","","Poster Making Competition on the Thoughts of Swami Vivekananda(MITCOM)","","","",""]
+  [24]: ["17","18","19","20","21","22","23","","",""]
+  [25]: ["Cricket - VSM'27","","How to use Linkedin as an Entrepreneur (TFC)","TEDxMITADT 2027","Intern Insight(Alpha Cell)","Vishwanath Sports Meet 2027","","","",""]
+  [26]: ["","AI Art War (ACM-W)","BOOTCAMP(Swift Coding)","UI&UX Designing on Figma (IEEE SB)","ACES Community Day (ACD 3.0) (ACES)","Expert Talk: on Gender Sensitization and Equality(MITCOM)  ","PIFF (SOH)(22 & 23)","","",""]
+  [27]: ["","Cloud Hackathon (AWS SBGL)","","Outreach, Extension & Social Impact Activities(SOFT)(20 to 27)","Maharashtra Government- One Act Play Competition (Panchayati)","Guest Lecture on Career Opportunities(SOES-CE)","Netaji Subhas Chandra Bose Jayanti (Parakram Diwas)","","",""]
+  [28]: ["","","Formaula Bharat competation (Speedtail Racing & SAE Club) ","","","","","","",""]
+  [29]: ["","VAC on Digital IC Design using Verilog HDL RTL Design and FPGA Implementation using VIVADO(SOES-ECE)","","","","","","","",""]
+  [30]: ["","Startup Fest (Laveric Club)","","","","Trek N Trail - Kedarkantha &  Kuari Pass","","","",""]
+  [31]: ["24","25","26","27","28","29","30","","",""]
+  [32]: ["Vishwanath Sports Meet 2027","","","","Panchayati - Play","Spelling Bee (SHD)","Alumni Webinar Series - Lecture 7 \n (SVS)","","",""]
+  [33]: ["Formaula Bharat competation(Speedtail Racing & SAE Club) ","Constitutional Roots of Ancient India: A Knowledge Quiz(SAP-Heritage Yatra)","78th Republic Day Celebrations","Donation Drive (Adventure Club)","","Group Discussion / Guest Lecture on any Technical / Social Topic (SOES-CE)","National MartyrsΓÇÖ Day-Martyrs of India Exhibition (SICS)","","",""]
+  [34]: ["","Cleanliness Drive (SVS)","Nukkad Natak & Cleanliness Drive (Panchayati) ","","","","","","",""]
+  [35]: ["","National VotersΓÇÖ Day Celebration (SICS)","Donation Drive (ASTECH)","","","","","","",""]
+  [36]: ["","","Republic Day Celebrations (Groovance)","","","","","","",""]
+  [38]: ["31","1","2","3","4","5","6","","",""]
+  [49]: ["Holiday","MIT ADT Holiday","","","","","","","",""]
+  [50]: ["University Flagship Events","Flagship Events","","","","","","","",""]
+  [51]: ["Days","  Days of Significance","","","","","","","",""]
+  [52]: ["Socio-economical","Socio-economical","","","","","","","",""]
+  [53]: ["Outreach","Trek N Trail","","","","","","","",""]
+  [54]: ["Alumni Meet","  Alumni & Convocation","","","","","","","",""]
+  [55]: ["Cultural","Cultural & Performing Arts","","","","","","","",""]
+  [56]: ["  Workshops, Conferences & Sessions","Workshop","","","","","","","",""]
+  [57]: ["Festival","Festivals","","","","","","","",""]
+  [58]: ["Sports","Sports","","","","","","","",""]
+  [59]: ["Technical/Innovation/Hackethon/Other","  General / Academic","","","","","","","",""]

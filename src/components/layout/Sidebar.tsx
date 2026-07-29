@@ -1,4 +1,4 @@
-import { LayoutDashboard, Brain, Briefcase, Rocket, Landmark, User, ShieldCheck, ClipboardCheck, Users, FlaskConical, Home } from 'lucide-react';
+import { LayoutDashboard, Brain, Briefcase, Rocket, Landmark, User, ShieldCheck, ClipboardCheck, Users, FlaskConical, Home, CalendarDays } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 const studentNav = [
@@ -6,6 +6,7 @@ const studentNav = [
     { icon: <Brain size={18} />, label: 'Insights', path: '/ai-insights' },
     { icon: <Briefcase size={18} />, label: 'Explore', path: '/explore' },
     { icon: <Rocket size={18} />, label: 'Projects', path: '/projects' },
+    { icon: <CalendarDays size={18} />, label: 'Calendar', path: '/calendar' },
     { icon: <Landmark size={18} />, label: 'Clubs', path: '/clubs' },
     { icon: <User size={18} />, label: 'Profile', path: '/profile' },
 ];

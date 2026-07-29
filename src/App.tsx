@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import VerifyQueue from './pages/VerifyQueue';
 import Projects from './pages/Projects';
 import Clubs from './pages/Clubs';
+import Calendar from './pages/Calendar';
 import OpportunityDetail from './pages/OpportunityDetail';
 import Applications from './pages/Applications';
 import AIInsights from './pages/AIInsights';
@@ -42,6 +43,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/verify" element={<VerifyQueue />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/calendar" element={<Calendar />} />
         <Route path="/clubs" element={<Clubs />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/opportunity/:id" element={<OpportunityDetail />} />
