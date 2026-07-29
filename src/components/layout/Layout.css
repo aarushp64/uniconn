@@ -10,6 +10,21 @@
     padding: 0;
 }
 
+/* Custom Scrollbar for inner components */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--border-soft);
+    border-radius: 10px;
+}
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+}
+
 /* Navbar */
 .top-navbar {
     display: flex;

@@ -6,10 +6,10 @@ import { Folder, Code2, Brain, Globe, Zap } from 'lucide-react';
 
 const Projects = () => {
     const projects = [
-        { title: 'Campus Event System', desc: 'Full-stack MERN app to manage college events, registrations, and feedback. Used by 500+ students during Persona Fest.', tags: ['React', 'Node.js', 'MongoDB'], status: 'Completed', statusVariant: 'success' as const, icon: Globe, iconBg: 'bg-sky-50 text-sky-600 border-sky-100', border: '' },
+        { title: 'UniConn App', desc: 'The official campus platform for MIT ADTU. Built with React, Node.js, and PostgreSQL.', tags: ['React', 'PostgreSQL', 'Tailwind'], status: 'Active', statusVariant: 'primary' as const, icon: Globe, iconBg: 'bg-sky-50 text-sky-600 border-sky-100', border: 'border-l-4 border-l-sky-500' },
         { title: 'AI Content Moderator', desc: 'Automated content moderation for the college forum using Python and OpenAI API. Filters spam and toxic content.', tags: ['Python', 'AI', 'FastAPI'], status: 'In Progress', statusVariant: 'warning' as const, icon: Brain, iconBg: 'bg-amber-50 text-amber-600 border-amber-100', border: 'border-l-4 border-l-amber-500' },
-        { title: 'Smart Attendance System', desc: 'Computer Vision based attendance using face recognition. Deployed in 3 classrooms at MITSOE.', tags: ['OpenCV', 'Python', 'Flask'], status: 'Completed', statusVariant: 'success' as const, icon: Code2, iconBg: 'bg-emerald-50 text-emerald-600 border-emerald-100', border: '' },
-        { title: 'EV Battery Optimizer', desc: 'AI-driven thermal management system for electric vehicle battery packs. Reduces overheating by 35% using predictive cooling.', tags: ['Python', 'TensorFlow', 'MATLAB'], status: 'In Progress', statusVariant: 'warning' as const, icon: Zap, iconBg: 'bg-violet-50 text-violet-600 border-violet-100', border: 'border-l-4 border-l-violet-500' },
+        { title: 'Smart Attendance System', desc: 'Computer Vision based attendance using face recognition. Deployed in 3 classrooms at MIT-SOE.', tags: ['OpenCV', 'Python', 'Flask'], status: 'Completed', statusVariant: 'success' as const, icon: Code2, iconBg: 'bg-emerald-50 text-emerald-600 border-emerald-100', border: '' },
+        { title: 'Formula Bharat Aerodynamics', desc: 'CFD simulations and aerodynamic package design for Speedtail Racing 2026 car.', tags: ['SolidWorks', 'CFD', 'Aero'], status: 'In Progress', statusVariant: 'warning' as const, icon: Zap, iconBg: 'bg-violet-50 text-violet-600 border-violet-100', border: 'border-l-4 border-l-violet-500' },
     ];
 
     return (

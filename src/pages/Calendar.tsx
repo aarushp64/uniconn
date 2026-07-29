@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import { MainLayout } from '../components/layout/MainLayout';
 import { CalendarHeader } from '../components/features/calendar/CalendarHeader';
 import { CalendarGrid } from '../components/features/calendar/CalendarGrid';
@@ -7,6 +8,9 @@ import { useCalendar } from '../components/features/calendar/useCalendar';
 import { CATEGORY_CONFIG } from '../mock/calendarEvents';
 
 const Calendar = () => {
+  const [searchParams] = useSearchParams();
+  const initialDate = searchParams.get('date') || undefined;
+
   const {
     currentMonth,
     currentYear,
@@ -24,7 +28,7 @@ const Calendar = () => {
     getEventsForDate,
     getDaysInMonth,
     isToday,
-  } = useCalendar();
+  } = useCalendar(initialDate);
 
   const selectedDateEvents = selectedDate ? getEventsForDate(selectedDate) : [];
   const days = getDaysInMonth();

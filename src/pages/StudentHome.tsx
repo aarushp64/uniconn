@@ -4,19 +4,11 @@ import Feed from '../components/features/feed/Feed';
 import { TrendingUp, Target, Briefcase } from 'lucide-react';
 import { Card } from '../components/common/Card';
 import { LiveActivity } from '../components/features/dashboard/LiveActivity';
-import { UpcomingEvents } from '../components/features/calendar/UpcomingEvents';
 
 const TECH_ITEMS = [
-    { cat: 'AI & ML', catColor: 'text-sky-600 bg-sky-50', time: '10m ago', text: 'OpenAI launches Sora: text-to-video era begins with high fidelity.' },
-    { cat: 'Market', catColor: 'text-teal-600 bg-teal-50', time: '1h ago', text: 'Nvidia market cap crosses $2T as global AI chip demand peaks.' },
-    { cat: 'Web3', catColor: 'text-indigo-600 bg-indigo-50', time: '3h ago', text: 'Ethereum Dencun upgrade goes live on Goerli testnet.' },
-    { cat: 'Dev', catColor: 'text-violet-600 bg-violet-50', time: '4h ago', text: 'Rust 2.0 release candidate announced with async trait support.' },
-    { cat: 'Cloud', catColor: 'text-emerald-600 bg-emerald-50', time: '5h ago', text: 'AWS announces $10B investment in India cloud infrastructure.' },
-    { cat: 'Security', catColor: 'text-rose-600 bg-rose-50', time: '6h ago', text: 'NIST publishes new post-quantum cryptography standards for 2026.' },
-    { cat: 'Mobile', catColor: 'text-orange-600 bg-orange-50', time: '8h ago', text: 'Flutter 4.0 ships with native compilation for all desktop platforms.' },
-    { cat: 'Data', catColor: 'text-cyan-600 bg-cyan-50', time: '10h ago', text: 'Apache Spark 4.0 introduces real-time ML pipeline orchestration.' },
-    { cat: 'AI & ML', catColor: 'text-sky-600 bg-sky-50', time: '12h ago', text: 'Anthropic Claude 4 scores 95% on ARC-AGI reasoning benchmark.' },
-    { cat: 'Startup', catColor: 'text-amber-600 bg-amber-50', time: '14h ago', text: 'Indian edtech unicorn raises $200M Series D for AI tutoring.' },
+    { cat: 'Innovation', catColor: 'text-sky-600 bg-sky-50', time: '10m ago', text: 'Speedtail Racing clinches top honors at Formula Bharat 2026.' },
+    { cat: 'AI & Data Science', catColor: 'text-violet-600 bg-violet-50', time: '2h ago', text: 'MIT-SOE AI Lab receives DASCA accreditation for new curriculum.' },
+    { cat: 'Events', catColor: 'text-emerald-600 bg-emerald-50', time: '5h ago', text: 'Persona Fest 2026 lineup revealed! Star nights coming soon.' },
 ];
 
 const StudentHome = () => {
@@ -42,9 +34,6 @@ const StudentHome = () => {
 
     const rightPanel = (
         <div className="flex flex-col gap-4">
-
-            {/* Upcoming Events */}
-            <UpcomingEvents />
 
             {/* Live Bulletin */}
             <LiveActivity />
@@ -113,9 +102,9 @@ const StudentHome = () => {
 
                 <div className="space-y-2 relative z-10">
                     {[
-                        { type: 'DRIVE', typeColor: 'text-rose-600 bg-rose-50 border-rose-100', when: 'TOMORROW', title: 'Google STEP Intern \'27', desc: 'Off-campus hackathon track' },
-                        { type: 'PLACEMENT', typeColor: 'text-sky-600 bg-sky-50 border-sky-100', when: 'MAR 02', title: 'Philips Core Research', desc: 'On-campus drive (Mech/Elec)' },
-                        { type: 'REMOTE', typeColor: 'text-teal-600 bg-teal-50 border-teal-100', when: 'LEVEL 1', title: 'Stripe Dev Infrastructure', desc: 'Cloud Platform (Foundational)' },
+                        { type: 'DRIVE', typeColor: 'text-rose-600 bg-rose-50 border-rose-100', when: 'TOMORROW', title: 'Microsoft SDE Off-Campus', desc: 'Pre-placement talk @ Main Auditorium' },
+                        { type: 'PLACEMENT', typeColor: 'text-sky-600 bg-sky-50 border-sky-100', text: 'MAR 02', title: 'Deloitte Tech Analyst', desc: 'On-campus drive (CS/IT)' },
+                        { type: 'LAB', typeColor: 'text-teal-600 bg-teal-50 border-teal-100', when: 'LEVEL 1', title: 'MIT-SOE AI Lab Assistant', desc: 'Research & ML Training' },
                     ].map((job, i) => (
                         <div key={i} className="p-2.5 bg-white hover:bg-slate-50/50 rounded-lg border border-slate-50 hover:border-slate-100 transition-all cursor-pointer group/job">
                             <div className="flex justify-between items-start mb-1">
@@ -140,10 +129,10 @@ const StudentHome = () => {
                 </h3>
                 <div className="flex flex-col gap-1.5">
                     {[
-                        { title: 'Smart India Hackathon 2026', meta: '450+ registered' },
-                        { title: 'Persona Fest Day 2', meta: 'Star night tonight' },
-                        { title: 'Shiv Jayanti Live', meta: 'Happening now @ Gate' },
-                        { title: 'GDSC Flutter Workshop', meta: 'Friday @ Lab 4' },
+                        { title: 'Smart India Hackathon 2026', meta: '450+ registered from MIT ADTU' },
+                        { title: 'Persona Fest 2026', meta: 'Star night registration open' },
+                        { title: 'Formula Bharat Wins', meta: 'Speedtail Racing takes gold' },
+                        { title: 'GDSC ML Workshop', meta: 'Friday @ MIT-SOE Lab 4' },
                     ].map((item, i) => (
                         <div key={i} className="p-2 bg-slate-50/50 rounded-lg hover:bg-white hover:shadow-sm border border-transparent hover:border-slate-100 cursor-pointer transition-all group active:scale-[0.98]">
                             <div className="font-bold text-slate-800 mb-0.5 group-hover:text-sky-600 transition-colors text-[9px] truncate">{item.title}</div>

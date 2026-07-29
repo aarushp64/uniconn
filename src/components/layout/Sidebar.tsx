@@ -1,14 +1,13 @@
 import { LayoutDashboard, Brain, Briefcase, Rocket, Landmark, User, ShieldCheck, ClipboardCheck, Users, FlaskConical, Home, CalendarDays } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { UpcomingEvents } from '../features/calendar/UpcomingEvents';
 
 const studentNav = [
     { icon: <Home size={18} />, label: 'Home', path: '/home' },
     { icon: <Brain size={18} />, label: 'Insights', path: '/ai-insights' },
     { icon: <Briefcase size={18} />, label: 'Explore', path: '/explore' },
     { icon: <Rocket size={18} />, label: 'Projects', path: '/projects' },
-    { icon: <CalendarDays size={18} />, label: 'Calendar', path: '/calendar' },
     { icon: <Landmark size={18} />, label: 'Clubs', path: '/clubs' },
-    { icon: <User size={18} />, label: 'Profile', path: '/profile' },
 ];
 
 const facultyNav = [
@@ -51,16 +50,25 @@ export const Sidebar = () => {
     );
 
     return (
-        <aside className="flex flex-col h-full">
-            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 flex flex-col h-full w-full">
-                <nav className="flex flex-col justify-between flex-1">
-                    <div>
-                        {isFacultySection
-                            ? renderNavSection('Faculty Portal', facultyNav)
-                            : renderNavSection('Navigation', studentNav)
-                        }
+        <aside className="flex flex-col h-full overflow-hidden">
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 flex flex-col h-full w-full overflow-hidden">
+                <nav className="flex flex-col h-full overflow-hidden">
+                    <div className="flex-1 flex flex-col overflow-hidden">
+                        <div className="pb-4 shrink-0">
+                            {isFacultySection
+                                ? renderNavSection('Faculty Portal', facultyNav)
+                                : renderNavSection('Navigation', studentNav)
+                            }
+                        </div>
+                        
+                        {!isFacultySection && (
+                            <div className="pt-4 border-t border-slate-100 hidden md:flex flex-col flex-1 overflow-hidden min-h-0">
+                                <UpcomingEvents />
+                            </div>
+                        )}
                     </div>
-                    <div className="pt-3 border-t border-slate-100 mt-3">
+                    
+                    <div className="pt-3 border-t border-slate-100 mt-2 shrink-0">
                         <div className="flex items-center gap-2 px-3">
                             <ShieldCheck size={12} className="text-emerald-500" />
                             <p className="text-[8px] font-bold text-slate-300 uppercase tracking-widest">UniConn v1.0</p>

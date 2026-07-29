@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CalendarDays, ChevronRight, Clock, MapPin } from 'lucide-react';
 import { Card } from '../../common/Card';
 import type { CalendarEvent } from '../../../mock/calendarEvents';
@@ -42,56 +42,58 @@ export const UpcomingEvents: React.FC = () => {
   const hasContent = displayEvents.length > 0;
 
   return (
-    <Card className="p-4 border-slate-100 shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+    <div className="relative overflow-hidden group flex flex-col h-full">
       {/* Glow accent */}
-      <div className="absolute -top-6 -right-6 w-16 h-16 bg-sky-50 blur-2xl rounded-full group-hover:bg-sky-100 transition-colors pointer-events-none" />
+      <div className="absolute -top-6 -right-6 w-16 h-16 bg-sky-50 blur-2xl rounded-full group-hover:bg-sky-100 transition-colors pointer-events-none shrink-0" />
 
       {/* Header */}
-      <div className="flex items-center justify-between mb-3 relative z-10">
+      <div className="flex items-center justify-between mb-3 relative z-10 shrink-0">
         <h3 className="text-[9px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
           <CalendarDays size={11} className="text-sky-500" />
           UPCOMING EVENTS
         </h3>
       </div>
 
-      <div className="relative z-10 space-y-1.5">
-        {/* Today's Events */}
-        {todayEvents.length > 0 && (
-          <div className="mb-2">
-            <span className="text-[7px] font-black text-sky-600 bg-sky-50 px-1.5 py-0.5 rounded uppercase">
-              Today
-            </span>
-            <div className="mt-1.5 space-y-1.5">
-              {todayEvents.slice(0, 2).map((event) => (
-                <EventMiniCard key={event.id} event={event} />
-              ))}
+      <div className="relative z-10 flex-1 overflow-y-auto pr-2 custom-scrollbar">
+        <div className="space-y-1.5 pb-2">
+          {/* Today's Events */}
+          {todayEvents.length > 0 && (
+            <div className="mb-2">
+              <span className="text-[7px] font-black text-sky-600 bg-sky-50 px-1.5 py-0.5 rounded uppercase">
+                Today
+              </span>
+              <div className="mt-1.5 space-y-1.5">
+                {todayEvents.slice(0, 2).map((event) => (
+                  <EventMiniCard key={event.id} event={event} />
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* This Week */}
-        {weekEvents.length > 0 && (
-          <div>
-            <span className="text-[7px] font-black text-slate-400 uppercase">
-              This Week
-            </span>
-            <div className="mt-1.5 space-y-1.5">
-              {weekEvents.slice(0, 3).map((event) => (
-                <EventMiniCard key={event.id} event={event} showDate />
-              ))}
+          {/* This Week */}
+          {weekEvents.length > 0 && (
+            <div>
+              <span className="text-[7px] font-black text-slate-400 uppercase">
+                This Week
+              </span>
+              <div className="mt-1.5 space-y-1.5">
+                {weekEvents.slice(0, 3).map((event) => (
+                  <EventMiniCard key={event.id} event={event} showDate />
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Empty state */}
-        {!hasContent && (
-          <div className="text-center py-4">
-            <CalendarDays size={18} className="text-slate-200 mx-auto mb-1.5" />
-            <p className="text-[10px] text-slate-400 font-medium">
-              No upcoming events
-            </p>
-          </div>
-        )}
+          {/* Empty state */}
+          {!hasContent && (
+            <div className="text-center py-4">
+              <CalendarDays size={18} className="text-slate-200 mx-auto mb-1.5" />
+              <p className="text-[10px] text-slate-400 font-medium">
+                No upcoming events
+              </p>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* View Full Calendar */}
@@ -102,13 +104,13 @@ export const UpcomingEvents: React.FC = () => {
           w-full mt-3 py-2 bg-sky-500 hover:bg-sky-600
           rounded-lg text-[8px] font-black text-white
           transition-all uppercase tracking-widest shadow-sm
-          active:scale-95 relative z-10
+          active:scale-95 relative z-10 shrink-0
         "
       >
         View Full Calendar
         <ChevronRight size={10} />
       </Link>
-    </Card>
+    </div>
   );
 };
 
@@ -122,9 +124,13 @@ const WEEKDAY_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const EventMiniCard: React.FC<EventMiniCardProps> = ({ event, showDate = false }) => {
   const config = CATEGORY_CONFIG[event.category];
+  const navigate = useNavigate();
 
   return (
-    <div className="p-2.5 bg-white hover:bg-slate-50/50 rounded-lg border border-slate-50 hover:border-slate-100 transition-all cursor-pointer group/evt">
+    <div 
+      className="p-2.5 bg-white hover:bg-slate-50/50 rounded-lg border border-slate-50 hover:border-slate-100 transition-all cursor-pointer group/evt"
+      onClick={() => navigate(`/calendar?date=${event.date}`)}
+    >
       <div className="flex justify-between items-start mb-1">
         <span
           className={`text-[7px] font-black ${config.color} ${config.bg} px-1.5 py-0.5 rounded-full border ${config.border}`}

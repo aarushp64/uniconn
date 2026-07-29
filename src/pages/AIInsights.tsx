@@ -49,9 +49,9 @@ const growthData = [
 ];
 
 const actionPlan = [
-    { step: 1, title: 'Production-Harden ML API', desc: 'Add auth, logging, versioning to your FastAPI project', color: 'border-sky-500', iconBg: 'bg-sky-50', iconColor: 'text-sky-600', icon: Shield, tags: ['Auth', 'Logging', 'Versioning'] },
-    { step: 2, title: 'Build CI/CD Pipeline', desc: 'Automate testing & deployment with GitHub Actions + Docker', color: 'border-violet-500', iconBg: 'bg-violet-50', iconColor: 'text-violet-600', icon: Rocket, tags: ['GitHub Actions', 'Docker', 'Tests'] },
-    { step: 3, title: 'Add Observability', desc: 'Implement monitoring, error tracking, and performance alerts', color: 'border-emerald-500', iconBg: 'bg-emerald-50', iconColor: 'text-emerald-600', icon: Lightbulb, tags: ['Monitoring', 'Alerts', 'Perf'] },
+    { step: 1, title: 'Apply for MIT-SOE AI Lab', desc: 'Prepare your portfolio for the upcoming research assistant selections', color: 'border-sky-500', iconBg: 'bg-sky-50', iconColor: 'text-sky-600', icon: Shield, tags: ['Research', 'Portfolio', 'AI Lab'] },
+    { step: 2, title: 'Smart India Hackathon Prep', desc: 'Form a cross-disciplinary team and finalize your problem statement', color: 'border-violet-500', iconBg: 'bg-violet-50', iconColor: 'text-violet-600', icon: Rocket, tags: ['SIH 2026', 'Team Building', 'Ideation'] },
+    { step: 3, title: 'Publish IEEE Paper', desc: 'Draft the findings from your ML project for the TechX Conference', color: 'border-emerald-500', iconBg: 'bg-emerald-50', iconColor: 'text-emerald-600', icon: Lightbulb, tags: ['IEEE', 'TechX', 'Publication'] },
 ];
 
 const AIInsights = () => {

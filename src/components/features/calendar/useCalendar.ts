@@ -35,11 +35,12 @@ export interface UseCalendarReturn {
   isToday: (dateStr: string) => boolean;
 }
 
-export function useCalendar(): UseCalendarReturn {
-  const today = new Date();
-  const [currentMonth, setCurrentMonth] = useState(today.getMonth());
-  const [currentYear, setCurrentYear] = useState(today.getFullYear());
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+export function useCalendar(initialDate?: string): UseCalendarReturn {
+  const initialDateObj = initialDate ? new Date(initialDate + 'T00:00:00') : new Date();
+  
+  const [currentMonth, setCurrentMonth] = useState(initialDateObj.getMonth());
+  const [currentYear, setCurrentYear] = useState(initialDateObj.getFullYear());
+  const [selectedDate, setSelectedDate] = useState<string | null>(initialDate || null);
   const [allEvents, setAllEvents] = useState<CalendarEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState<CalendarFilters>({

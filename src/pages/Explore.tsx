@@ -7,18 +7,18 @@ import { Button } from '../components/common/Button';
 
 const OPPS: OpportunityProps[] = [
     { id: 'o1', title: 'SDE Intern – Backend', organization: 'Microsoft (On-Campus Drive)', type: 'Job', skills: ['C++', 'DSA', 'System Design'], postedDaysAgo: 1, featured: true },
-    { id: 'o2', title: 'Aerodynamics Design Lead', organization: 'Team Speedtail Racing – SAE', type: 'Club Role', skills: ['CFD', 'SolidWorks', 'Aero'], postedDaysAgo: 1, featured: true },
+    { id: 'o2', title: 'Aerodynamics Design Lead', organization: 'Speedtail Racing – MIT ADTU', type: 'Club Role', skills: ['CFD', 'SolidWorks', 'Aero'], postedDaysAgo: 1, featured: true },
     {
-        id: 'o3', title: 'ML Research Assistant', organization: "Dr. Patil's AI Lab – MITSOE", type: 'Research', skills: ['PyTorch', 'NLP', 'Python'], postedDaysAgo: 2, featured: true
+        id: 'o3', title: 'ML Research Assistant', organization: "Dr. Patil's AI Lab – MIT-SOE", type: 'Research', skills: ['PyTorch', 'NLP', 'Python'], postedDaysAgo: 2, featured: true
     },
-    { id: 'o4', title: 'Full Stack Developer', organization: 'E-Cell Startup Incubator', type: 'Job', skills: ['React', 'Node.js', 'MongoDB'], postedDaysAgo: 2, featured: false },
-    { id: 'o5', title: 'Persona Fest – Tech Head', organization: 'Persona Fest Organizing Committee', type: 'Club Role', skills: ['Event Mgmt', 'Leadership', 'Tech'], postedDaysAgo: 3, featured: true },
-    { id: 'o6', title: 'IoT Smart Campus Project', organization: 'MIT Innovation Lab', type: 'Project', skills: ['Arduino', 'Sensors', 'Cloud'], postedDaysAgo: 3, featured: false },
-    { id: 'o7', title: 'EV Battery Research Intern', organization: 'MITSOE Electrical Lab', type: 'Research', skills: ['EV Systems', 'MATLAB', 'Testing'], postedDaysAgo: 4, featured: false },
+    { id: 'o4', title: 'Full Stack Developer', organization: 'MIT ADTU E-Cell Incubator', type: 'Job', skills: ['React', 'Node.js', 'MongoDB'], postedDaysAgo: 2, featured: false },
+    { id: 'o5', title: 'Persona Fest 2026 – Tech Head', organization: 'Persona Fest OC', type: 'Club Role', skills: ['Event Mgmt', 'Leadership', 'Tech'], postedDaysAgo: 3, featured: true },
+    { id: 'o6', title: 'IoT Smart Campus Project', organization: 'MIT Innovation Hub', type: 'Project', skills: ['Arduino', 'Sensors', 'Cloud'], postedDaysAgo: 3, featured: false },
+    { id: 'o7', title: 'EV Battery Research Intern', organization: 'MIT-SOE Electrical Dept', type: 'Research', skills: ['EV Systems', 'MATLAB', 'Testing'], postedDaysAgo: 4, featured: false },
     { id: 'o8', title: 'UI/UX Design Intern', organization: 'MIT Institute of Design (MID)', type: 'Job', skills: ['Figma', 'Prototyping', 'UX Research'], postedDaysAgo: 4, featured: false },
     { id: 'o9', title: 'Video Editor & Filmmaker', organization: 'Raj Kapoor Film Club', type: 'Club Role', skills: ['Premiere Pro', 'Cinematography'], postedDaysAgo: 5, featured: false },
-    { id: 'o10', title: 'Data Analyst Intern', organization: 'Deloitte (MIT ADTU Partner)', type: 'Job', skills: ['SQL', 'Python', 'Tableau'], postedDaysAgo: 5, featured: true },
-    { id: 'o11', title: 'Drone Swarm Researcher', organization: 'Robotics Club Lab', type: 'Research', skills: ['ROS', 'Python', 'Embedded'], postedDaysAgo: 6, featured: false },
+    { id: 'o10', title: 'Data Analyst Intern', organization: 'Deloitte (On-Campus Partner)', type: 'Job', skills: ['SQL', 'Python', 'Tableau'], postedDaysAgo: 5, featured: true },
+    { id: 'o11', title: 'Drone Swarm Researcher', organization: 'MIT ADTU Robotics Lab', type: 'Research', skills: ['ROS', 'Python', 'Embedded'], postedDaysAgo: 6, featured: false },
     { id: 'o12', title: 'Social Media Manager', organization: 'NSS MIT ADTU', type: 'Club Role', skills: ['Content', 'Canva', 'Analytics'], postedDaysAgo: 6, featured: false },
     { id: 'o13', title: 'Mobile App Developer', organization: 'GDSC MIT ADTU', type: 'Project', skills: ['Flutter', 'Dart', 'Firebase'], postedDaysAgo: 7, featured: false },
     { id: 'o14', title: 'Cybersecurity Analyst Trainee', organization: 'MIT CBC × CyberPeace', type: 'Job', skills: ['Pentesting', 'Linux', 'Networking'], postedDaysAgo: 7, featured: false },

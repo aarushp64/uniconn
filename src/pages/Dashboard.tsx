@@ -14,14 +14,14 @@ const Dashboard = () => {
     ];
 
     const recentProjects = [
-        { title: 'AI Crop Disease Detector', status: 'Verified', statusColor: 'text-emerald-600 bg-emerald-50', skills: ['Python', 'TensorFlow', 'OpenCV'], mentor: 'Dr. Meera Joshi' },
+        { title: 'UniConn Campus App', status: 'Verified', statusColor: 'text-emerald-600 bg-emerald-50', skills: ['React', 'PostgreSQL', 'Node.js'], mentor: 'Dr. Virendra Shete' },
         { title: 'Smart Campus IoT Dashboard', status: 'Under Review', statusColor: 'text-amber-600 bg-amber-50', skills: ['React', 'Node.js', 'MQTT'], mentor: 'Dr. Rajesh Patil' },
-        { title: 'NLP Chatbot for Student FAQs', status: 'Verified', statusColor: 'text-emerald-600 bg-emerald-50', skills: ['Python', 'LangChain', 'FastAPI'], mentor: 'Dr. Priya Deshmukh' },
+        { title: 'NLP Chatbot for MIT-ADTU FAQs', status: 'Verified', statusColor: 'text-emerald-600 bg-emerald-50', skills: ['Python', 'LangChain', 'FastAPI'], mentor: 'Dr. Priya Deshmukh' },
     ];
 
     const upcomingDeadlines = [
         { title: 'Microsoft SDE Intern Application', date: 'Feb 28', type: 'Placement', typeColor: 'text-sky-600 bg-sky-50' },
-        { title: 'IEEE Research Paper Submission', date: 'Mar 05', type: 'Research', typeColor: 'text-emerald-600 bg-emerald-50' },
+        { title: 'IEEE TechX Paper Submission', date: 'Mar 05', type: 'Research', typeColor: 'text-emerald-600 bg-emerald-50' },
         { title: 'GDSC Flutter Workshop', date: 'Mar 08', type: 'Workshop', typeColor: 'text-teal-600 bg-teal-50' },
         { title: 'Smart India Hackathon Finals', date: 'Mar 15', type: 'Event', typeColor: 'text-rose-600 bg-rose-50' },
     ];
@@ -39,7 +39,7 @@ const Dashboard = () => {
                 {/* Header */}
                 <div>
                     <h1 className="text-xl font-bold text-slate-900 mb-1">Student Dashboard</h1>
-                    <p className="text-xs text-slate-500">Welcome back, Aarush — here is your academic overview</p>
+                    <p className="text-xs text-slate-500">Welcome back, Vedant — here is your academic overview</p>
                 </div>
 
                 {/* Stats Grid */}
