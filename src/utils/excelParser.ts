@@ -47,13 +47,17 @@ const COLUMN_MAP: Record<string, keyof CalendarEvent> = {
 /* ─── Category inference from keywords ─── */
 const CATEGORY_KEYWORDS: Record<EventCategory, string[]> = {
   workshop: ['workshop', 'bootcamp', 'hands-on', 'session', 'training'],
-  research: ['research', 'symposium', 'paper', 'thesis', 'seminar', 'journal'],
-  club: ['club', 'fest', 'cultural', 'event', 'committee', 'council'],
+  research: ['research', 'symposium', 'paper', 'thesis', 'journal'],
+  club: ['club', 'cultural', 'event', 'committee', 'council'],
   placement: ['placement', 'recruitment', 'drive', 'internship', 'campus hiring', 'career'],
   exam: ['exam', 'examination', 'test', 'quiz', 'assessment', 'mid-sem', 'end-sem'],
-  holiday: ['holiday', 'vacation', 'break', 'closed', 'festival', 'celebration'],
+  holiday: ['holiday', 'vacation', 'break', 'closed', 'celebration'],
   academic: ['academic', 'orientation', 'semester', 'convocation', 'lecture', 'project'],
   sports: ['sports', 'match', 'tournament', 'athletics', 'football', 'cricket', 'basketball'],
+  festival: ['fest', 'festival', 'persona'],
+  competition: ['competition', 'contest', 'challenge'],
+  seminar: ['seminar', 'talk', 'keynote', 'webinar'],
+  hackathon: ['hackathon', 'hack', 'ideathon'],
 };
 
 function inferCategory(text: string): EventCategory {

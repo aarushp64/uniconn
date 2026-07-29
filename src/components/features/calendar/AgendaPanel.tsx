@@ -7,6 +7,13 @@ import { EventCard } from './EventCard';
 interface AgendaPanelProps {
   selectedDate: string | null;
   events: CalendarEvent[];
+  interestedIds?: string[];
+  registeredIds?: string[];
+  reminders?: Record<string, string>;
+  onToggleInterested?: (id: string) => void;
+  onToggleRegistered?: (id: string) => void;
+  onSetReminder?: (id: string, timing: string | null) => void;
+  onSelectEvent?: (event: CalendarEvent) => void;
   onClose: () => void;
 }
 
@@ -27,6 +34,13 @@ function formatDisplayDate(dateStr: string): string {
 export const AgendaPanel: React.FC<AgendaPanelProps> = ({
   selectedDate,
   events,
+  interestedIds = [],
+  registeredIds = [],
+  reminders = {},
+  onToggleInterested,
+  onToggleRegistered,
+  onSetReminder,
+  onSelectEvent,
   onClose,
 }) => {
   return (
@@ -70,7 +84,16 @@ export const AgendaPanel: React.FC<AgendaPanelProps> = ({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08, duration: 0.2 }}
                 >
-                  <EventCard event={event} />
+                  <EventCard
+                    event={event}
+                    isInterested={interestedIds.includes(event.id)}
+                    isRegistered={registeredIds.includes(event.id)}
+                    activeReminder={reminders[event.id] || null}
+                    onToggleInterested={onToggleInterested}
+                    onToggleRegistered={onToggleRegistered}
+                    onSetReminder={onSetReminder}
+                    onSelectEvent={onSelectEvent}
+                  />
                 </motion.div>
               ))}
             </div>

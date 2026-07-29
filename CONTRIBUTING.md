@@ -1,129 +1,53 @@
-# UniConn - Contributing Guide
+# Contributing to UniConn
 
-Thank you for considering contributing to UniConn! 🎉
+Thank you for helping improve UniConn.
 
-## Getting Started
+## Development workflow
 
-1. **Fork the repository** on GitHub
-2. **Clone your fork** locally
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/uniconn.git
-   cd uniconn
-   ```
-3. **Install dependencies**
-   ```bash
-   npm install
-   ```
-4. **Create a branch** for your changes
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+1. Fork the repository and create a branch.
+2. Install dependencies with `npm install`.
+3. Make your changes and verify them with `npm run build`.
+4. Open a pull request with a clear description.
 
-## Development Workflow
+## Branch naming
 
-### Running the App
-```bash
-npm run dev        # Start development server
-npm run build      # Build for production
-npm run lint       # Check code quality
-npm run preview    # Preview production build
+Use short, descriptive branch names such as:
+
+- `feature/calendar-improvements`
+- `fix/mobile-nav`
+- `docs/project-setup`
+
+## Commit conventions
+
+Use conventional commit messages, for example:
+
+```text
+feat: add dashboard filter controls
+fix: resolve sidebar overflow on mobile
+docs: update deployment instructions
+chore: add CI workflow
 ```
 
-### Code Standards
+## Code guidelines
 
-#### TypeScript
-- Use strict TypeScript types
-- Avoid `any` - use proper types or `unknown`
-- Define interfaces for all props and data structures
+- Prefer TypeScript and functional React components.
+- Keep components focused and reusable.
+- Avoid introducing unnecessary dependencies.
+- Keep styling consistent with the existing UI patterns.
 
-#### React
-- Use functional components with hooks
-- Follow React best practices
-- Keep components small and focused
-- Use proper prop typing with TypeScript
+## Validation checklist
 
-#### Styling
-- Use Tailwind CSS utility classes
-- Follow existing design patterns
-- Ensure responsive design (mobile-first)
-- Use CSS modules for component-specific styles
+Before opening a PR, confirm:
 
-#### Naming Conventions
-- **Components:** PascalCase (e.g., `UserProfile.tsx`)
-- **Files:** PascalCase for components, camelCase for utilities
-- **Variables:** camelCase
-- **Constants:** UPPER_SNAKE_CASE
-- **CSS classes:** kebab-case or Tailwind utilities
+- `npm run build` succeeds
+- The UI still works locally in the browser
+- Documentation reflects any new behavior or setup steps
 
-## Commit Guidelines
+## Pull request expectations
 
-Use conventional commit messages:
+A good pull request should include:
 
-```
-feat: Add user authentication
-fix: Resolve navigation bug on mobile
-docs: Update README with deployment steps
-style: Format code with prettier
-refactor: Simplify Dashboard component
-test: Add tests for Input component
-chore: Update dependencies
-```
-
-### Commit Types
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Code formatting (not CSS)
-- `refactor`: Code restructuring
-- `test`: Adding or updating tests
-- `chore`: Build process or tooling changes
-- `perf`: Performance improvements
-
-## Pull Request Process
-
-1. **Update documentation** if needed
-2. **Ensure all tests pass** and linting is clean
-3. **Write a clear PR description** explaining:
-   - What changes were made
-   - Why they were needed
-   - How to test them
-4. **Link related issues** if applicable
-5. **Request review** from maintainers
-
-### PR Title Format
-```
-feat: Add new feature description
-fix: Bug fix description
-docs: Documentation update description
-```
-
-## Code Review
-
-- Be respectful and constructive
-- Address all review comments
-- Update your PR based on feedback
-- Squash commits if requested
-
-## Testing
-
-- Test your changes thoroughly
-- Ensure responsive design works
-- Check browser compatibility
-- Test edge cases
-
-## Questions?
-
-Feel free to open an issue for:
-- Bug reports
-- Feature requests
-- Questions about the codebase
-- General discussions
-
-## Code of Conduct
-
-- Be respectful and inclusive
-- Welcome newcomers
-- Focus on constructive feedback
-- Collaborate positively
-
-Thank you for contributing! 🚀
+- What changed
+- Why it changed
+- Any setup or testing steps
+- Screenshots when UI changes are involved

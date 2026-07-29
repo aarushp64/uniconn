@@ -9,7 +9,11 @@ export type EventCategory =
   | 'exam'
   | 'holiday'
   | 'academic'
-  | 'sports';
+  | 'sports'
+  | 'festival'
+  | 'competition'
+  | 'seminar'
+  | 'hackathon';
 
 export interface CalendarEvent {
   id: string;
@@ -23,14 +27,25 @@ export interface CalendarEvent {
   location: string;
   registrationLink?: string;
   image?: string;
+  bannerImage?: string;
   color: string; // Tailwind color key
   featured: boolean;
+
+  // Extended production fields
+  eventType?: 'online' | 'offline' | 'hybrid';
+  registrationRequired?: boolean;
+  registrationStatus?: 'open' | 'closed' | 'invite_only';
+  organizerClub?: string;
+  interestedCount?: number;
+  attendeeCount?: number;
+  rsvpEnabled?: boolean;
+  qrCheckInEnabled?: boolean;
 }
 
-/* ─── Category → Color Map ─── */
+/* ─── Category → Color & Identity Map ─── */
 export const CATEGORY_CONFIG: Record<
   EventCategory,
-  { label: string; color: string; bg: string; dot: string; border: string }
+  { label: string; color: string; bg: string; dot: string; border: string; iconName: string }
 > = {
   workshop: {
     label: 'Workshop',
@@ -38,6 +53,7 @@ export const CATEGORY_CONFIG: Record<
     bg: 'bg-sky-50',
     dot: 'bg-sky-500',
     border: 'border-sky-200',
+    iconName: 'Wrench',
   },
   research: {
     label: 'Research',
@@ -45,13 +61,15 @@ export const CATEGORY_CONFIG: Record<
     bg: 'bg-emerald-50',
     dot: 'bg-emerald-500',
     border: 'border-emerald-200',
+    iconName: 'FlaskConical',
   },
   club: {
-    label: 'Club Activity',
+    label: 'Club Event',
     color: 'text-violet-600',
     bg: 'bg-violet-50',
     dot: 'bg-violet-500',
     border: 'border-violet-200',
+    iconName: 'Users',
   },
   placement: {
     label: 'Placement',
@@ -59,6 +77,7 @@ export const CATEGORY_CONFIG: Record<
     bg: 'bg-amber-50',
     dot: 'bg-amber-500',
     border: 'border-amber-200',
+    iconName: 'Briefcase',
   },
   exam: {
     label: 'Examination',
@@ -66,6 +85,7 @@ export const CATEGORY_CONFIG: Record<
     bg: 'bg-rose-50',
     dot: 'bg-rose-500',
     border: 'border-rose-200',
+    iconName: 'FileText',
   },
   holiday: {
     label: 'Holiday',
@@ -73,6 +93,7 @@ export const CATEGORY_CONFIG: Record<
     bg: 'bg-slate-50',
     dot: 'bg-slate-400',
     border: 'border-slate-200',
+    iconName: 'Sun',
   },
   academic: {
     label: 'Academic',
@@ -80,6 +101,7 @@ export const CATEGORY_CONFIG: Record<
     bg: 'bg-blue-50',
     dot: 'bg-blue-500',
     border: 'border-blue-200',
+    iconName: 'GraduationCap',
   },
   sports: {
     label: 'Sports',
@@ -87,6 +109,39 @@ export const CATEGORY_CONFIG: Record<
     bg: 'bg-orange-50',
     dot: 'bg-orange-500',
     border: 'border-orange-200',
+    iconName: 'Trophy',
+  },
+  festival: {
+    label: 'Festival',
+    color: 'text-purple-600',
+    bg: 'bg-purple-50',
+    dot: 'bg-purple-500',
+    border: 'border-purple-200',
+    iconName: 'Sparkles',
+  },
+  competition: {
+    label: 'Competition',
+    color: 'text-indigo-600',
+    bg: 'bg-indigo-50',
+    dot: 'bg-indigo-500',
+    border: 'border-indigo-200',
+    iconName: 'Award',
+  },
+  seminar: {
+    label: 'Seminar',
+    color: 'text-teal-600',
+    bg: 'bg-teal-50',
+    dot: 'bg-teal-500',
+    border: 'border-teal-200',
+    iconName: 'Presentation',
+  },
+  hackathon: {
+    label: 'Hackathon',
+    color: 'text-pink-600',
+    bg: 'bg-pink-50',
+    dot: 'bg-pink-500',
+    border: 'border-pink-200',
+    iconName: 'Code',
   },
 };
 

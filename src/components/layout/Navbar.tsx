@@ -31,7 +31,7 @@ export const Navbar = () => {
     ];
 
     return (
-        <header className="top-navbar animate-fade-in-down relative z-50">
+        <header className="top-navbar animate-fade-in-down sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs">
             <div className="flex items-center gap-8 flex-1">
                 <h1 className="text-xl font-bold text-gradient shrink-0">UniConn</h1>
 

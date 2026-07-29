@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CalendarDays, ChevronRight, Clock, MapPin } from 'lucide-react';
-import { Card } from '../../common/Card';
+import { CalendarDays, ChevronRight, Clock, MapPin, Star } from 'lucide-react';
 import type { CalendarEvent } from '../../../mock/calendarEvents';
 import {
   CATEGORY_CONFIG,
@@ -123,12 +122,12 @@ interface EventMiniCardProps {
 const WEEKDAY_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const EventMiniCard: React.FC<EventMiniCardProps> = ({ event, showDate = false }) => {
-  const config = CATEGORY_CONFIG[event.category];
+  const config = CATEGORY_CONFIG[event.category] || CATEGORY_CONFIG.academic;
   const navigate = useNavigate();
 
   return (
     <div 
-      className="p-2.5 bg-white hover:bg-slate-50/50 rounded-lg border border-slate-50 hover:border-slate-100 transition-all cursor-pointer group/evt"
+      className="p-2.5 bg-white hover:bg-slate-50/50 rounded-lg border border-slate-100 hover:border-sky-100 transition-all cursor-pointer group/evt"
       onClick={() => navigate(`/calendar?date=${event.date}`)}
     >
       <div className="flex justify-between items-start mb-1">
@@ -137,14 +136,17 @@ const EventMiniCard: React.FC<EventMiniCardProps> = ({ event, showDate = false }
         >
           {config.label}
         </span>
-        {showDate && (
-          <span className="text-[8px] font-bold text-slate-400">
-            {(() => {
-              const d = new Date(event.date + 'T00:00:00');
-              return `${WEEKDAY_SHORT[d.getDay()]}, ${d.getDate()}`;
-            })()}
-          </span>
-        )}
+        <div className="flex items-center gap-1">
+          {event.featured && <Star size={8} className="text-amber-500 fill-amber-500" />}
+          {showDate && (
+            <span className="text-[8px] font-bold text-slate-400">
+              {(() => {
+                const d = new Date(event.date + 'T00:00:00');
+                return `${WEEKDAY_SHORT[d.getDay()]}, ${d.getDate()}`;
+              })()}
+            </span>
+          )}
+        </div>
       </div>
       <h4 className="text-[10px] font-bold text-slate-800 group-hover/evt:text-sky-600 transition-colors truncate">
         {event.title}

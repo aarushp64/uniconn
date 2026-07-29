@@ -1,4 +1,4 @@
-import { LayoutDashboard, Brain, Briefcase, Rocket, Landmark, User, ShieldCheck, ClipboardCheck, Users, FlaskConical, Home, CalendarDays } from 'lucide-react';
+import { LayoutDashboard, Brain, Briefcase, Rocket, Landmark, User, ShieldCheck, ClipboardCheck, Users, FlaskConical, Home } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { UpcomingEvents } from '../features/calendar/UpcomingEvents';
 
