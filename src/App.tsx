@@ -12,6 +12,8 @@ import Calendar from './pages/Calendar';
 import OpportunityDetail from './pages/OpportunityDetail';
 import Applications from './pages/Applications';
 import AIInsights from './pages/AIInsights';
+import Notifications from './pages/Notifications';
+import Settings from './pages/Settings';
 import FacultyDashboard from './pages/faculty/FacultyDashboard';
 import FacultyHome from './pages/faculty/FacultyHome';
 import FacultyVerifications from './pages/faculty/FacultyVerifications';
@@ -49,6 +51,8 @@ function App() {
         <Route path="/opportunity/:id" element={<OpportunityDetail />} />
         <Route path="/applications" element={<Applications />} />
         <Route path="/ai-insights" element={<AIInsights />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="/faculty/home" element={<FacultyHome />} />
         <Route path="/faculty/dashboard" element={<FacultyDashboard />} />
         <Route path="/faculty/verifications" element={<FacultyVerifications />} />
@@ -56,6 +60,7 @@ function App() {
         <Route path="/faculty/opportunities" element={<FacultyOpportunities />} />
         <Route path="/faculty/calendar" element={<Calendar />} />
         <Route path="/faculty/profile" element={<FacultyProfile />} />
+        <Route path="/faculty/settings" element={<Settings />} />
       </Routes>
     </div>
   );

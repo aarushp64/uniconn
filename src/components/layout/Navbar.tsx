@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Bell, Search, CalendarDays } from 'lucide-react';
+import { Bell, Search, CalendarDays, Settings } from 'lucide-react';
 import { Input } from '../common/Input';
 import { Button } from '../common/Button';
 import { useAuth } from '../../context/AuthContext';
@@ -33,7 +33,7 @@ export const Navbar = () => {
     return (
         <header className="top-navbar animate-fade-in-down sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs">
             <div className="flex items-center gap-8 flex-1">
-                <h1 className="text-xl font-bold text-gradient shrink-0">UniConn</h1>
+                <h1 className="text-xl font-bold text-gradient shrink-0 cursor-pointer" onClick={() => navigate(isFaculty ? '/faculty/home' : '/home')}>UniConn</h1>
 
                 <div className="w-64">
                     <Input
@@ -45,7 +45,11 @@ export const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-4">
-                <Button variant="ghost" size="sm" className="text-slate-500 hover:text-sky-600" onClick={() => navigate(isFaculty ? '/faculty/calendar' : '/calendar')}>
+                <Button variant="ghost" size="sm" className="text-slate-500 hover:text-sky-600" onClick={() => navigate(isFaculty ? '/faculty/settings' : '/settings')} title="Settings">
+                    <Settings size={20} />
+                </Button>
+
+                <Button variant="ghost" size="sm" className="text-slate-500 hover:text-sky-600" onClick={() => navigate(isFaculty ? '/faculty/calendar' : '/calendar')} title="Calendar">
                     <CalendarDays size={20} />
                 </Button>
 
@@ -74,8 +78,14 @@ export const Navbar = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div className="p-3 text-center border-t border-slate-100 bg-slate-50 hover:bg-slate-100 cursor-pointer transition-colors">
-                                <p className="text-xs font-semibold text-slate-600">View All</p>
+                            <div
+                                onClick={() => {
+                                    setShowNotifications(false);
+                                    navigate('/notifications');
+                                }}
+                                className="p-3 text-center border-t border-slate-100 bg-slate-50 hover:bg-slate-100 cursor-pointer transition-colors"
+                            >
+                                <p className="text-xs font-semibold text-sky-600 hover:text-sky-700">View All Notifications →</p>
                             </div>
                         </div>
                     )}

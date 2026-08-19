@@ -189,7 +189,7 @@ const FacultyFeed = () => {
             )}
 
             {/* Filter Tags */}
-            <div className="bg-white border-b border-slate-100 px-4 py-3 overflow-x-auto no-scrollbar" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <div className="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 px-4 py-3 overflow-x-auto no-scrollbar" style={{ WebkitOverflowScrolling: 'touch' }}>
                 <div className="flex gap-2 min-w-max">
                     {TAGS.map(tag => {
                         const cfg = TAG_STYLE[tag] || TAG_STYLE['All'];

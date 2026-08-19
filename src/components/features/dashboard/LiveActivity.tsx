@@ -34,15 +34,15 @@ export const LiveActivity = () => {
 
     return (
         <Card
-            className="p-5 bg-white border-sky-100 relative overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            className="p-5 bg-white dark:bg-slate-900 border-sky-100 dark:border-slate-800 relative overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
         >
             <div className="flex items-center justify-between mb-4">
-                <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                <h3 className="text-[9px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" /> LIVE BULLETIN
                 </h3>
-                <span className="text-[9px] font-bold text-slate-300 uppercase">{activeIndex + 1}/{alerts.length}</span>
+                <span className="text-[9px] font-bold text-slate-300 dark:text-slate-500 uppercase">{activeIndex + 1}/{alerts.length}</span>
             </div>
 
             {/* Current Alert - Main Display */}
@@ -52,8 +52,8 @@ export const LiveActivity = () => {
                 onClick={() => setActiveIndex((activeIndex + 1) % alerts.length)}
             >
                 <div className="flex items-center gap-2 mb-2">
-                    <span className="p-1.5 bg-white/80 rounded-lg shadow-sm">{currentAlert.icon}</span>
-                    <span className="text-[8px] font-black uppercase tracking-wider text-slate-500">
+                    <span className="p-1.5 bg-white/80 dark:bg-slate-800/90 rounded-lg shadow-sm">{currentAlert.icon}</span>
+                    <span className="text-[8px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400">
                         {currentAlert.type}
                     </span>
                     <ChevronRight size={10} className="ml-auto text-slate-300 group-hover:text-slate-500 group-hover:translate-x-0.5 transition-all" />
@@ -65,11 +65,11 @@ export const LiveActivity = () => {
 
             {/* Next Alert Preview */}
             <div
-                className="mt-2 p-2.5 rounded-lg bg-slate-50/50 border border-slate-100 flex items-center gap-2 cursor-pointer hover:bg-slate-50 transition-colors opacity-60 hover:opacity-90"
+                className="mt-2 p-2.5 rounded-lg bg-slate-50/50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 flex items-center gap-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors opacity-60 hover:opacity-90"
                 onClick={() => setActiveIndex((activeIndex + 1) % alerts.length)}
             >
-                <span className="p-1 bg-white rounded shadow-sm">{nextAlert.icon}</span>
-                <p className="text-[10px] text-slate-500 font-bold truncate flex-1">
+                <span className="p-1 bg-white dark:bg-slate-800 rounded shadow-sm">{nextAlert.icon}</span>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold truncate flex-1">
                     {nextAlert.text}
                 </p>
             </div>

@@ -62,23 +62,23 @@ const FacultyDashboard = () => {
                         </div>
                         <div className="space-y-3">
                             {recentRequests.map(req => (
-                                <div key={req.id} className="p-3 bg-slate-50/80 rounded-xl border border-slate-100 hover:bg-white hover:shadow-sm transition-all cursor-pointer" onClick={() => navigate('/faculty/verifications')}>
+                                <div key={req.id} className="p-3 bg-slate-50/80 dark:bg-slate-800/60 rounded-xl border border-slate-100 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-800 hover:shadow-sm transition-all cursor-pointer" onClick={() => navigate('/faculty/verifications')}>
                                     <div className="flex items-start justify-between mb-1.5">
                                         <div className="flex items-center gap-2.5">
                                             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-sky-500 to-teal-400 flex items-center justify-center text-white text-[10px] font-bold shrink-0">
                                                 {req.studentAvatar}
                                             </div>
                                             <div>
-                                                <p className="text-xs font-bold text-slate-800">{req.studentName}</p>
+                                                <p className="text-xs font-bold text-slate-800 dark:text-slate-100">{req.studentName}</p>
                                                 <p className="text-[10px] text-slate-400">{req.studentDept} • Year {req.studentYear}</p>
                                             </div>
                                         </div>
                                         <Badge variant="warning" className="text-[8px]">PENDING</Badge>
                                     </div>
-                                    <p className="text-[11px] font-semibold text-slate-700 mt-1">{req.projectTitle}</p>
+                                    <p className="text-[11px] font-semibold text-slate-700 dark:text-slate-300 mt-1">{req.projectTitle}</p>
                                     <div className="flex flex-wrap gap-1 mt-2">
                                         {req.skills.slice(0, 3).map(s => (
-                                            <span key={s} className="text-[8px] font-bold text-sky-600 bg-sky-50 px-1.5 py-0.5 rounded">{s}</span>
+                                            <span key={s} className="text-[8px] font-bold text-sky-600 bg-sky-50 dark:bg-sky-900/40 dark:text-sky-300 px-1.5 py-0.5 rounded">{s}</span>
                                         ))}
                                     </div>
                                 </div>
@@ -101,24 +101,24 @@ const FacultyDashboard = () => {
                         </div>
                         <div className="space-y-3">
                             {topStudents.map(student => (
-                                <div key={student.id} className="p-3 bg-slate-50/80 rounded-xl border border-slate-100 hover:bg-white hover:shadow-sm transition-all cursor-pointer" onClick={() => navigate('/faculty/students')}>
+                                <div key={student.id} className="p-3 bg-slate-50/80 dark:bg-slate-800/60 rounded-xl border border-slate-100 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-800 hover:shadow-sm transition-all cursor-pointer" onClick={() => navigate('/faculty/students')}>
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-2.5">
                                             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-violet-500 to-pink-400 flex items-center justify-center text-white text-[10px] font-bold shrink-0">
                                                 {student.avatar}
                                             </div>
                                             <div>
-                                                <p className="text-xs font-bold text-slate-800">{student.name}</p>
+                                                <p className="text-xs font-bold text-slate-800 dark:text-slate-100">{student.name}</p>
                                                 <p className="text-[10px] text-slate-400">{student.department} • Year {student.year}</p>
                                             </div>
                                         </div>
                                         <div className="text-right">
-                                            <p className="text-sm font-black text-slate-900">{student.readinessScore}%</p>
+                                            <p className="text-sm font-black text-slate-900 dark:text-slate-100">{student.readinessScore}%</p>
                                             <p className="text-[8px] text-slate-400 font-bold">READINESS</p>
                                         </div>
                                     </div>
                                     {student.currentProject && (
-                                        <p className="text-[10px] text-emerald-600 font-semibold mt-2 bg-emerald-50 px-2 py-1 rounded">
+                                        <p className="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold mt-2 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-1 rounded">
                                             Working on: {student.currentProject}
                                         </p>
                                     )}
