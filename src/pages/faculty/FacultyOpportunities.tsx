@@ -47,8 +47,8 @@ const FacultyOpportunities = () => {
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
                     <div>
-                        <h1 className="text-xl font-bold text-slate-900 mb-1">Research Opportunities</h1>
-                        <p className="text-xs text-slate-500">Manage and create research positions for students</p>
+                        <h1 className="text-xl font-bold text-slate-900 mb-1">Faculty Workspace</h1>
+                        <p className="text-xs text-slate-500">Manage projects, research opportunities, and student workspace listings</p>
                     </div>
                     <Button
                         variant="primary"
@@ -64,7 +64,7 @@ const FacultyOpportunities = () => {
                 {showForm && (
                     <Card className="p-5 border-sky-100 bg-sky-50/30">
                         <div className="flex items-center justify-between mb-4">
-                            <h2 className="text-sm font-bold text-slate-900">New Research Opportunity</h2>
+                            <h2 className="text-sm font-bold text-slate-900">New Workspace Listing</h2>
                             <button onClick={() => setShowForm(false)} className="text-slate-400 hover:text-slate-600">
                                 <X size={16} />
                             </button>
@@ -87,7 +87,7 @@ const FacultyOpportunities = () => {
                             <div className="md:col-span-2">
                                 <Input
                                     label="Description"
-                                    placeholder="Describe the research work..."
+                                    placeholder="Describe the research or project work..."
                                     value={description}
                                     onChange={e => setDescription(e.target.value)}
                                     fullWidth
@@ -126,7 +126,7 @@ const FacultyOpportunities = () => {
                                 isLoading={submitting}
                                 disabled={!title || !description || !skillsInput || !duration || !maxStudents || !department}
                             >
-                                Create Opportunity
+                                Create Workspace Listing
                             </Button>
                         </div>
                     </Card>
@@ -134,7 +134,7 @@ const FacultyOpportunities = () => {
 
                 {/* Count */}
                 <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
-                    {opportunities.length} {opportunities.length === 1 ? 'opportunity' : 'opportunities'}
+                    {opportunities.length} {opportunities.length === 1 ? 'workspace listing' : 'workspace listings'}
                 </p>
 
                 {/* Opportunities List */}
@@ -181,7 +181,7 @@ const FacultyOpportunities = () => {
 
                 {opportunities.length === 0 && (
                     <Card className="p-10 text-center">
-                        <p className="text-sm text-slate-400 mb-3">No research opportunities yet.</p>
+                        <p className="text-sm text-slate-400 mb-3">No workspace listings yet.</p>
                         <Button variant="primary" size="sm" leftIcon={<Plus size={14} />} onClick={() => setShowForm(true)}>
                             Create Your First
                         </Button>

@@ -15,7 +15,7 @@ const facultyNav = [
     { icon: <LayoutDashboard size={18} />, label: 'Dashboard', path: '/faculty/dashboard' },
     { icon: <ClipboardCheck size={18} />, label: 'Verifications', path: '/faculty/verifications' },
     { icon: <Users size={18} />, label: 'Students', path: '/faculty/students' },
-    { icon: <FlaskConical size={18} />, label: 'Opportunities', path: '/faculty/opportunities' },
+    { icon: <FlaskConical size={18} />, label: 'Workspace', path: '/faculty/opportunities' },
     { icon: <CalendarDays size={18} />, label: 'Calendar', path: '/faculty/calendar' },
     { icon: <User size={18} />, label: 'Profile', path: '/faculty/profile' },
 ];

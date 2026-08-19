@@ -170,7 +170,7 @@ const FacultyHome = () => {
                     {[
                         { label: 'Review Verifications', desc: `${pending} pending`, path: '/faculty/verifications' },
                         { label: 'Manage Students', desc: `${active} active`, path: '/faculty/students' },
-                        { label: 'Post Opportunity', desc: `${openOpps} open`, path: '/faculty/opportunities' },
+                        { label: 'Workspace Listings', desc: `${openOpps} open`, path: '/faculty/opportunities' },
                     ].map((action, i) => (
                         <div
                             key={i}

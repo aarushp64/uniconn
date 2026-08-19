@@ -21,7 +21,7 @@ const FacultyDashboard = () => {
     const statCards = stats ? [
         { label: 'Pending Verifications', value: stats.pendingVerifications, icon: <ClipboardCheck size={20} />, color: 'text-amber-600 bg-amber-50', border: 'border-amber-100' },
         { label: 'Active Students', value: stats.activeStudents, icon: <Users size={20} />, color: 'text-sky-600 bg-sky-50', border: 'border-sky-100' },
-        { label: 'Research Opportunities', value: stats.researchOpportunities, icon: <FlaskConical size={20} />, color: 'text-emerald-600 bg-emerald-50', border: 'border-emerald-100' },
+        { label: 'Workspace Listings', value: stats.researchOpportunities, icon: <FlaskConical size={20} />, color: 'text-emerald-600 bg-emerald-50', border: 'border-emerald-100' },
         { label: 'Verified This Month', value: stats.verifiedThisMonth, icon: <ShieldCheck size={20} />, color: 'text-violet-600 bg-violet-50', border: 'border-violet-100' },
     ] : [];
 

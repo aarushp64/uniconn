@@ -10,19 +10,39 @@
     padding: 0;
 }
 
-/* Custom Scrollbar for inner components */
+/* Custom Scrollbar for inner components (Transparent & No Arrows) */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+.custom-scrollbar:hover {
+    scrollbar-color: rgba(203, 213, 225, 0.4) transparent;
+}
 .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0;
+    height: 0;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
     background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: var(--border-soft);
+    background-color: transparent;
     border-radius: 10px;
 }
 .custom-scrollbar:hover::-webkit-scrollbar-thumb {
-    background-color: #cbd5e1;
+    background-color: rgba(203, 213, 225, 0.4);
+}
+
+/* Hide scrollbar arrows globally in sidebar */
+aside ::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0;
+    height: 0;
 }
 
 /* Navbar */
