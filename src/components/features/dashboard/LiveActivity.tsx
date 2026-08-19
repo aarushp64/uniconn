@@ -4,18 +4,18 @@ import { useState, useEffect } from 'react';
 
 export const LiveActivity = () => {
     const alerts = [
-        { type: 'News', text: '🏆 Team Speedtail Racing wins Formula Bharat 2026!', icon: <Megaphone size={14} className="text-sky-600" />, color: 'bg-sky-50', border: 'border-sky-200', accent: 'text-sky-700' },
-        { type: 'Notice', text: '🚶‍♂️ Campus Holiday on account of Shiv Jayanti tomorrow.', icon: <Info size={14} className="text-amber-600" />, color: 'bg-amber-50', border: 'border-amber-200', accent: 'text-amber-700' },
-        { type: 'Reminder', text: '🎭 Persona Fest registrations close in 2 days.', icon: <Bell size={14} className="text-rose-600" />, color: 'bg-rose-50', border: 'border-rose-200', accent: 'text-rose-700' },
-        { type: 'News', text: '🚀 GDSC Workshop: Learn Flutter this Friday at 4 PM.', icon: <Megaphone size={14} className="text-emerald-600" />, color: 'bg-emerald-50', border: 'border-emerald-200', accent: 'text-emerald-700' },
-        { type: 'Notice', text: '📢 New MoU signed with Philips for Healthcare Tech.', icon: <Info size={14} className="text-indigo-600" />, color: 'bg-indigo-50', border: 'border-indigo-200', accent: 'text-indigo-700' },
-        { type: 'Reminder', text: '📝 Submit your Project Abstracts by Feb 25th.', icon: <Bell size={14} className="text-purple-600" />, color: 'bg-purple-50', border: 'border-purple-200', accent: 'text-purple-700' },
-        { type: 'News', text: '💻 Apple visionOS 3 dev kit is out now for students!', icon: <Megaphone size={14} className="text-blue-600" />, color: 'bg-blue-50', border: 'border-blue-200', accent: 'text-blue-700' },
-        { type: 'Notice', text: '🏗️ Civil Dept: Site visit to Pune Metro Phase 3 on Monday.', icon: <Info size={14} className="text-orange-600" />, color: 'bg-orange-50', border: 'border-orange-200', accent: 'text-orange-700' },
-        { type: 'Reminder', text: '🩺 Bio-med Quiz registration ends tonight at 11:59.', icon: <Bell size={14} className="text-pink-600" />, color: 'bg-pink-50', border: 'border-pink-200', accent: 'text-pink-700' },
-        { type: 'News', text: '🏢 Samsung Prism selects 12 students from MITSOE.', icon: <Megaphone size={14} className="text-blue-600" />, color: 'bg-blue-50', border: 'border-blue-200', accent: 'text-blue-700' },
-        { type: 'Notice', text: '📡 Wi-Fi maintenance in Hostel 2 from 2 PM to 5 PM today.', icon: <Info size={14} className="text-slate-600" />, color: 'bg-slate-50', border: 'border-slate-200', accent: 'text-slate-700' },
-        { type: 'Reminder', text: '🎓 Graduating class: Collect Toga/Caps from Admin office.', icon: <Bell size={14} className="text-teal-600" />, color: 'bg-teal-50', border: 'border-teal-200', accent: 'text-teal-700' },
+        { type: 'News', text: 'Team Speedtail Racing wins Formula Bharat 2026!', icon: <Megaphone size={14} className="text-sky-600" />, color: 'bg-sky-50', border: 'border-sky-200', accent: 'text-sky-700' },
+        { type: 'Notice', text: 'Campus Holiday on account of Shiv Jayanti tomorrow.', icon: <Info size={14} className="text-slate-600" />, color: 'bg-slate-50', border: 'border-slate-200', accent: 'text-slate-700' },
+        { type: 'Reminder', text: 'Persona Fest registrations close in 2 days.', icon: <Bell size={14} className="text-emerald-600" />, color: 'bg-emerald-50', border: 'border-emerald-200', accent: 'text-emerald-700' },
+        { type: 'News', text: 'GDSC Workshop: Learn Flutter this Friday at 4 PM.', icon: <Megaphone size={14} className="text-sky-600" />, color: 'bg-sky-50', border: 'border-sky-200', accent: 'text-sky-700' },
+        { type: 'Notice', text: 'New MoU signed with Philips for Healthcare Tech.', icon: <Info size={14} className="text-slate-600" />, color: 'bg-slate-50', border: 'border-slate-200', accent: 'text-slate-700' },
+        { type: 'Reminder', text: 'Submit your Project Abstracts by Feb 25th.', icon: <Bell size={14} className="text-emerald-600" />, color: 'bg-emerald-50', border: 'border-emerald-200', accent: 'text-emerald-700' },
+        { type: 'News', text: 'Apple visionOS 3 dev kit is out now for students!', icon: <Megaphone size={14} className="text-sky-600" />, color: 'bg-sky-50', border: 'border-sky-200', accent: 'text-sky-700' },
+        { type: 'Notice', text: 'Civil Dept: Site visit to Pune Metro Phase 3 on Monday.', icon: <Info size={14} className="text-slate-600" />, color: 'bg-slate-50', border: 'border-slate-200', accent: 'text-slate-700' },
+        { type: 'Reminder', text: 'Bio-med Quiz registration ends tonight at 11:59.', icon: <Bell size={14} className="text-emerald-600" />, color: 'bg-emerald-50', border: 'border-emerald-200', accent: 'text-emerald-700' },
+        { type: 'News', text: 'Samsung Prism selects 12 students from MITSOE.', icon: <Megaphone size={14} className="text-sky-600" />, color: 'bg-sky-50', border: 'border-sky-200', accent: 'text-sky-700' },
+        { type: 'Notice', text: 'Wi-Fi maintenance in Hostel 2 from 2 PM to 5 PM today.', icon: <Info size={14} className="text-slate-600" />, color: 'bg-slate-50', border: 'border-slate-200', accent: 'text-slate-700' },
+        { type: 'Reminder', text: 'Graduating class: Collect Toga/Caps from Admin office.', icon: <Bell size={14} className="text-emerald-600" />, color: 'bg-emerald-50', border: 'border-emerald-200', accent: 'text-emerald-700' },
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -56,7 +56,7 @@ export const LiveActivity = () => {
                     <span className="text-[8px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400">
                         {currentAlert.type}
                     </span>
-                    <ChevronRight size={10} className="ml-auto text-slate-300 group-hover:text-slate-500 group-hover:translate-x-0.5 transition-all" />
+                    <ChevronRight size={10} className="ml-auto text-slate-300" />
                 </div>
                 <p className={`text-xs ${currentAlert.accent} font-bold leading-relaxed`}>
                     {currentAlert.text}
@@ -86,7 +86,7 @@ export const LiveActivity = () => {
             </div>
 
             {/* Background Decorative */}
-            <div className="absolute -top-10 -right-10 w-24 h-24 bg-sky-50 blur-2xl rounded-full pointer-events-none" />
+            
         </Card>
     );
 };

@@ -32,8 +32,8 @@ export default {
                 'glass-surface': 'var(--glass-surface)',
             },
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                display: ['Outfit', 'sans-serif'],
+                sans: ['IBM Plex Sans', 'sans-serif'],
+                display: ['IBM Plex Sans', 'sans-serif'],
             },
             borderRadius: {
                 sm: 'var(--radius-sm)',

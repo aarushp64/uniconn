@@ -246,7 +246,7 @@ const FacultyProfile = () => {
                         </Card>
 
                         {/* Awards */}
-                        <Card className="p-3 sm:p-4 border-l-4 border-l-amber-400">
+                        <Card className="p-3 sm:p-4 border border-slate-100">
                             <h3 className="text-xs font-bold text-slate-700 mb-3 flex items-center gap-2">
                                 🏆 Awards & Recognition
                             </h3>

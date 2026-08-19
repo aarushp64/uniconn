@@ -46,7 +46,7 @@ export const UpcomingEvents: React.FC = () => {
   return (
     <div className="relative overflow-hidden group flex flex-col h-full">
       {/* Glow accent */}
-      <div className="absolute -top-6 -right-6 w-16 h-16 bg-sky-50 blur-2xl rounded-full group-hover:bg-sky-100 transition-colors pointer-events-none shrink-0" />
+      
 
       {/* Header */}
       <div className="flex items-center justify-between mb-3 relative z-10 shrink-0">

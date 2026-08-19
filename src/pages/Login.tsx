@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Mail, Lock, ArrowRight, AlertCircle, Sparkles, GraduationCap } from 'lucide-react';
+import { Mail, Lock, ArrowRight, AlertCircle, GraduationCap } from 'lucide-react';
 import { AuthLayout } from '../components/layout/AuthLayout';
 import { Button } from '../components/common/Button';
 import { Input } from '../components/common/Input';
@@ -76,10 +76,9 @@ const Login = () => {
         >
             <div className="mb-6 p-4 bg-sky-50 border border-sky-100 rounded-2xl flex flex-col gap-3">
                 <div className="flex items-center gap-2 text-sky-700">
-                    <Sparkles size={18} />
                     <span className="font-bold text-sm text-left">Quick Access Mode</span>
                 </div>
-                <p className="text-xs text-slate-500 text-left">Explore all features instantly — no account needed.</p>
+                <p className="text-xs text-slate-500 text-left">Explore all features instantly. No account needed.</p>
                 <div className="flex gap-2">
                     <Button
                         variant="outline"
@@ -88,7 +87,7 @@ const Login = () => {
                         onClick={() => handleDemoLogin('student')}
                         disabled={loading}
                     >
-                        🚀 Student Demo
+                        Student Demo
                     </Button>
                     <Button
                         variant="outline"

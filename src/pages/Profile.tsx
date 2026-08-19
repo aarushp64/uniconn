@@ -150,7 +150,7 @@ const Profile = () => {
 
     return (
         <MainLayout>
-            <div className="pb-10 animate-fade-in text-left relative">
+            <div className="pb-10 text-left relative">
                 {/* Share Toast */}
                 {shareToast && (
                     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-2xl z-50 animate-fade-in">
@@ -510,7 +510,7 @@ const Profile = () => {
                         </Card>
 
                         {/* Faculty Endorsement */}
-                        <Card className="p-3 sm:p-4 border-l-4 border-l-sky-500">
+                        <Card className="p-3 sm:p-4 border border-slate-100">
                             <div className="flex gap-3 items-center mb-3">
                                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-sky-500 to-teal-500 flex items-center justify-center text-white font-bold text-[10px] sm:text-xs">SM</div>
                                 <div>

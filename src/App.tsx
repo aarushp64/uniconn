@@ -20,6 +20,8 @@ import FacultyVerifications from './pages/faculty/FacultyVerifications';
 import FacultyStudents from './pages/faculty/FacultyStudents';
 import FacultyOpportunities from './pages/faculty/FacultyOpportunities';
 import FacultyProfile from './pages/faculty/FacultyProfile';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 function App() {
   return (
@@ -27,10 +29,8 @@ function App() {
       <Routes>
         <Route path="/" element={<div className="p-10 min-h-screen flex-center flex-col gap-6 text-center">
           <div className="max-w-2xl">
-            <h1 className="text-6xl font-bold text-gradient mb-6 leading-tight">UniConn</h1>
-            <p className="text-xl text-secondary mb-8">
-              The authentic, campus-centric platform for building verifiable professional identities.
-            </p>
+            <h1 className="text-6xl font-bold text-sky-700 mb-6 leading-tight">UniConn</h1>
+            <p className="text-lg text-slate-600 mb-8">Build a verified campus identity. Connect with peers, faculty, clubs, and real opportunities at MIT ADTU.</p>
             <div className="flex gap-4 justify-center">
               <Link to="/login" className="btn btn-primary btn-lg">Start Now</Link>
               <Link to="/signup" className="btn btn-outline btn-lg">Learn More</Link>
@@ -61,6 +61,8 @@ function App() {
         <Route path="/faculty/calendar" element={<Calendar />} />
         <Route path="/faculty/profile" element={<FacultyProfile />} />
         <Route path="/faculty/settings" element={<Settings />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
       </Routes>
     </div>
   );

@@ -45,7 +45,7 @@ export const EventCard: React.FC<EventCardProps> = ({
       onClick={() => onSelectEvent?.(event)}
       className={`
         group bg-white rounded-xl border border-slate-100 p-4
-        hover:shadow-md hover:border-slate-200 transition-all duration-200
+        hover:shadow-sm hover:border-slate-200 transition-all duration-200
         relative overflow-visible cursor-pointer flex flex-col justify-between
       `}
     >

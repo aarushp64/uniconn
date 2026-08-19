@@ -84,15 +84,13 @@ const StudentHome = () => {
                         onClick={() => setTechIndex(prev => (prev + 1) % TECH_ITEMS.length)}
                         className="text-[8px] font-bold text-sky-500 hover:text-sky-600 active:scale-95 transition-all"
                     >
-                        Next →
+                        Next
                     </button>
                 </div>
             </Card>
 
             {/* Career Openings */}
             <Card className="p-4 border-slate-100 shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
-                <div className="absolute -top-6 -right-6 w-16 h-16 bg-rose-50 blur-2xl rounded-full group-hover:bg-rose-100 transition-colors pointer-events-none" />
-
                 <div className="flex items-center justify-between mb-3 relative z-10">
                     <h3 className="text-[9px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
                         <Target size={11} className="text-rose-500" /> CAREER OPENINGS
@@ -134,7 +132,7 @@ const StudentHome = () => {
                         { title: 'Formula Bharat Wins', meta: 'Speedtail Racing takes gold' },
                         { title: 'GDSC ML Workshop', meta: 'Friday @ MIT-SOE Lab 4' },
                     ].map((item, i) => (
-                        <div key={i} className="p-2 bg-slate-50/50 rounded-lg hover:bg-white hover:shadow-sm border border-transparent hover:border-slate-100 cursor-pointer transition-all group active:scale-[0.98]">
+                        <div key={i} className="p-2 bg-slate-50/50 rounded-lg hover:bg-white hover:shadow-sm border border-transparent hover:border-slate-100 cursor-pointer transition-all group">
                             <div className="font-bold text-slate-800 mb-0.5 group-hover:text-sky-600 transition-colors text-[9px] truncate">{item.title}</div>
                             <div className="text-[7px] text-slate-400 font-bold uppercase">{item.meta}</div>
                         </div>

@@ -171,7 +171,7 @@ export const Notifications = () => {
 
   return (
     <MainLayout>
-      <div className="flex flex-col gap-6 pb-12 animate-fade-in">
+      <div className="flex flex-col gap-6 pb-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
           <div>

@@ -27,14 +27,14 @@ const Stars = ({ rating, max = 5, size = 14 }: { rating: number; max?: number; s
 
 /* ─── Data ─── */
 const skills = [
-    { name: 'Python', stars: 4.5, icon: '🐍' },
-    { name: 'ML / AI', stars: 4, icon: '🧠' },
-    { name: 'Databases', stars: 4.5, icon: '🗄️' },
-    { name: 'APIs & Backend', stars: 4, icon: '⚡' },
-    { name: 'System Design', stars: 3.5, icon: '🏗️' },
-    { name: 'Frontend', stars: 3, icon: '🎨' },
-    { name: 'Docker / Cloud', stars: 2.5, icon: '☁️' },
-    { name: 'DevOps / CI-CD', stars: 2, icon: '🔧' },
+    { name: 'Python', stars: 4.5, icon: '' },
+    { name: 'ML / AI', stars: 4, icon: '' },
+    { name: 'Databases', stars: 4.5, icon: '' },
+    { name: 'APIs & Backend', stars: 4, icon: '' },
+    { name: 'System Design', stars: 3.5, icon: '' },
+    { name: 'Frontend', stars: 3, icon: '' },
+    { name: 'Docker / Cloud', stars: 2.5, icon: '' },
+    { name: 'DevOps / CI-CD', stars: 2, icon: '' },
 ];
 
 const growthData = [
@@ -76,7 +76,7 @@ const AIInsights = () => {
 
     return (
         <MainLayout>
-            <div className="container mx-auto pb-12 animate-fade-in">
+            <div className="container mx-auto pb-12">
                 {/* Header */}
                 <div className="mb-6">
                     <h1 className="text-xl font-bold text-slate-900 mb-1">Growth Intelligence</h1>
@@ -97,11 +97,11 @@ const AIInsights = () => {
                         <div className="flex-1 w-full md:w-auto">
                             <div className="grid grid-cols-3 gap-3">
                                 {[
-                                    { label: 'Peer Rank', value: 'Top 15%', emoji: '🏅' },
-                                    { label: 'Stage', value: 'Emerging', emoji: '🚀' },
-                                    { label: 'Next Level', value: 'Competitive', emoji: '🎯' },
+                                    { label: 'Peer Rank', value: 'Top 15%', emoji: '' },
+                                    { label: 'Stage', value: 'Emerging', emoji: '' },
+                                    { label: 'Next Level', value: 'Competitive', emoji: '' },
                                 ].map(stat => (
-                                    <div key={stat.label} className="text-center p-3 bg-white rounded-xl border border-slate-100">
+                                    <div key={stat.label} className="text-center p-3 bg-white rounded-lg border border-slate-100">
                                         <span className="text-lg">{stat.emoji}</span>
                                         <p className="text-xs font-bold text-slate-800 mt-1">{stat.value}</p>
                                         <p className="text-[8px] font-bold text-slate-400 uppercase">{stat.label}</p>
@@ -202,7 +202,7 @@ const AIInsights = () => {
                         {/* Focus Areas */}
                         <div className="grid grid-cols-2 gap-4">
                             <Card className="p-4 border-rose-100 bg-rose-50/30">
-                                <h3 className="text-xs font-bold text-rose-700 mb-3">🚧 Needs Work</h3>
+                                <h3 className="text-xs font-bold text-rose-700 mb-3">Needs Work</h3>
                                 <div className="space-y-2">
                                     {[
                                         { name: 'DevOps / CI-CD', stars: 2 },
@@ -216,7 +216,7 @@ const AIInsights = () => {
                                 </div>
                             </Card>
                             <Card className="p-4 border-emerald-100 bg-emerald-50/30">
-                                <h3 className="text-xs font-bold text-emerald-700 mb-3">💪 Strengths</h3>
+                                <h3 className="text-xs font-bold text-emerald-700 mb-3">Strengths</h3>
                                 <div className="space-y-2">
                                     {[
                                         { name: 'Python', stars: 4.5 },
@@ -247,7 +247,7 @@ const AIInsights = () => {
                                         <button
                                             key={item.step}
                                             onClick={() => setExpandedStep(expandedStep === item.step ? null : item.step)}
-                                            className={`w-full text-left p-3 rounded-xl border-l-4 ${item.color} transition-all ${expandedStep === item.step ? `${item.iconBg} shadow-sm` : 'bg-white hover:bg-slate-50'
+                                            className={`w-full text-left p-3 rounded-lg border-l-4 ${item.color} transition-all ${expandedStep === item.step ? `${item.iconBg} shadow-sm` : 'bg-white hover:bg-slate-50'
                                                 }`}
                                         >
                                             <div className="flex items-start gap-2.5">
@@ -261,7 +261,7 @@ const AIInsights = () => {
                                                     </div>
                                                     <h4 className="text-xs font-bold text-slate-800">{item.title}</h4>
                                                     {expandedStep === item.step && (
-                                                        <div className="animate-fade-in mt-2">
+                                                        <div className="mt-2">
                                                             <p className="text-[10px] text-slate-500 mb-2">{item.desc}</p>
                                                             <div className="flex flex-wrap gap-1">
                                                                 {item.tags.map(tag => (
@@ -281,11 +281,11 @@ const AIInsights = () => {
                         {/* Projected Ratings */}
                         <Card className="p-5 bg-gradient-to-br from-sky-50/50 to-transparent border-sky-100">
                             <h3 className="text-xs font-bold text-slate-700 mb-4 flex items-center gap-2">
-                                🔮 Projected Ratings
+                                Projected Ratings
                             </h3>
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sm">📅</div>
+                                    <div className="w-10 h-10 rounded-lg bg-sky-100 flex items-center justify-center text-sm"></div>
                                     <div className="flex-1">
                                         <p className="text-xs font-bold text-slate-800">In 3 Months</p>
                                         <Stars rating={4.2} size={12} />
@@ -293,7 +293,7 @@ const AIInsights = () => {
                                     <span className="text-[10px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded border border-sky-100">Competitive</span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-sm">🎯</div>
+                                    <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-sm"></div>
                                     <div className="flex-1">
                                         <p className="text-xs font-bold text-slate-800">In 6 Months</p>
                                         <Stars rating={4.7} size={12} />
@@ -305,7 +305,7 @@ const AIInsights = () => {
 
                         {/* Identity Shift */}
                         <Card className="p-4 border-slate-100">
-                            <h3 className="text-xs font-bold text-slate-700 mb-3">🧬 Identity Evolution</h3>
+                            <h3 className="text-xs font-bold text-slate-700 mb-3">Identity Evolution</h3>
                             <div className="flex items-center gap-3 text-xs">
                                 <div className="text-center p-2 bg-slate-50 rounded-lg flex-1">
                                     <p className="text-slate-400 line-through text-[10px]">AI Builder</p>

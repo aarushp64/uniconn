@@ -74,9 +74,9 @@ const Explore = () => {
                     {tabs.map(tab => {
                         const colors: Record<string, { active: string; inactive: string }> = {
                             'All': { active: 'bg-slate-800 text-white border-slate-800', inactive: 'bg-white text-slate-600 border-slate-200 hover:border-slate-400' },
-                            'Club Role': { active: 'bg-violet-600 text-white border-violet-600', inactive: 'bg-violet-50 text-violet-600 border-violet-200 hover:border-violet-400' },
+                            'Club Role': { active: 'bg-slate-600 text-white border-slate-600', inactive: 'bg-slate-100 text-slate-600 border-slate-200 hover:border-slate-400' },
                             'Research': { active: 'bg-emerald-600 text-white border-emerald-600', inactive: 'bg-emerald-50 text-emerald-600 border-emerald-200 hover:border-emerald-400' },
-                            'Project': { active: 'bg-amber-500 text-white border-amber-500', inactive: 'bg-amber-50 text-amber-600 border-amber-200 hover:border-amber-400' },
+                            'Project': { active: 'bg-amber-600 text-white border-amber-600', inactive: 'bg-amber-50 text-amber-600 border-amber-200 hover:border-amber-400' },
                             'Job': { active: 'bg-sky-600 text-white border-sky-600', inactive: 'bg-sky-50 text-sky-600 border-sky-200 hover:border-sky-400' },
                         };
                         const c = colors[tab] || colors['All'];

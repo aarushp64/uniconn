@@ -34,7 +34,7 @@ const OpportunityDetail = () => {
 
     return (
         <MainLayout>
-            <div className="max-w-4xl mx-auto flex flex-col gap-6 pb-10 animate-fade-in">
+            <div className="max-w-4xl mx-auto flex flex-col gap-6 pb-10">
 
                 <Link to="/explore" className="text-slate-500 hover:text-sky-600 flex items-center gap-2 mb-2 w-fit">
                     <ArrowLeft size={18} /> Back to Explore

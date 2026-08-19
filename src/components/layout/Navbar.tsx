@@ -33,7 +33,7 @@ export const Navbar = () => {
     return (
         <header className="top-navbar animate-fade-in-down sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs">
             <div className="flex items-center gap-8 flex-1">
-                <h1 className="text-xl font-bold text-gradient shrink-0 cursor-pointer" onClick={() => navigate(isFaculty ? '/faculty/home' : '/home')}>UniConn</h1>
+                <h1 className="text-xl font-bold text-sky-700 shrink-0 cursor-pointer" onClick={() => navigate(isFaculty ? '/faculty/home' : '/home')}>UniConn</h1>
 
                 <div className="w-64">
                     <Input
@@ -85,7 +85,7 @@ export const Navbar = () => {
                                 }}
                                 className="p-3 text-center border-t border-slate-100 bg-slate-50 hover:bg-slate-100 cursor-pointer transition-colors"
                             >
-                                <p className="text-xs font-semibold text-sky-600 hover:text-sky-700">View All Notifications →</p>
+                                <p className="text-xs font-semibold text-sky-600 hover:text-sky-700">View All Notifications</p>
                             </div>
                         </div>
                     )}

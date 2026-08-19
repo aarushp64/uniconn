@@ -135,7 +135,7 @@ const Calendar = () => {
 
   return (
     <MainLayout rightPanel={rightPanel}>
-      <div className="animate-fade-in pb-10">
+      <div className="pb-10">
         {/* Navigation / My Events Tabs */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4 bg-white p-2 rounded-2xl border border-slate-100 shadow-sm">
           <div className="flex items-center gap-1">

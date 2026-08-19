@@ -1,5 +1,5 @@
 import { LayoutDashboard, Brain, Briefcase, Rocket, Landmark, User, ShieldCheck, ClipboardCheck, Users, FlaskConical, Home, CalendarDays } from 'lucide-react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { UpcomingEvents } from '../features/calendar/UpcomingEvents';
 
 const studentNav = [
@@ -68,9 +68,13 @@ export const Sidebar = () => {
                     </div>
                     
                     <div className="pt-3 border-t border-slate-100 mt-2 shrink-0">
-                        <div className="flex items-center gap-2 px-3">
+                        <div className="flex items-center gap-2 px-3 mb-1.5">
                             <ShieldCheck size={12} className="text-emerald-500" />
                             <p className="text-[8px] font-bold text-slate-300 uppercase tracking-widest">UniConn v1.0</p>
+                        </div>
+                        <div className="flex items-center gap-3 px-3">
+                            <Link to="/privacy" className="text-[8px] font-medium text-slate-400 hover:text-slate-600 transition-colors">Privacy</Link>
+                            <Link to="/terms" className="text-[8px] font-medium text-slate-400 hover:text-slate-600 transition-colors">Terms</Link>
                         </div>
                     </div>
                 </nav>

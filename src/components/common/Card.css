@@ -1,15 +1,13 @@
 .card {
     padding: 1.5rem;
-    border-radius: var(--radius-lg);
-    transition: all 0.3s ease;
+    border-radius: 10px;
+    transition: border-color 0.2s ease;
     position: relative;
     overflow: hidden;
 }
 
 .card-glass {
     background: var(--bg-card);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 }
 
 .card-opaque {
@@ -21,9 +19,5 @@
 }
 
 .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px -8px rgba(15, 23, 42, 0.1);
-    border-color: var(--primary-glow);
+    border-color: var(--primary);
 }
-
-/* Optional: Gradient Border effect (future enhancement) */

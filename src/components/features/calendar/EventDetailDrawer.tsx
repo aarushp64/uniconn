@@ -69,7 +69,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-          className="relative w-full max-w-lg bg-white h-full shadow-2xl z-10 flex flex-col overflow-hidden"
+          className="relative w-full max-w-lg bg-white h-full shadow-sm z-10 flex flex-col overflow-hidden"
         >
           {/* Hero Header */}
           <div className={`relative h-44 ${config.bg} border-b ${config.border} flex flex-col justify-between p-6 shrink-0`}>
@@ -80,10 +80,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
                 alt={event.title}
                 className="absolute inset-0 w-full h-full object-cover opacity-30"
               />
-            ) : (
-              <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-white/40 blur-2xl pointer-events-none" />
-            )}
-
+            ) : null}
             {/* Top Close Button & Badges */}
             <div className="relative z-10 flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -116,7 +113,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
           <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
             {/* Meta Information Cards */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2.5">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 flex items-start gap-2.5">
                 <div className="p-2 bg-sky-100 text-sky-600 rounded-lg shrink-0 mt-0.5">
                   <Clock size={14} />
                 </div>
@@ -127,7 +124,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
                 </div>
               </div>
 
-              <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2.5">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 flex items-start gap-2.5">
                 <div className="p-2 bg-emerald-100 text-emerald-600 rounded-lg shrink-0 mt-0.5">
                   <MapPin size={14} />
                 </div>
@@ -138,7 +135,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
                 </div>
               </div>
 
-              <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2.5 col-span-2">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 flex items-start gap-2.5 col-span-2">
                 <div className="p-2 bg-violet-100 text-violet-600 rounded-lg shrink-0 mt-0.5">
                   <User size={14} />
                 </div>
@@ -152,7 +149,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
             {/* Description */}
             <div>
               <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">About This Event</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal bg-slate-50/50 p-4 rounded-xl border border-slate-100">
+              <p className="text-xs text-slate-600 leading-relaxed font-normal bg-slate-50/50 p-4 rounded-lg border border-slate-100">
                 {event.description}
               </p>
             </div>
@@ -166,7 +163,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
                     <div
                       key={rel.id}
                       onClick={() => onSelectEvent?.(rel)}
-                      className="p-3 bg-white hover:bg-slate-50 rounded-xl border border-slate-100 transition-all cursor-pointer flex items-center justify-between group"
+                      className="p-3 bg-white hover:bg-slate-50 rounded-lg border border-slate-100 transition-all cursor-pointer flex items-center justify-between group"
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
                         <span className={`w-2 h-2 rounded-full ${CATEGORY_CONFIG[rel.category]?.dot || 'bg-blue-500'} shrink-0`} />
@@ -190,7 +187,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
               <button
                 onClick={() => onToggleInterested?.(event.id)}
                 className={`
-                  flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all active:scale-95 border
+                  flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold transition-all active:scale-95 border
                   ${isInterested
                     ? 'bg-amber-500 text-white border-amber-500 shadow-sm'
                     : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-amber-50 hover:text-amber-600'
@@ -209,7 +206,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
                 <button
                   onClick={() => setShowReminderMenu(!showReminderMenu)}
                   className={`
-                    flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all active:scale-95 border
+                    flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold transition-all active:scale-95 border
                     ${activeReminder
                       ? 'bg-sky-500 text-white border-sky-500 shadow-sm'
                       : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-sky-50 hover:text-sky-600'
@@ -221,7 +218,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
                 </button>
 
                 {showReminderMenu && (
-                  <div className="absolute left-0 bottom-full mb-2 w-44 bg-white rounded-xl shadow-xl border border-slate-100 p-2 z-30">
+                  <div className="absolute left-0 bottom-full mb-2 w-44 bg-white rounded-lg shadow-sm border border-slate-100 p-2 z-30">
                     <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest px-2 py-1 border-b border-slate-50 mb-1">
                       Set Reminder
                     </div>
@@ -250,7 +247,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
                 href={googleCalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-xl transition-all active:scale-95"
+                className="p-2 bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg transition-all active:scale-95"
                 title="Add to Google Calendar"
               >
                 <CalendarIcon size={14} className="text-blue-500" />
@@ -266,7 +263,7 @@ export const EventDetailDrawer: React.FC<EventDetailDrawerProps> = ({
                 className="
                   flex items-center gap-1.5 px-4 py-2
                   text-xs font-bold text-white bg-sky-500 hover:bg-sky-600
-                  rounded-xl transition-all active:scale-95 shadow-sm
+                  rounded-lg transition-all active:scale-95 shadow-sm
                 "
               >
                 <ExternalLink size={13} />

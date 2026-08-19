@@ -9,7 +9,7 @@ const Dashboard = () => {
     const statCards = [
         { label: 'Verified Projects', value: 5, icon: <ShieldCheck size={20} />, color: 'text-emerald-600 bg-emerald-50', border: 'border-emerald-100' },
         { label: 'Skill Score', value: 82, icon: <TrendingUp size={20} />, color: 'text-sky-600 bg-sky-50', border: 'border-sky-100' },
-        { label: 'Applications', value: 3, icon: <Briefcase size={20} />, color: 'text-violet-600 bg-violet-50', border: 'border-violet-100' },
+        { label: 'Applications', value: 3, icon: <Briefcase size={20} />, color: 'text-slate-600 bg-slate-100', border: 'border-slate-200' },
         { label: 'Courses Active', value: 6, icon: <BookOpen size={20} />, color: 'text-amber-600 bg-amber-50', border: 'border-amber-100' },
     ];
 
@@ -39,7 +39,7 @@ const Dashboard = () => {
                 {/* Header */}
                 <div>
                     <h1 className="text-xl font-bold text-slate-900 mb-1">Student Dashboard</h1>
-                    <p className="text-xs text-slate-500">Welcome back, Vedant — here is your academic overview</p>
+                    <p className="text-xs text-slate-500">Welcome back, Vedant. Here is your academic overview.</p>
                 </div>
 
                 {/* Stats Grid */}
@@ -47,7 +47,7 @@ const Dashboard = () => {
                     {statCards.map((stat, i) => (
                         <Card key={i} className={`p-4 border ${stat.border} hover:shadow-md transition-all cursor-pointer`}>
                             <div className="flex items-center justify-between mb-3">
-                                <div className={`p-2 rounded-xl ${stat.color}`}>{stat.icon}</div>
+                                <div className={`p-2 rounded-lg ${stat.color}`}>{stat.icon}</div>
                             </div>
                             <p className="text-2xl font-black text-slate-900">{stat.value}</p>
                             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">{stat.label}</p>
@@ -70,7 +70,7 @@ const Dashboard = () => {
                         </div>
                         <div className="space-y-3">
                             {recentProjects.map((proj, i) => (
-                                <div key={i} className="p-3 bg-slate-50/80 rounded-xl border border-slate-100 hover:bg-white hover:shadow-sm transition-all cursor-pointer">
+                                <div key={i} className="p-3 bg-slate-50/80 rounded-lg border border-slate-100 hover:bg-white hover:shadow-sm transition-all cursor-pointer">
                                     <div className="flex items-start justify-between mb-1.5">
                                         <p className="text-xs font-bold text-slate-800">{proj.title}</p>
                                         <span className={`text-[8px] font-bold ${proj.statusColor} px-1.5 py-0.5 rounded-full`}>{proj.status}</span>
@@ -121,7 +121,7 @@ const Dashboard = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
                         {upcomingDeadlines.map((item, i) => (
-                            <div key={i} className="p-3 bg-slate-50/80 rounded-xl border border-slate-100 hover:bg-white hover:shadow-sm transition-all cursor-pointer">
+                            <div key={i} className="p-3 bg-slate-50/80 rounded-lg border border-slate-100 hover:bg-white hover:shadow-sm transition-all cursor-pointer">
                                 <div className="flex items-center justify-between mb-2">
                                     <span className={`text-[8px] font-bold ${item.typeColor} px-1.5 py-0.5 rounded-full`}>{item.type}</span>
                                     <span className="text-[10px] font-bold text-slate-400">{item.date}</span>

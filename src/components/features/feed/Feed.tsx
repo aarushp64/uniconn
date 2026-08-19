@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BadgeCheck, MessageSquare, Share2, Bookmark, Send, X, ThumbsUp, Repeat2 } from 'lucide-react';
+import { Skeleton } from '../../common/Skeleton';
 
 /* ─── Types ─── */
 type TagType = 'All' | 'Club Role' | 'Research' | 'Project' | 'Job' | 'Event' | 'Achievement' | 'Workshop' | 'Placement' | 'Sports' | 'Cultural' | 'Tech';
@@ -19,20 +20,20 @@ interface Post {
     tag: TagType;
 }
 
-/* ─── Tag Styles ─── */
+/* ─── Tag Styles (restrained 4-color palette) ─── */
 const TAG_STYLE: Record<string, { bg: string; text: string; border: string; activeBg: string }> = {
     'All': { bg: 'bg-slate-900', text: 'text-white', border: 'border-slate-900', activeBg: 'bg-slate-900' },
-    'Club Role': { bg: 'bg-violet-50', text: 'text-violet-600', border: 'border-violet-200', activeBg: 'bg-violet-500' },
-    'Research': { bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200', activeBg: 'bg-emerald-500' },
-    'Project': { bg: 'bg-amber-50', text: 'text-amber-600', border: 'border-amber-200', activeBg: 'bg-amber-500' },
-    'Job': { bg: 'bg-sky-50', text: 'text-sky-600', border: 'border-sky-200', activeBg: 'bg-sky-500' },
-    'Event': { bg: 'bg-rose-50', text: 'text-rose-600', border: 'border-rose-200', activeBg: 'bg-rose-500' },
-    'Achievement': { bg: 'bg-indigo-50', text: 'text-indigo-600', border: 'border-indigo-200', activeBg: 'bg-indigo-500' },
-    'Workshop': { bg: 'bg-teal-50', text: 'text-teal-600', border: 'border-teal-200', activeBg: 'bg-teal-500' },
-    'Placement': { bg: 'bg-blue-50', text: 'text-blue-600', border: 'border-blue-200', activeBg: 'bg-blue-500' },
-    'Sports': { bg: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-200', activeBg: 'bg-orange-500' },
-    'Cultural': { bg: 'bg-pink-50', text: 'text-pink-600', border: 'border-pink-200', activeBg: 'bg-pink-500' },
-    'Tech': { bg: 'bg-cyan-50', text: 'text-cyan-600', border: 'border-cyan-200', activeBg: 'bg-cyan-500' },
+    'Club Role': { bg: 'bg-slate-100', text: 'text-slate-600', border: 'border-slate-200', activeBg: 'bg-slate-600' },
+    'Research': { bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200', activeBg: 'bg-emerald-600' },
+    'Project': { bg: 'bg-amber-50', text: 'text-amber-600', border: 'border-amber-200', activeBg: 'bg-amber-600' },
+    'Job': { bg: 'bg-sky-50', text: 'text-sky-600', border: 'border-sky-200', activeBg: 'bg-sky-600' },
+    'Event': { bg: 'bg-sky-50', text: 'text-sky-600', border: 'border-sky-200', activeBg: 'bg-sky-600' },
+    'Achievement': { bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200', activeBg: 'bg-emerald-600' },
+    'Workshop': { bg: 'bg-slate-100', text: 'text-slate-600', border: 'border-slate-200', activeBg: 'bg-slate-600' },
+    'Placement': { bg: 'bg-sky-50', text: 'text-sky-600', border: 'border-sky-200', activeBg: 'bg-sky-600' },
+    'Sports': { bg: 'bg-amber-50', text: 'text-amber-600', border: 'border-amber-200', activeBg: 'bg-amber-600' },
+    'Cultural': { bg: 'bg-slate-100', text: 'text-slate-600', border: 'border-slate-200', activeBg: 'bg-slate-600' },
+    'Tech': { bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200', activeBg: 'bg-emerald-600' },
 };
 
 const TAGS: TagType[] = ['All', 'Club Role', 'Research', 'Project', 'Job', 'Event', 'Achievement', 'Workshop', 'Placement', 'Sports', 'Cultural', 'Tech'];
@@ -198,6 +199,13 @@ const Feed = () => {
     const [commentText, setCommentText] = useState('');
     const [toast, setToast] = useState('');
     const [activeTag, setActiveTag] = useState<TagType>('All');
+    const [isLoading, setIsLoading] = useState(true);
+
+    // Simulate loading
+    useEffect(() => {
+        const timer = setTimeout(() => setIsLoading(false), 1500);
+        return () => clearTimeout(timer);
+    }, []);
 
     const showToast = (msg: string) => { setToast(msg); setTimeout(() => setToast(''), 2000); };
 
@@ -234,113 +242,123 @@ const Feed = () => {
             </div>
 
             {/* Posts */}
-            {filteredPosts.length === 0 && (
+            {filteredPosts.length === 0 && !isLoading && (
                 <div className="py-16 text-center"><p className="text-sm text-slate-400">No posts for this filter yet</p></div>
             )}
 
-            {filteredPosts.map(post => {
-                const isLiked = liked.has(post.id);
-                const isSaved = saved.has(post.id);
-                const likeCount = post.likes + (isLiked ? 1 : 0);
-                const tagCfg = TAG_STYLE[post.tag] || TAG_STYLE['All'];
+            <div className="space-y-4">
+                {isLoading ? (
+                    <>
+                        <Skeleton variant="card" />
+                        <Skeleton variant="card" />
+                        <Skeleton variant="card" />
+                    </>
+                ) : (
+                    filteredPosts.map(post => {
+                        const isLiked = liked.has(post.id);
+                        const isSaved = saved.has(post.id);
+                        const likeCount = post.likes + (isLiked ? 1 : 0);
+                        const tagCfg = TAG_STYLE[post.tag] || TAG_STYLE['All'];
 
-                return (
-                    <article key={post.id} className="bg-white border-b border-slate-100">
-                        {/* Author */}
-                        <div className="px-4 pt-3 pb-2 flex gap-2.5">
-                            <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white text-[11px] font-bold shrink-0 shadow-sm`}>
-                                {post.initials}
-                            </div>
-                            <div className="flex-1 min-w-0">
-                                <div className="flex items-center gap-1">
-                                    <span className="text-[13px] font-semibold text-slate-900 truncate">{post.name}</span>
-                                    <BadgeCheck size={14} className="text-sky-500 fill-sky-50 shrink-0" />
-                                </div>
-                                <p className="text-[11px] text-slate-500 leading-tight truncate">{post.headline}</p>
-                                <div className="flex items-center gap-2 mt-0.5">
-                                    <span className="text-[10px] text-slate-400">{post.timeAgo}</span>
-                                    <span className={`text-[8px] font-bold uppercase px-1.5 py-0.5 rounded-full ${tagCfg.bg} ${tagCfg.text} border ${tagCfg.border}`}>{post.tag}</span>
-                                </div>
-                            </div>
-                            <button
-                                onClick={() => { setSaved(p => { const n = new Set(p); n.has(post.id) ? n.delete(post.id) : n.add(post.id); return n; }); }}
-                                className="self-start p-1.5 rounded-full hover:bg-slate-50 transition-colors"
-                            >
-                                <Bookmark size={16} className={isSaved ? 'fill-sky-500 text-sky-500' : 'text-slate-300'} />
-                            </button>
-                        </div>
-
-                        {/* Content */}
-                        <div className="px-4 pb-2">
-                            <p className="text-[13px] text-slate-800 leading-[1.55]">{post.content}</p>
-                        </div>
-
-                        {/* Image */}
-                        <div className="cursor-pointer group/img">
-                            <img
-                                src={post.img}
-                                alt=""
-                                className="w-full h-56 object-cover group-hover/img:brightness-95 transition-all"
-                                loading="lazy"
-                                onError={(e) => {
-                                    const target = e.target as HTMLImageElement;
-                                    target.style.display = 'none';
-                                }}
-                            />
-                        </div>
-
-                        {/* Stats */}
-                        <div className="px-4 py-1.5 flex items-center text-[11px] text-slate-400">
-                            <span className="flex items-center gap-1">
-                                <span className="w-4 h-4 rounded-full bg-sky-500 flex items-center justify-center"><ThumbsUp size={9} className="text-white" /></span>
-                                {likeCount}
-                            </span>
-                            <span className="ml-auto flex gap-3">
-                                <span>{post.comments} comments</span>
-                                <span>{post.reposts} reposts</span>
-                            </span>
-                        </div>
-
-                        {/* Actions */}
-                        <div className="flex border-t border-slate-100 mx-4">
-                            {[
-                                { icon: <ThumbsUp size={16} className={isLiked ? 'fill-sky-600' : ''} />, label: 'Like', active: isLiked, onClick: () => setLiked(p => { const n = new Set(p); n.has(post.id) ? n.delete(post.id) : n.add(post.id); return n; }) },
-                                { icon: <MessageSquare size={16} />, label: 'Comment', active: commenting === post.id, onClick: () => { setCommenting(commenting === post.id ? null : post.id); setCommentText(''); } },
-                                { icon: <Repeat2 size={16} />, label: 'Repost', active: false, onClick: () => showToast('✅ Reposted!') },
-                                { icon: <Share2 size={16} />, label: 'Send', active: false, onClick: () => showToast('✅ Link copied!') },
-                            ].map(btn => (
-                                <button
-                                    key={btn.label}
-                                    onClick={btn.onClick}
-                                    className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 text-[12px] font-medium transition-all hover:bg-slate-50 active:bg-slate-100 rounded-lg ${btn.active ? 'text-sky-600' : 'text-slate-500'}`}
-                                >
-                                    {btn.icon} {btn.label}
-                                </button>
-                            ))}
-                        </div>
-
-                        {/* Comment Box */}
-                        {commenting === post.id && (
-                            <div className="px-4 py-3 bg-slate-50/80 border-t border-slate-100 animate-fade-in">
-                                <div className="flex gap-2 items-center">
-                                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sky-500 to-teal-500 flex items-center justify-center text-white text-[9px] font-bold shrink-0">AP</div>
-                                    <div className="flex-1 flex items-center bg-white rounded-full border border-slate-200 focus-within:border-sky-300 overflow-hidden">
-                                        <input type="text" value={commentText} onChange={e => setCommentText(e.target.value)} placeholder="Add a comment..." className="flex-1 px-3 py-2 text-[12px] bg-transparent outline-none" autoFocus />
-                                        <button className="px-2 text-slate-300 hover:text-slate-500" onClick={() => { setCommenting(null); setCommentText(''); }}><X size={14} /></button>
+                        return (
+                            <article key={post.id} className="bg-white border-b border-slate-100">
+                                {/* Author */}
+                                <div className="px-4 pt-3 pb-2 flex gap-2.5">
+                                    <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${post.gradient} flex items-center justify-center text-white text-[11px] font-bold shrink-0 shadow-sm`}>
+                                        {post.initials}
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-1">
+                                            <span className="text-[13px] font-semibold text-slate-900 truncate">{post.name}</span>
+                                            <BadgeCheck size={14} className="text-sky-500 fill-sky-50 shrink-0" />
+                                        </div>
+                                        <p className="text-[11px] text-slate-500 leading-tight truncate">{post.headline}</p>
+                                        <div className="flex items-center gap-2 mt-0.5">
+                                            <span className="text-[10px] text-slate-400">{post.timeAgo}</span>
+                                            <span className={`text-[8px] font-bold uppercase px-1.5 py-0.5 rounded-full ${tagCfg.bg} ${tagCfg.text} border ${tagCfg.border}`}>{post.tag}</span>
+                                        </div>
                                     </div>
                                     <button
-                                        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${commentText.trim() ? 'bg-sky-500 text-white shadow-sm' : 'bg-slate-100 text-slate-300'}`}
-                                        disabled={!commentText.trim()}
-                                        onClick={() => { showToast('✅ Comment posted!'); setCommenting(null); setCommentText(''); }}
+                                        onClick={() => { setSaved(p => { const n = new Set(p); n.has(post.id) ? n.delete(post.id) : n.add(post.id); return n; }); }}
+                                        className="self-start p-1.5 rounded-full hover:bg-slate-50 transition-colors"
                                     >
-                                        <Send size={13} />
+                                        <Bookmark size={16} className={isSaved ? 'fill-sky-500 text-sky-500' : 'text-slate-300'} />
                                     </button>
                                 </div>
-                            </div>
-                        )}
-                    </article>
-                );
-            })}
+
+                                {/* Content */}
+                                <div className="px-4 pb-2">
+                                    <p className="text-[13px] text-slate-800 leading-[1.55]">{post.content}</p>
+                                </div>
+
+                                {/* Image */}
+                                <div className="cursor-pointer group/img">
+                                    <img
+                                        src={post.img}
+                                        alt=""
+                                        className="w-full h-56 object-cover group-hover/img:brightness-95 transition-all"
+                                        loading="lazy"
+                                        onError={(e) => {
+                                            const target = e.target as HTMLImageElement;
+                                            target.style.display = 'none';
+                                        }}
+                                    />
+                                </div>
+
+                                {/* Stats */}
+                                <div className="px-4 py-1.5 flex items-center text-[11px] text-slate-400">
+                                    <span className="flex items-center gap-1">
+                                        <span className="w-4 h-4 rounded-full bg-sky-500 flex items-center justify-center"><ThumbsUp size={9} className="text-white" /></span>
+                                        {likeCount}
+                                    </span>
+                                    <span className="ml-auto flex gap-3">
+                                        <span>{post.comments} comments</span>
+                                        <span>{post.reposts} reposts</span>
+                                    </span>
+                                </div>
+
+                                {/* Actions */}
+                                <div className="flex border-t border-slate-100 mx-4">
+                                    {[
+                                        { icon: <ThumbsUp size={16} className={isLiked ? 'fill-sky-600' : ''} />, label: 'Like', active: isLiked, onClick: () => setLiked(p => { const n = new Set(p); n.has(post.id) ? n.delete(post.id) : n.add(post.id); return n; }) },
+                                        { icon: <MessageSquare size={16} />, label: 'Comment', active: commenting === post.id, onClick: () => { setCommenting(commenting === post.id ? null : post.id); setCommentText(''); } },
+                                        { icon: <Repeat2 size={16} />, label: 'Repost', active: false, onClick: () => showToast('✅ Reposted!') },
+                                        { icon: <Share2 size={16} />, label: 'Send', active: false, onClick: () => showToast('✅ Link copied!') },
+                                    ].map(btn => (
+                                        <button
+                                            key={btn.label}
+                                            onClick={btn.onClick}
+                                            className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 text-[12px] font-medium transition-all hover:bg-slate-50 active:bg-slate-100 rounded-lg ${btn.active ? 'text-sky-600' : 'text-slate-500'}`}
+                                        >
+                                            {btn.icon} {btn.label}
+                                        </button>
+                                    ))}
+                                </div>
+
+                                {/* Comment Box */}
+                                {commenting === post.id && (
+                                    <div className="px-4 py-3 bg-slate-50/80 border-t border-slate-100 animate-fade-in">
+                                        <div className="flex gap-2 items-center">
+                                            <div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-white text-[9px] font-bold shrink-0">AP</div>
+                                            <div className="flex-1 flex items-center bg-white rounded-full border border-slate-200 focus-within:border-sky-300 overflow-hidden">
+                                                <input type="text" value={commentText} onChange={e => setCommentText(e.target.value)} placeholder="Add a comment..." className="flex-1 px-3 py-2 text-[12px] bg-transparent outline-none" autoFocus />
+                                                <button className="px-2 text-slate-300 hover:text-slate-500" onClick={() => { setCommenting(null); setCommentText(''); }}><X size={14} /></button>
+                                            </div>
+                                            <button
+                                                className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${commentText.trim() ? 'bg-sky-500 text-white shadow-sm' : 'bg-slate-100 text-slate-300'}`}
+                                                disabled={!commentText.trim()}
+                                                onClick={() => { showToast('✅ Comment posted!'); setCommenting(null); setCommentText(''); }}
+                                            >
+                                                <Send size={13} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                            </article>
+                        );
+                    })
+                )}
+            </div>
         </div>
     );
 };

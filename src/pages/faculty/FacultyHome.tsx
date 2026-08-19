@@ -115,7 +115,7 @@ const FacultyHome = () => {
                     ))}
                 </div>
 
-                <div className="absolute -top-10 -right-10 w-24 h-24 bg-sky-50 blur-2xl rounded-full pointer-events-none" />
+                
             </Card>
 
             {/* Tech Pulse */}
@@ -175,7 +175,7 @@ const FacultyHome = () => {
                         <div
                             key={i}
                             onClick={() => navigate(action.path)}
-                            className="p-2.5 bg-slate-50/50 rounded-lg hover:bg-white hover:shadow-sm border border-transparent hover:border-slate-100 cursor-pointer transition-all group active:scale-[0.98]"
+                            className="p-2.5 bg-slate-50/50 rounded-lg hover:bg-white hover:shadow-sm border border-transparent hover:border-slate-100 cursor-pointer transition-all group"
                         >
                             <div className="font-bold text-slate-800 mb-0.5 group-hover:text-sky-600 transition-colors text-[9px] truncate">{action.label}</div>
                             <div className="text-[7px] text-slate-400 font-bold uppercase">{action.desc}</div>
